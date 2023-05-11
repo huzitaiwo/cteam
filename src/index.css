@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.msg,
+.status {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 3px solid #fff;
+}
+.error,
+.high {
+  color: #F7423D;
+  background: #FFF3EA;
+  border-color: #F7423D;
+}
+.high {
+  color: #FF7782;
+  background: #FFF3EA;
+  border-color: #FF7782;
+}
+.success,
+.completed {
+  color: #60B158;
+  background: #E7F4E6;
+  border-color: #60B158;
+}
+.warning,
+.warning__test,
+.medium {
+  color: #FD8B51;
+  background: #FFF3EA;
+  border-color: #FD8B51;
+}
+.medium {
+  color: #FFBB55;
+  background: #FFF3EA;
+  border-color: #FFBB55;
+}
+.low {
+  color: #717EEE;
+  background: #F5ECF2;
+  border-color: #717EEE;
+}
+.high,
+.medium,
+.low {
+  background: none;
+  padding: 4px 12px;
+}
+.progress_select {
+  padding: 4px 12px;
+  color: #7078BA;
+  background: #D7DBFD;
+  border-color: #D7DBFD;
+}
+.completed {
+  border-color:#E7F4E6;
+  padding: 5px 12px;
+}
+.w-6 {
+  width: 23px;
+}
+.w-4 {
+  width: 17px;
+}
+
+/* dark mode */
+.error.dark,
+.warning.dark {
+  color: #fff;
+  background: #F7423D;
+  border-color: #F7423D;
+}
+.medium.dark {
+  color: #fff;
+  background: #FD8B51;
+  color: #FD8B51;
+}
+.success.dark {
+  color: #fff;
+  background: #60B158;
+  border-color: #60B158;
+}
+.warning__text.dark {
+  color: #F7423D;
+  background: #403034;
+  border-color: #F7423D;
+}

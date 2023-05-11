@@ -1,0 +1,111 @@
+.App {
+  color: #25283b;
+  background: #f7f6f4;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 2200px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 30px;
+  display: flex;
+}
+.App.dark {
+  background: #212529;
+  color: #e3e4e4;
+}
+.content {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+header,
+.sidebar {
+  background: #fff;
+  border-radius: 0.5rem;
+}
+header.dark,
+.sidebar.dark {
+  background: #2b2f33;
+  color: #e3e4e4;
+}
+.btn {
+  background: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #fd7b38;
+  cursor: pointer;
+  font-size: 1em;
+  border: 2px solid #fd7b38;
+}
+.btn:focus,
+.account a:focus {
+  outline: 2px solid #fd7b38;
+}
+.btn.dark {
+  background: #2b2f33;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #fd413c;
+  cursor: pointer;
+  font-size: 1em;
+  border: 2px solid #fd413c;
+}
+.btn.dark:focus,
+.account.dark a:focus {
+  outline: 2px solid #fd413c;
+}
+.btn:hover {
+  color: #fff;
+  background-color: #fd7b38;
+}
+.btn.dark:hover {
+  color: #fff;
+  background-color: #fd413c;
+}
+.account {
+  margin-top: 30px;
+}
+.account p {
+  border-bottom: 1px solid #e3e4e4;
+  padding-bottom: 3px;
+  margin-bottom: 10px;
+}
+.account a {
+  color: #fd7b38;
+}
+.account.dark p {
+  border-bottom: 1px solid #5f6365;
+}
+.account.dark a {
+  color: #fd413c;
+}
+
+/* media query */
+@media (max-width: 1200px) {
+  .App {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .App {
+    padding: 0 10px;
+  }
+  .header,
+  .sidebar {
+    border-radius: 0;
+  }
+  .content {
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .content {
+    margin: 0;
+  }
+}
