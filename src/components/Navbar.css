@@ -1,0 +1,51 @@
+.navbar {
+  display: flex;
+  align-items: center;
+}
+header {
+  background: #fff;
+  flex: 1;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 15px;
+  margin-bottom: 20px;
+}
+button.hamburger {
+  padding: 5px 12px 2px 8px;
+  border-radius: 5px;
+  margin: 0 15px 8px 0;
+}
+button.hamburger svg {
+  width: 35px;
+}
+form.search {
+  margin-right: auto;
+  width: 100%;
+  /* background: #f7f6f4; */
+  padding: 10px;
+  border-radius: 5px;
+}
+form.search input {
+  display: block;
+  width: 100%;
+  outline: none;
+  border: none;
+  background: none;
+}
+.notification {
+  padding: 8px 10px;
+  border-radius: 4px;
+  display: flex;
+  background: none;
+}
+
+/* dark */
+header.dark input,
+header.dark input::placeholder {
+  color: #e3e4e4;
+}
+header.dark .notification svg {
+  stroke: #5f6365;
+}

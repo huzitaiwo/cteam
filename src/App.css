@@ -3,8 +3,8 @@
   background: #f7f6f4;
   min-height: 100vh;
   width: 100%;
-  /* max-width: 2200px;
-  margin: 0 auto; */
+  max-width: 2500px;
+  margin: 0 auto;
   padding: 20px;
   gap: 30px;
   display: flex;
@@ -26,11 +26,6 @@ header,
 .sidebar {
   background: #fff;
   border-radius: 0.5rem;
-}
-header.dark,
-.sidebar.dark {
-  background: #2b2f33;
-  color: #e3e4e4;
 }
 .btn {
   background: #fff;
@@ -84,16 +79,25 @@ header.dark,
   color: #fd413c;
 }
 
+/* dark mode */
+.App.dark header,
+.App.dark .sidebar {
+  background: #2b2f33;
+  color: #e3e4e4;
+}
+.App.dark .account a {
+  color: #fd413c;
+}
+
 /* media query */
-/* @media (max-width: 1200px) {
+@media (max-width: 1200px) {
   .App {
     gap: 15px;
   }
-} */
-
-/* @media (max-width: 1100px) {
+}
+@media (max-width: 1100px) {
   .App {
-    padding: 0 10px;
+    padding: 10px;
   }
   .header,
   .sidebar {
@@ -102,10 +106,21 @@ header.dark,
   .content {
     margin-right: 15px;
   }
-} */
-
-/* @media (max-width: 500px) {
+}
+@media (max-width: 500px) {
+  .App {
+    gap: 0;
+  }
   .content {
     margin: 0;
   }
-} */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+  }
+}

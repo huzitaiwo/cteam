@@ -1,4 +1,10 @@
+// react packages
+import { useState, useEffect } from "react";
+
+// react-router packages
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+
+// hooks
 import { useAuthContext } from "./hooks/useAuthContext";
 import { useTheme } from "./hooks/useTheme";
 
@@ -13,23 +19,59 @@ import Calender from "./pages/calender/Calender";
 import Projects from "./pages/projects/Projects";
 import Project from "./pages/project/Project";
 import Signup from "./pages/signup/Signup";
-// import Sidebar from './components/Sidebar'
+import Sidebar from "./components/Sidebar";
 import Create from "./pages/create/Create";
-// import Navbar from './components/Navbar'
+import Navbar from "./components/Navbar";
 import Login from "./pages/login/Login";
 import Task from "./pages/task/Task";
 
 function App() {
-  const { user, authIsReady } = useAuthContext();
   const { mode } = useTheme();
+  const { user, authIsReady } = useAuthContext();
+  const [mobileMenu, setMobileMenu] = useState(false);
+
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const changeWidth = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", changeWidth);
+
+    // cleanup function
+    return () => {
+      window.removeEventListener("resize", changeWidth);
+    };
+  }, []);
 
   return (
     <div className={`App ${mode}`}>
+      {mobileMenu && (
+        <div
+          onClick={() => {
+            setMobileMenu(false);
+          }}
+          className="overlay"
+        />
+      )}
       {authIsReady && (
         <BrowserRouter>
-          {/* {user && <Sidebar />} */}
+          {user && (
+            <Sidebar
+              mobileMenu={mobileMenu}
+              setMobileMenu={setMobileMenu}
+              screenWidth={screenWidth}
+            />
+          )}
           <div className="content">
-            {/* {user && <Navbar />} */}
+            {user && (
+              <Navbar
+                mobileMenu={mobileMenu}
+                setMobileMenu={setMobileMenu}
+                screenWidth={screenWidth}
+              />
+            )}
             <main>
               <Switch>
                 <Route exact path="/">
