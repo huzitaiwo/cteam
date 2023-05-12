@@ -1,5 +1,6 @@
 .App {
   color: #25283b;
+  color: #4e5157;
   background: #f7f6f4;
   min-height: 100vh;
   width: 100%;
@@ -11,7 +12,7 @@
 }
 .App.dark {
   background: #212529;
-  color: #e3e4e4;
+  color: #fff;
 }
 .content {
   width: 100%;
@@ -79,7 +80,7 @@ header,
 .App.dark header,
 .App.dark .sidebar {
   background: #2b2f33;
-  color: #e3e4e4;
+  color: #85878a;
 }
 .App.dark .account a {
   color: #fd413c;

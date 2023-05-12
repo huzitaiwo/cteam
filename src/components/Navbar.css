@@ -44,12 +44,12 @@ form.search input {
 /* dark */
 .navbar.dark input,
 .navbar.dark input::placeholder {
-  color: #e3e4e4;
+  color: #858789;
 }
 .navbar.dark .hamburger {
   background: #2b2f33;
 }
 .navbar.dark .notification svg,
 .navbar.dark .hamburger svg {
-  stroke: #e3e4e4;
+  stroke: #858789;
 }

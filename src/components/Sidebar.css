@@ -18,7 +18,8 @@
   margin-right: 10px;
 }
 .navigation-links a {
-  color: #64666c;
+  color: #85878a;
+
   text-decoration: none;
   display: block;
   padding: 10px 20px;
@@ -35,16 +36,16 @@
 
 /* dark mode */
 .sidebar.dark .logo svg {
-  stroke: #e3e4e4;
+  stroke: #fff;
 }
 .sidebar.dark .navigation-links svg {
-  stroke: #e3e4e4;
+  stroke: #85878a;
 }
 .sidebar.dark .navigation-links a.active svg {
   stroke: #f7423d;
 }
 .sidebar.dark .navigation-links a {
-  color: #e3e4e4;
+  color: #85878a;
 }
 .sidebar.dark .navigation-links a.active {
   color: #f7423d;

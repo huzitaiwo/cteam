@@ -47,7 +47,7 @@ export default function Signup() {
       <form onSubmit={handleSignup} className={`form__auth ${mode}`}>
         <h2>Sign up</h2>
         <p className="form__text">
-          Collaborate with your team remotely and efficiently!
+          Collaborate with your team easily and remotely!
         </p>
 
         <label className="input__field">
@@ -134,6 +134,7 @@ export default function Signup() {
             type="file"
             id="file"
             onChange={handleFileChange}
+            required
           />
 
           <label className="input__field file" htmlFor="file">

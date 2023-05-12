@@ -182,3 +182,10 @@ body {
 .form__auth.dark .input__icon {
   background: #fd413c;
 }
+
+/* mobile viewport */
+@media (max-width: 500px) {
+  .form__auth {
+    padding: 15px;
+  }
+}

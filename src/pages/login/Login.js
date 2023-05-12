@@ -25,7 +25,7 @@ export default function Login() {
         <p className="form__text">Welcome back! 👋</p>
 
         <label className="input__field">
-          <div class="input__icon">
+          <div className="input__icon">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -51,7 +51,7 @@ export default function Login() {
         </label>
 
         <label className="input__field">
-          <div class="input__icon">
+          <div className="input__icon">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

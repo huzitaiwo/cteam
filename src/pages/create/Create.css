@@ -1,0 +1,64 @@
+.form__create {
+  max-width: 500px;
+  margin-bottom: 200px;
+}
+.form__create h2 {
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+.form__create span {
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+.form__create input,
+.form__create .file,
+.form__create textarea {
+  display: block;
+  width: 100%;
+  margin: 3px 0 20px;
+  padding: 8px;
+  background-color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 4px;
+}
+.form__create .input__field:focus {
+  outline-color: hsl(0, 0%, 80%);
+}
+.form__create textarea {
+  resize: none;
+  min-height: 100px;
+}
+.form__create .select {
+  margin: 3px 0 20px;
+}
+.form__create .thumbnail {
+  width: 100px;
+}
+.form__create .file {
+  text-align: center;
+  padding: 0;
+}
+
+/*__________ dark mode __________*/
+.form__create.dark input,
+.form__create.dark .file,
+.form__create.dark textarea {
+  background-color: #2b2f33;
+  border: 1px solid #858789;
+  color: #85878a;
+}
+.form__create.dark .input__field:focus {
+  outline: 1px solid #858789;
+}
+/* .form__create.dark .css-6j8wv5-Input  */
+.form__create.dark .css-1s2u09g-control,
+.form__create.dark .css-1pahdxg-control,
+.form__create.dark #react-select-27-listbox,
+.form__create.dark #react-select-29-listbox,
+.form__create.dark #react-select-31-listbox {
+  background-color: #2b2f33;
+  border: 1px solid #858789;
+  color: #85878a;
+}
