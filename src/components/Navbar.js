@@ -14,7 +14,7 @@ export default function Navbar({ mobileMenu, setMobileMenu, screenWidth }) {
   const { mode } = useTheme();
 
   return (
-    <div className="navbar">
+    <div className={`navbar ${mode}`}>
       {!mobileMenu && screenWidth < 501 && (
         <button
           className="hamburger"
@@ -38,7 +38,7 @@ export default function Navbar({ mobileMenu, setMobileMenu, screenWidth }) {
           </svg>
         </button>
       )}
-      <header className={mode}>
+      <header>
         <form className="search">
           <input type="text" placeholder="search" />
         </form>

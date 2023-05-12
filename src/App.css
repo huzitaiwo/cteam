@@ -42,11 +42,7 @@ header,
 }
 .btn.dark {
   background: #2b2f33;
-  padding: 5px 10px;
-  border-radius: 4px;
   color: #fd413c;
-  cursor: pointer;
-  font-size: 1em;
   border: 2px solid #fd413c;
 }
 .btn.dark:focus,

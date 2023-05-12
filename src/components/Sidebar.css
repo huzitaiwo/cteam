@@ -17,9 +17,6 @@
 .navigation-links svg {
   margin-right: 10px;
 }
-.navigation-links a.active svg {
-  stroke: #fd8b51;
-}
 .navigation-links a {
   color: #64666c;
   text-decoration: none;
@@ -46,12 +43,12 @@
 .sidebar.dark .navigation-links a.active svg {
   stroke: #f7423d;
 }
-.sidebar.dark .navigation-links.dark a {
+.sidebar.dark .navigation-links a {
   color: #e3e4e4;
 }
-.sidebar.dark .navigation-links.dark a.active {
+.sidebar.dark .navigation-links a.active {
   color: #f7423d;
-  background: linear-gradient(to right, #3e3633, #2b2f33);
+  background: linear-gradient(to right, #3e3633, #3e3633);
   border-color: #f7423d;
 }
 
@@ -68,6 +65,9 @@
   }
   .sidebar .logo {
     border-bottom: 1px solid #f7f6f4;
+  }
+  .sidebar.dark .logo {
+    border-bottom: 1px solid #4b5563;
   }
   .sidebar .logo svg {
     width: 50px;
@@ -89,6 +89,9 @@
     width: 220px;
     box-shadow: 5px 5px 15px #64666c;
     z-index: 12;
+  }
+  .sidebar.dark {
+    box-shadow: none;
   }
   .navigation-links span {
     display: initial;

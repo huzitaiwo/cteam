@@ -1,0 +1,57 @@
+.layout {
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.layout button {
+  border: 1px solid #5F6365;
+  border-radius: 8px;
+  padding: 5px 7px 3px 7px;
+}
+.layout .list,
+.layout .grid {
+  background: #fff;
+  border-color: #fff;
+}
+.layout .list svg,
+.layout .grid svg {
+  stroke: #64666C;
+}
+.layout .active {
+  background: #FFF3ED;
+  border-color: #FD7B38;
+}
+.layout .active svg {
+  stroke: #FD7B38;
+}
+.layout .add {
+  background: #FD7B38;
+  border-color: #FD7B38;
+}
+.layout .add svg {
+  stroke: #fff;
+}
+
+/* dark */
+.layout.dark .list,
+.layout.dark .grid {
+  background: #2b2f33;
+  border-color: #2b2f33;
+}
+.layout.dark .active {
+  /* background: #fff; */
+  border-color: #F7423D;
+}
+.layout.dark .list svg,
+.layout.dark .grid svg {
+  stroke: #fff;
+}
+.layout.dark .active svg {
+  stroke: #F7423D;
+}
+.layout.dark .add {
+  background: #F7423D;
+  border-color: #F7423D;
+}

@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 import { useTheme } from "../../hooks/useTheme";
 import { useSignup } from "../../hooks/useSignup";
 
-//styles and images
-import "./Signup.css";
+// images
 import Thumbnail from "../../assets/img/thumbnail.png";
 
 export default function Signup() {

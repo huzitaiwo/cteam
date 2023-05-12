@@ -58,11 +58,7 @@ function App() {
       {authIsReady && (
         <BrowserRouter>
           {user && (
-            <Sidebar
-              mobileMenu={mobileMenu}
-              setMobileMenu={setMobileMenu}
-              screenWidth={screenWidth}
-            />
+            <Sidebar mobileMenu={mobileMenu} screenWidth={screenWidth} />
           )}
           <div className="content">
             {user && (
@@ -78,11 +74,11 @@ function App() {
                   {!user && <Redirect to="/login" />}
                   {user && <Dashboard />}
                 </Route>
-                <Route path="/projects">
+                <Route exact path="/projects">
                   {!user && <Redirect to="/login" />}
                   {user && <Projects />}
                 </Route>
-                <Route path="/project/:id">
+                <Route path="/projects/:id">
                   {!user && <Redirect to="/login" />}
                   {user && <Project />}
                 </Route>

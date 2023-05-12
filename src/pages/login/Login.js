@@ -6,9 +6,6 @@ import { Link } from "react-router-dom";
 import { useTheme } from "../../hooks/useTheme";
 import { useLogin } from "../../hooks/useLogin";
 
-//styles
-import "./Login.css";
-
 export default function Login() {
   const { mode } = useTheme();
   const { login, isPending, error } = useLogin();
@@ -23,7 +20,7 @@ export default function Login() {
 
   return (
     <div>
-      <form onSubmit={handleLogin} className={`form__auth`}>
+      <form onSubmit={handleLogin} className={`form__auth ${mode}`}>
         <h2>Login</h2>
         <p className="form__text">Welcome back! 👋</p>
 
