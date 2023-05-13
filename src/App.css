@@ -16,7 +16,6 @@
 .content {
   width: 100%;
 }
-
 button {
   cursor: pointer;
   background: none;
@@ -86,11 +85,6 @@ header,
 }
 
 /* media query */
-@media (max-width: 1200px) {
-  .App {
-    gap: 15px;
-  }
-}
 @media (max-width: 1100px) {
   .App {
     padding: 10px;
@@ -105,7 +99,7 @@ header,
 }
 @media (max-width: 500px) {
   .App {
-    gap: 0;
+    gap: 15px;
   }
   .content {
     margin: 0;

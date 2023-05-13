@@ -58,7 +58,11 @@ function App() {
       {authIsReady && (
         <BrowserRouter>
           {user && (
-            <Sidebar mobileMenu={mobileMenu} screenWidth={screenWidth} />
+            <Sidebar
+              mobileMenu={mobileMenu}
+              setMobileMenu={setMobileMenu}
+              screenWidth={screenWidth}
+            />
           )}
           <div className="content">
             {user && (

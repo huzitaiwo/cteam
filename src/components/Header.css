@@ -6,9 +6,9 @@
   margin-bottom: 20px;
 }
 .layout button {
-  border: 1px solid #5F6365;
-  border-radius: 8px;
-  padding: 5px 7px 3px 7px;
+  border: 1px solid #5f6365;
+  border-radius: 7px;
+  padding: 3px 5px 0 5px;
 }
 .layout .list,
 .layout .grid {
@@ -17,18 +17,18 @@
 }
 .layout .list svg,
 .layout .grid svg {
-  stroke: #64666C;
+  stroke: #64666c;
 }
 .layout .active {
-  background: #FFF3ED;
-  border-color: #FD7B38;
+  background: #fff3ed;
+  border-color: #fd7b38;
 }
 .layout .active svg {
-  stroke: #FD7B38;
+  stroke: #fd7b38;
 }
 .layout .add {
-  background: #FD7B38;
-  border-color: #FD7B38;
+  background: #fd7b38;
+  border-color: #fd7b38;
 }
 .layout .add svg {
   stroke: #fff;
@@ -42,16 +42,16 @@
 }
 .layout.dark .active {
   /* background: #fff; */
-  border-color: #F7423D;
+  border-color: #f7423d;
 }
 .layout.dark .list svg,
 .layout.dark .grid svg {
   stroke: #fff;
 }
 .layout.dark .active svg {
-  stroke: #F7423D;
+  stroke: #f7423d;
 }
 .layout.dark .add {
-  background: #F7423D;
-  border-color: #F7423D;
+  background: #f7423d;
+  border-color: #f7423d;
 }
