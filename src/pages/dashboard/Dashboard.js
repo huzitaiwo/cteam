@@ -63,11 +63,12 @@ export default function Dashboard() {
                       )}
                       {!project.isCompleted && !project.inProgress && (
                         <span className="status progress_select">
-                          Select progress
+                          <span className="md-none">Select</span> progress
                         </span>
                       )}
                       <span className={`status ${project.priority}`}>
-                        {project.priority} Priority
+                        {project.priority}{" "}
+                        <span className="md-none">Priority</span>
                       </span>
                     </div>
                     <div className="progress__bar"></div>
@@ -89,7 +90,8 @@ export default function Dashboard() {
                       ))}
                     </ul>
                     <div className={`msg warning ${mode}`}>
-                      Due by: {project.dueDate.toDate().toDateString()}
+                      Due date:{" "}
+                      {project.dueDate.toDate().toDateString().slice(4)}
                     </div>
                   </Link>
                 ))}

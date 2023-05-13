@@ -11,11 +11,11 @@
   text-decoration: none;
   color: #4e5157;
   border-radius: 1rem;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   box-shadow: 5px 5px 15px #f7f6f4;
 }
 .card__head {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .card__head,
 .card__status {
@@ -25,14 +25,18 @@
 }
 .card__name h2 {
   color: #303648;
+  line-height: 1.2;
+  font-size: 1.5rem;
 }
 .card__name p {
   color: #a0a3b0;
+  line-height: 1.1;
 }
 .card__status {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
-.card__status span {
+.card__status span,
+.msg {
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -44,7 +48,6 @@
   border: none;
   border-radius: 7px;
   font-weight: 600;
-  font-size: 14px;
   text-transform: uppercase;
 }
 .category.website,
@@ -76,4 +79,36 @@
 }
 .card__users li:first-of-type {
   margin-left: 0;
+}
+
+@media (max-width: 1200px) {
+  .dashboard__grid {
+    gap: 15px;
+  }
+  .dashboard__card {
+    padding: 15px 10px;
+  }
+  .md-none {
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  .dashboard__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .dashboard__card {
+    padding: 30px;
+  }
+  .md-none {
+    display: initial;
+  }
+}
+@media (max-width: 500px) {
+  .dashboard__grid {
+    gap: 15px;
+  }
+  .dashboard__card {
+    padding: 15px;
+  }
 }

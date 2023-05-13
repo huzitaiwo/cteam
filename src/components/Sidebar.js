@@ -152,7 +152,7 @@ export default function Sidebar({ mobileMenu, screenWidth }) {
                       d="M12 6v6m0 0v6m0-6h6m-6 0H6"
                     />
                   </svg>
-                  New Project
+                  <span>New Project</span>
                 </NavLink>
               </li>
             </ul>
