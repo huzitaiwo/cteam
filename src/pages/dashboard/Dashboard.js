@@ -23,7 +23,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className={`dashboard`}>
+    <div className={`dashboard ${mode}`}>
       {documents && (
         <>
           <div className="dashboard__grid">
@@ -54,7 +54,7 @@ export default function Dashboard() {
                         </svg>
                       </div>
                     </div>
-                    <div className="card__status">
+                    <div className={`card__status ${mode}`}>
                       {project.isCompleted && (
                         <span className="status completed">Completed</span>
                       )}
@@ -71,7 +71,14 @@ export default function Dashboard() {
                         <span className="md-none">Priority</span>
                       </span>
                     </div>
-                    <div className="progress__bar"></div>
+                    <div className="card__progress">
+                      <p>Task Done: 75 / 100</p>
+                      <div className="progress__bar">
+                        <div
+                          className={`bar bar__${project.priority} ${mode}`}
+                        ></div>
+                      </div>
+                    </div>
                     <div className="card__category">
                       {project.categories.map((catogory) => (
                         <span

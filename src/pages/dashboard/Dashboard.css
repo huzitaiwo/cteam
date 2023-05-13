@@ -28,7 +28,8 @@
   line-height: 1.2;
   font-size: 1.5rem;
 }
-.card__name p {
+.card__name p,
+.card__progress p {
   color: #a0a3b0;
   line-height: 1.1;
 }
@@ -39,6 +40,33 @@
 .msg {
   text-transform: uppercase;
   font-weight: 500;
+}
+.card__progress {
+  margin-bottom: 20px;
+}
+.card__progress p {
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+.progress__bar {
+  height: 5px;
+  width: 100%;
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
+.bar {
+  height: 100%;
+  width: 75%;
+  border-radius: 20px;
+}
+.bar__high {
+  background: #ff7782;
+}
+.bar__medium {
+  background: #ffbb55;
+}
+.bar__low {
+  background: #717eee;
 }
 .card__category span {
   display: inline-block;
@@ -77,8 +105,53 @@
 .card__users li {
   margin-left: -8px;
 }
+.card__users .avatar {
+  width: 30px;
+  height: 30px;
+}
 .card__users li:first-of-type {
   margin-left: 0;
+}
+/* __________dark mode__________ */
+.dashboard.dark .dashboard__card {
+  background: #2b2f33;
+  border-color: #4b5563;
+  /* color: #fff; */
+  box-shadow: none;
+}
+.dashboard.dark .card__name h2 {
+  color: #fff;
+}
+.dashboard.dark .progress__bar {
+  background: #3e4246;
+}
+.bar__high.dark {
+  background: #fd413c;
+}
+.bar__medium {
+  background: #ffbb55;
+}
+.bar__low {
+  background: #717eee;
+}
+.category.dark.website,
+.category.dark.uiux {
+  color: #2c5bff;
+  background: #273647;
+}
+.category.dark.ios,
+.category.dark.marketing {
+  color: #f7423d;
+  background: #403034;
+}
+.category.dark.branding,
+.category.dark.sales {
+  color: #cd9d2d;
+  background: #403d32;
+}
+.category.dark.andriod {
+  color: #60b158;
+  background: #313c37;
 }
 
 @media (max-width: 1200px) {

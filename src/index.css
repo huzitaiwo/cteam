@@ -36,7 +36,7 @@ body {
 } */
 .high {
   color: #ff7782;
-  background: #fff3ea;
+  /* background: #fff3ea; */
   border-color: #ff7782;
 }
 .success,
@@ -52,12 +52,12 @@ body {
 }
 .medium {
   color: #ffbb55;
-  background: #fff3ea;
+  /* background: #fff3ea; */
   border-color: #ffbb55;
 }
 .low {
   color: #717eee;
-  background: #f5ecf2;
+  /* background: #f5ecf2; */
   border-color: #717eee;
 }
 .high,
@@ -68,9 +68,12 @@ body {
 }
 .progress_select {
   padding: 4px 12px;
-  color: #7078ba;
+  /* color: #7078ba;
   background: #d7dbfd;
-  border-color: #d7dbfd;
+  border-color: #d7dbfd; */
+  color: #9a9dac;
+  background: #f1f2f4;
+  border-color: #f1f2f4;
 }
 .completed {
   border-color: #e7f4e6;
@@ -146,8 +149,9 @@ body {
 }
 
 /* dark mode */
-.error.dark,
-.warning.dark {
+/* .error.dark,
+.warning.dark,
+.high.dark {
   color: #fff;
   background: #f7423d;
   border-color: #f7423d;
@@ -161,11 +165,23 @@ body {
   color: #fff;
   background: #60b158;
   border-color: #60b158;
+} */
+.card__status.dark .high {
+  color: #fd413c;
+  border-color: #fd413c;
 }
-.warning__text.dark {
-  color: #f7423d;
+.card__status.dark .medium {
+  color: #febc2c;
+  border-color: #febc2c;
+}
+.card__status.dark .progress_select {
+  color: #b9b9bb;
+  background: #404347;
+  border-color: #404347;
+}
+.warning.dark {
+  color: #fd413c;
   background: #403034;
-  border-color: #f7423d;
 }
 
 /* authentication form */
