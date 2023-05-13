@@ -29,9 +29,9 @@ const categories = [
 ];
 
 const priorities = [
-  { value: "high", label: "High priority" },
-  { value: "medium", label: "Medium priority" },
-  { value: "low", label: "Low priority" },
+  { value: "high", label: "High" },
+  { value: "medium", label: "Medium" },
+  { value: "low", label: "Low" },
 ];
 
 export default function Create() {
@@ -45,9 +45,12 @@ export default function Create() {
 
   // form field values
   const [name, setName] = useState("");
+  const [companyName, setCompanyName] = useState("");
   const [thumbnail, setThumbnail] = useState(null);
   const [thumbnailError, setThumbnailError] = useState(null);
-  const [details, setDetails] = useState("");
+  const [details, setDetails] = useState(
+    "This project need a new brand identify where they will recognize"
+  );
   const [dueDate, setDueDate] = useState("");
   const [priority, setPriority] = useState("");
   const [projectCategories, setProjectCategories] = useState([]);
@@ -91,7 +94,11 @@ export default function Create() {
 
     setFormError(null);
 
-    if (!category) {
+    if (!priority) {
+      setFormError("Please select project priority");
+    }
+
+    if (category.length < 1) {
       setFormError("Please select project categories");
       return;
     }
@@ -116,6 +123,7 @@ export default function Create() {
 
     const project = {
       name,
+      companyName,
       details,
       categories: projectCategories,
       dueDate: timestamp.fromDate(new Date(dueDate)),
@@ -148,6 +156,16 @@ export default function Create() {
           />
         </label>
 
+        <label>
+          <span>Project company:</span>
+          <input
+            required
+            type="text"
+            onChange={(e) => setCompanyName(e.target.value)}
+            value={companyName}
+          />
+        </label>
+
         <div className="label">
           <span>project thumbnail:</span>
           <input
@@ -158,6 +176,8 @@ export default function Create() {
           />
           <label className="file" htmlFor="file">
             <img src={Thumbnail} alt="" className="thumbnail" />
+            {!thumbnail && <span>Project Image</span>}
+            {thumbnail && <span>{thumbnail.name}</span>}
           </label>
           {thumbnailError && <div className="error">{thumbnailError}</div>}
         </div>

@@ -66,12 +66,17 @@ export const useFirestore = (collection) => {
       const createdAt = timestamp.fromDate(new Date());
 
       // upload project thumbnail
-      const uploadPath = `projects/${thumbnail.name}`;
-      const photo = await firebaseStorage.ref(uploadPath).put(thumbnail);
-      const photoURL = await photo.ref.getDownloadURL();
+      if (thumbnail) {
+        const uploadPath = `projects/${thumbnail.name}`;
+        const photo = await firebaseStorage.ref(uploadPath).put(thumbnail);
+        const photoURL = await photo.ref.getDownloadURL();
 
-      const addedDocument = await ref.add({ ...doc, createdAt, photoURL });
-      dispatchIfNotUnMounted({ type: "ADD_DOCUMENT", payload: addedDocument });
+        const addedDocument = await ref.add({ ...doc, createdAt, photoURL });
+        dispatchIfNotUnMounted({
+          type: "ADD_DOCUMENT",
+          payload: addedDocument,
+        });
+      }
     } catch (err) {
       dispatchIfNotUnMounted({ type: "ERROR", payload: err.message });
     }

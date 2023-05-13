@@ -141,8 +141,8 @@ export default function Signup() {
             <img src={Thumbnail} alt="" className="thumbnail" />
             {!thumbnail && <span>Profile Image</span>}
             {thumbnail && <span>{thumbnail.name}</span>}
-            {thumbnailError && <div className="error">{thumbnailError}</div>}
           </label>
+          {thumbnailError && <div className="error">{thumbnailError}</div>}
         </div>
 
         {!isPending && <button className={`btn ${mode}`}>Sign up</button>}

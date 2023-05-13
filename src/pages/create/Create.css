@@ -23,8 +23,9 @@
   border: 1px solid hsl(0, 0%, 80%);
   border-radius: 4px;
 }
-.form__create .input__field:focus {
-  outline-color: hsl(0, 0%, 80%);
+.form__create input:focus,
+.form__create textarea:focus {
+  outline: 1px solid hsl(0, 0%, 80%);
 }
 .form__create textarea {
   resize: none;
@@ -39,6 +40,9 @@
 .form__create .file {
   text-align: center;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*__________ dark mode __________*/

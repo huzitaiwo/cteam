@@ -16,10 +16,10 @@ body {
   border: none;
   border-radius: 5px;
   padding: 10px;
-  margin: 10px 0;
   display: inline-block;
-  border: 3px solid #fff;
+  border: 2px solid #fff;
 }
+
 .error {
   background: pink;
   border: 1px solid red;
@@ -44,11 +44,10 @@ body {
   background: #e7f4e6;
   border-color: #60b158;
 }
-.warning,
-.warning__test {
+.warning {
   color: #fd8b51;
   background: #fff3ea;
-  border-color: #fd8b51;
+  border-color: transparent;
 }
 .medium {
   color: #ffbb55;
