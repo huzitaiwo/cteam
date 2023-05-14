@@ -82,7 +82,7 @@ function App() {
                   {!user && <Redirect to="/login" />}
                   {user && <Projects />}
                 </Route>
-                <Route path="/projects/:id">
+                <Route exact path="/projects/:id">
                   {!user && <Redirect to="/login" />}
                   {user && <Project />}
                 </Route>
@@ -98,7 +98,7 @@ function App() {
                   {!user && <Redirect to="/login" />}
                   {user && <Create />}
                 </Route>
-                <Route path="/addtask/:id">
+                <Route path="/projects/:id/create">
                   {!user && <Redirect to="/login" />}
                   {user && <CreateTask />}
                 </Route>

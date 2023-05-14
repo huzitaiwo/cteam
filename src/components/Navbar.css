@@ -34,7 +34,8 @@ form.search input {
   border: none;
   background: none;
 }
-.notification {
+.notification,
+.searchButton {
   padding: 8px 10px;
   border-radius: 4px;
   display: flex;
@@ -50,6 +51,7 @@ form.search input {
   background: #2b2f33;
 }
 .navbar.dark .notification svg,
-.navbar.dark .hamburger svg {
+.navbar.dark .hamburger svg,
+.navbar.dark .searchButton svg {
   stroke: #858789;
 }

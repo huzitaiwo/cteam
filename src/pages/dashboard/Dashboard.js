@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 // hooks
 import { useCollection } from "../../hooks/useCollection";
+import { useAuthContext } from "../../hooks/useAuthContext";
 import { useTheme } from "../../hooks/useTheme";
 
 // components
@@ -13,21 +14,36 @@ import "./Dashboard.css";
 
 export default function Dashboard() {
   const { mode } = useTheme();
+  const { user } = useAuthContext();
   const { documents, isPending, error } = useCollection("projects");
+
+  const myProjects = documents
+    ? documents.filter((document) => {
+        let assignedToMe = false;
+        document.assignedUsersList.forEach((u) => {
+          if (user.uid === u.id) {
+            assignedToMe = true;
+          }
+        });
+        return assignedToMe;
+      })
+    : null;
 
   if (error) {
     return <div className="error">{error}</div>;
   }
+
   if (isPending) {
     return <h4>loading...</h4>;
   }
-  // if (documents.length === 0) {
-  //   return (
-  //     <p className={`project-redirect ${mode}`}>
-  //       No projects yet! Add a new project <Link to="/create">here</Link>
-  //     </p>
-  //   );
-  // }
+
+  if (documents && documents.length === 0) {
+    return (
+      <p className={`project-redirect ${mode}`}>
+        No projects yet in your dashboard!
+      </p>
+    );
+  }
 
   return (
     <div className={`dashboard ${mode}`}>
@@ -35,8 +51,12 @@ export default function Dashboard() {
         <>
           <div className="dashboard__grid">
             <div className="grid__1">
-              {documents.map((project) => (
-                <Link to="/" key={project.id} className="dashboard__card">
+              {myProjects.map((project) => (
+                <Link
+                  to={`/projects/${project.id}`}
+                  key={project.id}
+                  className="dashboard__card"
+                >
                   <div className="card__head">
                     {/* <div className="card__logo"></div> */}
                     <div className="card__name">
@@ -65,11 +85,13 @@ export default function Dashboard() {
                       <span className="status completed">Completed</span>
                     )}
                     {project.inProgress && (
-                      <span className="status completed">In Progress</span>
+                      <span className="status progress_select">
+                        In progress
+                      </span>
                     )}
                     {!project.isCompleted && !project.inProgress && (
                       <span className="status progress_select">
-                        <span className="md-none">Select</span> progress
+                        Start <span className="md-none">Project</span>
                       </span>
                     )}
                     <span className={`status ${project.priority}`}>
@@ -87,7 +109,7 @@ export default function Dashboard() {
                       ></div>
                     </div>
                   </div>
-                  <div className="card__category">
+                  <div className={`card__category ${mode}`}>
                     {project.categories.map((catogory) => (
                       <span
                         className={`category ${catogory.value} ${mode}`}

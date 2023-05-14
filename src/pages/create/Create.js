@@ -19,13 +19,15 @@ import Thumbnail from "../../assets/img/thumbnail.png";
 import "./Create.css";
 
 const categories = [
-  { value: "website", label: "Website" },
-  { value: "uiux", label: "ui/ux" },
-  { value: "sales", label: "Sales" },
-  { value: "marketing", label: "Marketing" },
-  { value: "ios", label: "IOS app" },
   { value: "andriod", label: "Andriod" },
+  { value: "ar", label: "AR" },
   { value: "branding", label: "Branding" },
+  { value: "ios", label: "IOS app" },
+  { value: "iot", label: "IOT" },
+  { value: "marketing", label: "Marketing" },
+  { value: "sales", label: "Sales" },
+  { value: "uiux", label: "ui/ux" },
+  { value: "website", label: "Website" },
 ];
 
 const priorities = [
@@ -128,7 +130,6 @@ export default function Create() {
       categories: projectCategories,
       dueDate: timestamp.fromDate(new Date(dueDate)),
       comments: [],
-      tasks: [],
       createdBy,
       assignedUsersList,
       priority: priority.value,

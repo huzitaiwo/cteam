@@ -60,20 +60,39 @@ export const useFirestore = (collection) => {
 
   // add document
   const addDocument = async (doc, thumbnail) => {
-    dispatch({ type: "IS_LOADING" });
+    if (thumbnail) {
+      dispatch({ type: "IS_LOADING" });
 
-    try {
-      const createdAt = timestamp.fromDate(new Date());
+      try {
+        const createdAt = timestamp.fromDate(new Date());
 
-      // upload project thumbnail
-      const uploadPath = `projects/${thumbnail.name}`;
-      const photo = await firebaseStorage.ref(uploadPath).put(thumbnail);
-      const photoURL = await photo.ref.getDownloadURL();
+        // upload project thumbnail
+        const uploadPath = `projects/${thumbnail.name}`;
+        const photo = await firebaseStorage.ref(uploadPath).put(thumbnail);
+        const photoURL = await photo.ref.getDownloadURL();
 
-      const addedDocument = await ref.add({ ...doc, createdAt, photoURL });
-      dispatchIfNotUnMounted({ type: "ADD_DOCUMENT", payload: addedDocument });
-    } catch (err) {
-      dispatchIfNotUnMounted({ type: "ERROR", payload: err.message });
+        const addedDocument = await ref.add({ ...doc, createdAt, photoURL });
+        dispatchIfNotUnMounted({
+          type: "ADD_DOCUMENT",
+          payload: addedDocument,
+        });
+      } catch (err) {
+        dispatchIfNotUnMounted({ type: "ERROR", payload: err.message });
+      }
+    } else {
+      dispatch({ type: "IS_LOADING" });
+
+      try {
+        const createdAt = timestamp.fromDate(new Date());
+
+        const addedDocument = await ref.add({ ...doc, createdAt });
+        dispatchIfNotUnMounted({
+          type: "ADD_DOCUMENT",
+          payload: addedDocument,
+        });
+      } catch (err) {
+        dispatchIfNotUnMounted({ type: "ERROR", payload: err.message });
+      }
     }
   };
 

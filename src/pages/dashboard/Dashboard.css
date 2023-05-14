@@ -87,17 +87,22 @@
 .card__category span {
   display: inline-block;
   margin: 2px 10px 2px 0;
-  padding: 5px 15px;
+  padding: 3px 12px;
   background: #fff;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 3px;
   font-weight: 600;
   text-transform: uppercase;
 }
 .category.website,
-.category.uiux {
+.category.uiux,
+.category.ar {
   background: #edf1ff;
   color: #2c5bff;
+}
+.category.iot {
+  color: #9f7dd9;
+  background: #f6f2fc;
 }
 .category.ios,
 .category.marketing {
@@ -151,24 +156,32 @@
 .bar__low {
   background: #717eee;
 }
+.card__category.dark span {
+  background: transparent;
+}
 .category.dark.website,
-.category.dark.uiux {
+.category.dark.uiux,
+.category.dark.ar {
   color: #2c5bff;
-  background: #273647;
+  border-color: #2c5bff;
+}
+.category.dark.iot {
+  color: #9f7dd9;
+  border-color: #9f7dd9;
 }
 .category.dark.ios,
 .category.dark.marketing {
-  color: #f7423d;
-  background: #403034;
+  color: #fd7b38;
+  border-color: #fd7b38;
 }
 .category.dark.branding,
 .category.dark.sales {
-  color: #cd9d2d;
-  background: #403d32;
+  color: #7078ba;
+  border-color: #7078ba;
 }
 .category.dark.andriod {
   color: #60b158;
-  background: #313c37;
+  border-color: #60b158;
 }
 
 @media (max-width: 1200px) {
