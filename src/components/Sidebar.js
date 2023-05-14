@@ -90,7 +90,7 @@ export default function Sidebar({ mobileMenu, setMobileMenu, screenWidth }) {
                   onClick={() => {
                     setMobileMenu(false);
                   }}
-                  to="/task"
+                  to="/tasks"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

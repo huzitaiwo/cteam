@@ -1,0 +1,160 @@
+.tasks {
+  color: #444858;
+  stroke: #444858;
+  text-decoration: none;
+}
+.tasks a {
+  color: #444858;
+  text-decoration: none;
+}
+.tasks a:hover {
+  background: #e5e5e5;
+}
+.tasks .h3 {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #f3f3f3;
+  box-shadow: 5px 5px 15px #f3f3f3;
+  margin-top: 10px;
+  text-transform: uppercase;
+  border-radius: 7px 7px 0 0;
+  font-size: 1rem;
+}
+.tasks .h3 span {
+  color: #9c9fad;
+  font-weight: 600;
+  margin-left: 10px;
+}
+.thead {
+  color: #9c9fad;
+  font-weight: 600;
+  border-radius: 10px;
+}
+.thead,
+.td {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  box-shadow: 5px 5px 15px #f3f3f3;
+  background: #fff;
+}
+.thead > div:first-of-type,
+.td > div:first-of-type {
+  /* grid-column: 1/3; */
+  width: 550px;
+}
+.thead > div,
+.td > * {
+  border-right: 1px solid #f3f3f3;
+  border-bottom: 1px solid #f3f3f3;
+  padding: 5px 0 5px 15px;
+}
+.thead > div {
+  padding: 15px;
+}
+.thead > div:last-of-type {
+  border-right-color: transparent;
+}
+.task__name {
+  border-left: 4px solid #9c9fad;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+svg.check {
+  margin: 0 10px 0 5px;
+}
+.task__tag {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #f7f6f4;
+  border-radius: 5px;
+  margin-right: 5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.html,
+.javascript,
+.firebase {
+  color: #ffbb55;
+  border-color: #ffbb55;
+}
+.css,
+.react,
+.python,
+.photoshop,
+.native {
+  color: #45bfff;
+  border-color: #45bfff;
+}
+.vue,
+.node,
+.tailwind {
+  color: #60b158;
+  border-color: #60b158;
+}
+.figma,
+.bootstrap,
+.flutter,
+.scss {
+  color: #717eee;
+  border-color: #717eee;
+}
+.xd,
+.php {
+  color: #9f7dd9;
+  border-color: #9f7dd9;
+}
+.tasks ul {
+  display: flex;
+  align-items: center;
+}
+.tasks .avatar {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+.task__user {
+  text-transform: capitalize;
+  margin-right: 5px;
+}
+.task__user,
+.task__duedate {
+  display: flex;
+  align-items: center;
+}
+
+/* dark mode */
+.tasks.dark,
+.tasks.dark .td {
+  color: #abadae;
+  stroke: #abadae;
+}
+.tasks.dark .h3,
+.tasks.dark .thead,
+.tasks.dark .td {
+  background: #2b2f33;
+  box-shadow: none;
+}
+.tasks.dark .thead > div,
+.tasks.dark .td > *,
+.tasks.dark .h3 {
+  border-color: #32363b;
+}
+@media (max-width: 1200px) {
+  .tasks a {
+    margin-bottom: 10px;
+  }
+  .thead {
+    display: none;
+  }
+  .td {
+    grid-template-columns: 1fr;
+  }
+  .td > div:first-of-type {
+    width: 100%;
+  }
+}

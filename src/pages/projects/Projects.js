@@ -73,7 +73,10 @@ export default function Projects() {
                 <div className="projects__head">
                   <h3>Working</h3>
                   <span>
-                    ({workingProjects !== 0 && workingProjects.length < 10 && 0}
+                    (
+                    {workingProjects.length !== 0 &&
+                      workingProjects.length < 10 &&
+                      0}
                     {workingProjects.length})
                   </span>
                   <svg
@@ -100,7 +103,7 @@ export default function Projects() {
                   <h3>In Progress</h3>
                   <span>
                     (
-                    {projectsInProgress !== 0 &&
+                    {projectsInProgress.length !== 0 &&
                       projectsInProgress.length < 10 &&
                       0}
                     {projectsInProgress.length})
@@ -130,7 +133,7 @@ export default function Projects() {
                   <h3>Completed</h3>
                   <span>
                     (
-                    {completedProjects !== 0 &&
+                    {completedProjects.length !== 0 &&
                       completedProjects.length < 10 &&
                       0}
                     {completedProjects.length})

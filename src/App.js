@@ -86,7 +86,7 @@ function App() {
                   {!user && <Redirect to="/login" />}
                   {user && <Project />}
                 </Route>
-                <Route path="/task">
+                <Route path="/tasks">
                   {!user && <Redirect to="/login" />}
                   {user && <Task />}
                 </Route>
