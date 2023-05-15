@@ -12,6 +12,7 @@ export default function ProjectList({ project }) {
 
   return (
     <Link to={`/projects/${project.id}`} className="projects__card">
+      <p>{project.createdBy.displayName}</p>
       {project.photoURL && (
         <img
           className="projects__image"

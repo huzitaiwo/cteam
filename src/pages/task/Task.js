@@ -7,7 +7,7 @@ import Avatar from "../../components/Avatar";
 
 // hooks
 import { useCollection } from "../../hooks/useCollection";
-import { useDocument } from "../../hooks/useDocument";
+// import { useDocument } from "../../hooks/useDocument";
 import { useTheme } from "../../hooks/useTheme";
 
 // styles
@@ -15,7 +15,6 @@ import "./Task.css";
 
 export default function Task() {
   const { mode } = useTheme();
-  // const { document: project } = useDocument();
   const { documents, isPending, error } = useCollection("tasks");
 
   if (error) {
@@ -24,6 +23,10 @@ export default function Task() {
 
   if (isPending) {
     return <h4>loading...</h4>;
+  }
+
+  if (documents && documents.length === 0) {
+    return <p className={`project-redirect ${mode}`}>No Tasks yet!</p>;
   }
 
   return (
@@ -80,14 +83,14 @@ export default function Task() {
                     ))}
                 </div>
                 <ul>
-                  {task.assignedUsersList &&
+                  {/* {task.assignedUsersList &&
                     task.assignedUsersList.map((user) => (
                       <li key={user.photoURL} className="task__user">
                         <Avatar src={user.photoURL} />
                         <span>{user.displayName}</span>
                       </li>
-                    ))}
-                  {/* {task.assignedUsersList && (
+                    ))} */}
+                  {task.assignedUsersList && (
                     <li
                       key={task.assignedUsersList[0].photoURL}
                       className="task__user"
@@ -95,7 +98,7 @@ export default function Task() {
                       <Avatar src={task.assignedUsersList[0].photoURL} />
                       <span>{task.assignedUsersList[0].displayName}</span>
                     </li>
-                  )} */}
+                  )}
                 </ul>
                 <p className="task__duedate">
                   {task.dueDate.toDate().toDateString().slice(3)}

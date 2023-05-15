@@ -20,7 +20,10 @@
 .projects__head {
   margin-bottom: 20px;
 }
-.card__head,
+.card__head {
+  display: flex;
+  justify-content: space-between;
+}
 .card__status,
 .projects__head,
 .projects__name,
@@ -28,6 +31,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.card__name {
+  flex: 1;
 }
 .card__name h2,
 .projects__name h2 {
@@ -100,7 +106,9 @@
   background: #edf1ff;
   color: #2c5bff;
 }
-.category.iot {
+.category.iot,
+.category.illustrator,
+.category.ad {
   color: #9f7dd9;
   background: #f6f2fc;
 }
@@ -114,7 +122,8 @@
   color: #7078ba;
   background: #d7dbfd;
 }
-.category.andriod {
+.category.andriod,
+.category.corel {
   color: #60b158;
   background: #e7f4e6;
 }

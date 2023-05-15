@@ -42,7 +42,7 @@
 .thead > div:first-of-type,
 .td > div:first-of-type {
   /* grid-column: 1/3; */
-  width: 550px;
+  width: 500px;
 }
 .thead > div,
 .td > * {
@@ -145,7 +145,8 @@ svg.check {
   border-color: #32363b;
 }
 @media (max-width: 1200px) {
-  .tasks a {
+  .tasks a,
+  .tasks .h3 {
     margin-bottom: 10px;
   }
   .thead {
