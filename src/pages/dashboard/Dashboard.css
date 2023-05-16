@@ -127,12 +127,24 @@
   color: #60b158;
   background: #e7f4e6;
 }
+.users__more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #a0a3b0;
+  font-weight: 600;
+  width: 35px;
+  height: 35px;
+}
+
 .card__users {
   display: flex;
   margin: 15px 0;
   list-style: none;
 }
-.card__users li {
+.card__users li,
+.users__more {
   margin-left: -8px;
 }
 .card__users .avatar {
@@ -142,6 +154,7 @@
 .card__users li:first-of-type {
   margin-left: 0;
 }
+
 /* __________dark mode__________ */
 .dashboard.dark .dashboard__card,
 .projects.dark .projects__card {
@@ -191,6 +204,9 @@
 .category.dark.andriod {
   color: #60b158;
   border-color: #60b158;
+}
+.users__more.dark {
+  background: #212529;
 }
 
 @media (max-width: 1200px) {

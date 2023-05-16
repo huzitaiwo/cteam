@@ -120,11 +120,16 @@ export default function Dashboard() {
                     ))}
                   </div>
                   <ul className="card__users">
-                    {project.assignedUsersList.map((user) => (
+                    {project.assignedUsersList.slice(0, 4).map((user) => (
                       <li key={user.photoURL}>
                         <Avatar src={user.photoURL} />
                       </li>
                     ))}
+                    {project.assignedUsersList.length > 4 && (
+                      <div className={`users__more ${mode}`}>
+                        +{project.assignedUsersList.length - 4}
+                      </div>
+                    )}
                   </ul>
                   <div className={`msg warning ${mode}`}>
                     Due date: {project.dueDate.toDate().toDateString().slice(4)}

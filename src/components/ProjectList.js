@@ -80,11 +80,16 @@ export default function ProjectList({ project }) {
           </svg>
         </div>
         <ul className="card__users">
-          {project.assignedUsersList.map((user) => (
+          {project.assignedUsersList.slice(0, 3).map((user) => (
             <li key={user.photoURL}>
               <Avatar src={user.photoURL} />
             </li>
           ))}
+          {project.assignedUsersList.length > 3 && (
+            <div className={`users__more ${mode}`}>
+              +{project.assignedUsersList.length - 3}
+            </div>
+          )}
         </ul>
       </div>
     </Link>
