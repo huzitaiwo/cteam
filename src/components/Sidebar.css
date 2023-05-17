@@ -35,7 +35,7 @@
 .navigation-links a:hover {
   color: #fd8b51;
   background: #fffcfa;
-  border-right: 4px solid #fffcfa;
+  border-right-color: #fffcfa;
 }
 
 /* dark mode */
@@ -60,7 +60,6 @@
 .sidebar.dark .navigation-links a:hover {
   color: #f7423d;
   background: #3e3633;
-  border-right: 4px solid #3e3633;
 }
 
 /* media query */

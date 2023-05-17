@@ -1,51 +1,3 @@
-.project__banner {
-  min-height: 300px;
-  color: #fff;
-  padding: 100px 0 0 20px;
-  position: relative;
-  z-index: 1;
-}
-.backdrop {
-  background: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-.project__info {
-  background: #fff;
-  padding: 25px 15px;
-  border-radius: 10px;
-  margin: 15px 0;
-}
-.project__info > li {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.project__info > li:last-of-type {
-  margin: 0;
-}
-.project__info h5 {
-  margin-right: 15px;
-}
-.project__info h5 span {
-  display: inline-block;
-  width: 100px;
-}
-.project .status {
-  text-transform: uppercase;
-  font-weight: 600;
-}
-.project .card__users {
-  margin: 0;
-}
-.project .progress__bar {
-  max-width: 500px;
-}
 .project__header {
   display: flex;
   justify-content: space-between;
@@ -53,8 +5,7 @@
 }
 .project__header button {
   padding: 5px 2px;
-  border: 2px solid transparent;
-  border-radius: none;
+  border-bottom: 2px solid transparent;
   margin-right: 20px;
 }
 .project__header .add {
@@ -66,4 +17,20 @@
 }
 .project__header button.active {
   border-bottom-color: #fd8b51;
+}
+
+/* dark mode */
+.project.dark .project__info {
+  background: #2b2f33;
+}
+.project.dark .card__users li {
+  background: #212529;
+  color: #85878a;
+  border: 1px solid #4b5563;
+  border-radius: 3px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.project.dark .project__header button {
+  color: #85878a;
 }

@@ -10,9 +10,9 @@ import { useDocument } from "../../hooks/useDocument";
 import { useCollection } from "../../hooks/useCollection";
 
 // components
-import Avatar from "../../components/Avatar";
 import TaskList from "./TaskList";
 import Comment from "./Comment";
+// import Avatar from "../../components/Avatar";
 import ProjectDetails from "../../components/ProjectDetails";
 // import Comment from './Comment'
 
@@ -53,89 +53,8 @@ export default function Project() {
   console.log(project, tasks);
 
   return (
-    <div>
-      <div className={`project ${mode}`}>
-        <div
-          className="project__banner"
-          style={{
-            backgroundImage: `url(${project.photoURL})`,
-          }}
-        >
-          <div className="backdrop"></div>
-          <small>Project / {project.companyName}</small>
-          <h3>{project.name} Project</h3>
-        </div>
-        <ul className="project__info">
-          <li>
-            <h5>
-              <span>Priority</span>:
-            </h5>
-
-            <span className={`status ${project.priority}`}>
-              {project.priority} Priority
-            </span>
-          </li>
-          <li>
-            <h5>
-              <span>Dealine</span>:
-            </h5>
-            <span>{project.dueDate.toDate().toDateString().slice(4)}</span>
-          </li>
-          <li>
-            <h5>
-              <span>Assigned to</span>:
-            </h5>
-
-            <ul className="card__users">
-              {project.assignedUsersList.map((user) => (
-                <li key={user.photoURL}>
-                  <Avatar src={user.photoURL} />
-                </li>
-              ))}
-            </ul>
-          </li>
-          <li>
-            <h5>
-              <span>Category</span>:
-            </h5>
-
-            <div className={`card__category ${mode}`}>
-              {project.categories.map((catogory) => (
-                <span
-                  className={`category ${catogory.value} ${mode}`}
-                  key={catogory.value}
-                >
-                  {catogory.label}
-                </span>
-              ))}
-            </div>
-          </li>
-          <li>
-            <h5>
-              <span>Progress:</span>
-            </h5>
-
-            <div className={`progress__bar progress__${project.priority}`}>
-              <div className={`bar bar__${project.priority} ${mode}`}></div>
-            </div>
-          </li>
-          <li>
-            <h5>
-              <span>Status</span>:
-            </h5>
-
-            {project.isCompleted && (
-              <span className="status completed">Completed</span>
-            )}
-            {project.inProgress && (
-              <span className="status progress_select">In progress</span>
-            )}
-            {!project.isCompleted && !project.inProgress && (
-              <span className="status progress_select">Start Project</span>
-            )}
-          </li>
-        </ul>
-      </div>
+    <div className={`project ${mode}`}>
+      <ProjectDetails project={project} />
       {tasks && (
         <>
           <div className="project__header">
