@@ -26,8 +26,6 @@
 .tasks__list {
   padding: 10px 15px;
   border-radius: 10px;
-  color: #fff;
-  margin-bottom: 10px;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -46,7 +44,7 @@
 }
 .tasks__low {
   background: #717eee;
-  color: #d1ffff;
+  color: #eef6ff;
 }
 .tasks__head,
 .tasks__foot {

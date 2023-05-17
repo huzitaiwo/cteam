@@ -64,14 +64,13 @@
 .progress__bar {
   height: 5px;
   width: 100%;
-  background-color: whitesmoke;
   border-radius: 20px;
 }
 .progress__high {
   background: #f1e5e6;
 }
 .progress__medium {
-  background: #fff4e3;
+  background: #eef6ff;
 }
 .progress__low {
   background: #e8eaf2;
@@ -168,15 +167,6 @@
 }
 .dashboard.dark .progress__bar {
   background: #3e4246;
-}
-.bar__high.dark {
-  background: #fd413c;
-}
-.bar__medium {
-  background: #45bfff;
-}
-.bar__low {
-  background: #717eee;
 }
 .card__category.dark span {
   background: transparent;

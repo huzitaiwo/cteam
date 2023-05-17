@@ -38,7 +38,9 @@ export default function TaskList({ tasks, project }) {
             </ul>
             <div className="tasks__tags">
               {task.tags.map((tag) => (
-                <span key={tag.value}>{tag.label}</span>
+                <span className="task__tag" key={tag.value}>
+                  {tag.label}
+                </span>
               ))}
             </div>
           </div>
