@@ -18,19 +18,74 @@
 .project__header button.active {
   border-bottom-color: #fd8b51;
 }
+.tasks__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+.tasks__list {
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: #fff;
+  margin-bottom: 10px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 5px 15px #f7f6f4;
+}
+.tasks__list li:last-of-type {
+  margin-bottom: 0;
+}
+.tasks__high {
+  background: #ff7782;
+  color: #ffebf3;
+}
+.tasks__medium {
+  background: #45bfff;
+  color: #f5fcff;
+}
+.tasks__low {
+  background: #717eee;
+  color: #d1ffff;
+}
+.tasks__head,
+.tasks__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tasks__name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.tasks__description {
+  line-height: 1.2;
+  margin: 2px 0 15px;
+}
+.tasks__foot {
+  margin-top: auto;
+}
+.tasks__users .avatar {
+  width: 25px;
+  height: 25px;
+}
+.tasks__users li {
+  margin-left: -8px;
+  list-style: none;
+}
+.tasks__users li:first-of-type {
+  margin: 0;
+}
+.tasks__users {
+  display: flex;
+  align-items: center;
+}
 
 /* dark mode */
-.project.dark .project__info {
-  background: #2b2f33;
-}
-.project.dark .card__users li {
-  background: #212529;
-  color: #85878a;
-  border: 1px solid #4b5563;
-  border-radius: 3px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
 .project.dark .project__header button {
   color: #85878a;
+}
+.project.dark .tasks__list {
+  box-shadow: none;
 }

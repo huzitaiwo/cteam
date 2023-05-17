@@ -4,11 +4,11 @@ import Avatar from "../../components/Avatar";
 // styles
 import "./Project.css";
 
-export default function TaskList({ tasks }) {
+export default function TaskList({ tasks, project }) {
   return (
-    <div className="tasks__list">
+    <ul className="tasks__grid">
       {tasks.map((task) => (
-        <li key={task.id}>
+        <li className={`tasks__list tasks__${project.priority}`} key={task.id}>
           <div className="tasks__head">
             <p>{task.dueDate.toDate().toDateString().slice(4)}</p>
             <svg
@@ -26,8 +26,8 @@ export default function TaskList({ tasks }) {
               />
             </svg>
           </div>
-          <h3>{task.name}</h3>
-          <p>{task.description}</p>
+          <h3 className="tasks__name">{task.name}</h3>
+          <p className="tasks__description">{task.description}</p>
           <div className="tasks__foot">
             <ul className="tasks__users">
               {task.assignedUsersList.map((user) => (
@@ -44,6 +44,6 @@ export default function TaskList({ tasks }) {
           </div>
         </li>
       ))}
-    </div>
+    </ul>
   );
 }

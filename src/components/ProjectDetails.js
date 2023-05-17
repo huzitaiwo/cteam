@@ -83,7 +83,7 @@ export default function ProjectDetails({ project }) {
           </h5>
 
           {project.isCompleted && (
-            <span className="status completed">Completed</span>
+            <span className={`status completed ${mode}`}>Completed</span>
           )}
           {project.inProgress && (
             <span className="status progress_select">In progress</span>

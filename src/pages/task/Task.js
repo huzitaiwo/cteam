@@ -50,7 +50,7 @@ export default function Task() {
                 key={task.id}
                 className="td"
               >
-                <div className="task__name">
+                <div className={`task__name`}>
                   <span>
                     {documents.length !== 0 && documents.length < 10 && 0}
                     {i + 1}

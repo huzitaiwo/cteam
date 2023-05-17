@@ -51,9 +51,9 @@ body {
   border-color: transparent;
 }
 .medium {
-  color: #ffbb55;
+  color: #45bfff;
   /* background: #fff3ea; */
-  border-color: #ffbb55;
+  border-color: #45bfff;
 }
 .low {
   color: #717eee;
@@ -149,30 +149,19 @@ body {
 }
 
 /* dark mode */
-/* .error.dark,
-.warning.dark,
-.high.dark {
-  color: #fff;
-  background: #f7423d;
-  border-color: #f7423d;
-}
-.medium.dark {
-  color: #fff;
-  background: #fd8b51;
-  color: #fd8b51;
-}
-.success.dark {
+.success.dark,
+.completed.dark {
   color: #fff;
   background: #60b158;
   border-color: #60b158;
-} */
+}
 .card__status.dark .high {
   color: #fd413c;
   border-color: #fd413c;
 }
 .card__status.dark .medium {
-  color: #febc2c;
-  border-color: #febc2c;
+  color: #45bfff;
+  border-color: #45bfff;
 }
 .card__status.dark .progress_select {
   color: #b9b9bb;

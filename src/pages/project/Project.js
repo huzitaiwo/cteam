@@ -50,8 +50,6 @@ export default function Project() {
     );
   }
 
-  console.log(project, tasks);
-
   return (
     <div className={`project ${mode}`}>
       <ProjectDetails project={project} />
@@ -90,7 +88,7 @@ export default function Project() {
             </Link>
           </div>
           {projectTab === "task" && (
-            <div>{tasks && <TaskList tasks={tasks} />}</div>
+            <div>{tasks && <TaskList tasks={tasks} project={project} />}</div>
           )}
           {projectTab === "comment" && (
             <div>

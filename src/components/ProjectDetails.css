@@ -61,6 +61,22 @@
   max-width: 500px;
 }
 
+/* dark mode */
+.project.dark .project__info {
+  background: #2b2f33;
+}
+.project.dark .card__users li {
+  background: #212529;
+  color: #85878a;
+  border: 1px solid #4b5563;
+  border-radius: 3px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.project.dark .progress__bar {
+  background: #3e4246;
+}
+
 @media (max-width: 810px) {
   .project__info > li {
     list-style: none;

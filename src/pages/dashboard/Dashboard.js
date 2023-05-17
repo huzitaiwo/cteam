@@ -82,7 +82,9 @@ export default function Dashboard() {
                   </div>
                   <div className={`card__status ${mode}`}>
                     {project.isCompleted && (
-                      <span className="status completed">Completed</span>
+                      <span className={`status completed ${mode}`}>
+                        Completed
+                      </span>
                     )}
                     {project.inProgress && (
                       <span className="status progress_select">
