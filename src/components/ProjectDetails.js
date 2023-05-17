@@ -36,7 +36,9 @@ export default function ProjectDetails({ project }) {
           <h5>
             <span>Dealine</span>:
           </h5>
-          <span>{project.dueDate.toDate().toDateString().slice(4)}</span>
+          <span className="deadline">
+            {project.dueDate.toDate().toDateString().slice(4)}
+          </span>
         </li>
         <li>
           <h5>

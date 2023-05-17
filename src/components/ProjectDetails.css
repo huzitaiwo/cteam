@@ -68,6 +68,10 @@
 .project .progress__bar {
   max-width: 500px;
 }
+.deadline {
+  color: #fd413c;
+  font-weight: 600;
+}
 
 /* dark mode */
 .project.dark .project__info {
