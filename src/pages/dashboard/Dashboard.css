@@ -142,16 +142,12 @@
   margin: 15px 0;
   list-style: none;
 }
-.card__users li,
 .users__more {
   margin-left: -8px;
 }
 .card__users .avatar {
   width: 30px;
   height: 30px;
-}
-.card__users li:first-of-type {
-  margin-left: 0;
 }
 
 /* __________dark mode__________ */

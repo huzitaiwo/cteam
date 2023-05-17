@@ -5,6 +5,11 @@
   position: relative;
   z-index: 1;
 }
+.project__banner h1 {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
 .backdrop {
   background: rgba(0, 0, 0, 0.4);
   position: absolute;
@@ -31,6 +36,7 @@
 }
 .project__info h5 {
   margin-right: 15px;
+  min-width: 105px;
 }
 .project__info h5 span {
   display: inline-block;

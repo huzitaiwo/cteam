@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import { useTheme } from "../hooks/useTheme";
 
-export default function Header({ list, grid, pID }) {
+export default function Header({ list, grid }) {
   const { mode } = useTheme();
 
   return (
@@ -44,46 +44,24 @@ export default function Header({ list, grid, pID }) {
           </svg>
         </button>
       </div>
-      {pID && (
-        <button className="add">
-          <Link to={`/addtask/${pID}`}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 4.5v15m7.5-7.5h-15"
-              />
-            </svg>
-          </Link>
-        </button>
-      )}
-      {!pID && (
-        <button className="add">
-          <Link to="/create">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 4.5v15m7.5-7.5h-15"
-              />
-            </svg>
-          </Link>
-        </button>
-      )}
+      <button className="add">
+        <Link to="/create">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 4.5v15m7.5-7.5h-15"
+            />
+          </svg>
+        </Link>
+      </button>
     </div>
   );
 }

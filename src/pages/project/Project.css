@@ -1,6 +1,6 @@
 .project__header {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin-bottom: 15px;
 }
 .project__header button {

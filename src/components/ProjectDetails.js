@@ -20,7 +20,7 @@ export default function ProjectDetails({ project }) {
       >
         <div className="backdrop"></div>
         <small>Project / {project.companyName}</small>
-        <h3>{project.name} Project</h3>
+        <h1>{project.name} Project</h1>
       </div>
       <ul className="project__info">
         <li>
