@@ -1,6 +1,5 @@
 .project__header {
   display: flex;
-  /* justify-content: space-between; */
   margin-bottom: 15px;
 }
 .project__header button {
@@ -23,6 +22,8 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
 }
+
+/* tasks component */
 .tasks__list {
   padding: 10px 15px;
   border-radius: 10px;
@@ -78,6 +79,53 @@
 .tasks__users {
   display: flex;
   align-items: center;
+}
+
+/* comments component */
+.comments li {
+  list-style: none;
+  background: #fff;
+  color: #4e5157;
+  padding: 15px;
+  /* border: 2px solid #fff; */
+}
+.comments li:nth-child(even) {
+  background: #fafafa;
+}
+.comments li:last-of-type {
+  margin-bottom: 15px;
+}
+.comment__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.comment__head h5 {
+  margin: 0 10px 0 15px;
+}
+.comment__head small {
+  margin-right: auto;
+}
+.comments form {
+  display: flex;
+  align-items: center;
+}
+.comments label {
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+.comments textarea {
+  resize: none;
+  outline: none;
+  border: none;
+  display: block;
+  height: 100%;
+  width: 100%;
+  flex: 1;
 }
 
 /* dark mode */

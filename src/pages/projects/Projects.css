@@ -31,6 +31,7 @@
 .card__info {
   display: flex;
   align-items: center;
+  color: #a0a3b0;
 }
 .card__info svg:first-of-type {
   margin-right: 10px;

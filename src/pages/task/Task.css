@@ -58,8 +58,12 @@
   display: flex;
   align-items: center;
 }
-svg.check {
-  margin: 0 10px 0 5px;
+.tasks svg {
+  margin: 0 15px 0 10px;
+}
+.tasks svg.checked {
+  fill: #60b158;
+  stroke: #fff;
 }
 .task__tag {
   display: inline-block;

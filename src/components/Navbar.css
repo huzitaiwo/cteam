@@ -55,3 +55,13 @@ form.search input {
 .navbar.dark .searchButton svg {
   stroke: #858789;
 }
+
+@media (max-width: 500px) {
+  .navbar .avatar {
+    width: 30px;
+    height: 30px;
+  }
+  header {
+    padding: 5px 5px;
+  }
+}

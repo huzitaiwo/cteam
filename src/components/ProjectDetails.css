@@ -89,7 +89,7 @@
   background: #3e4246;
 }
 
-@media (max-width: 810px) {
+/* @media (max-width: 810px) {
   .project__info > li {
     list-style: none;
     display: block;
@@ -101,4 +101,4 @@
   .project__info h5 span {
     display: inline;
   }
-}
+} */

@@ -3,12 +3,18 @@ import { Link } from "react-router-dom";
 
 // hooks
 import { useTheme } from "../hooks/useTheme";
+import { useCollection } from "../hooks/useCollection";
 
 // components
 import Avatar from "./Avatar";
 
 export default function ProjectList({ project }) {
   const { mode } = useTheme();
+  const { documents: tasks } = useCollection("tasks", [
+    "projectID",
+    "==",
+    project.id,
+  ]);
 
   return (
     <Link to={`/projects/${project.id}`} className="projects__card">
@@ -50,7 +56,7 @@ export default function ProjectList({ project }) {
       </div>
       <div className="card__foot">
         <div className="card__info">
-          <small></small>
+          {tasks && <small>{tasks.length}</small>}
           <svg
             width="20"
             height="20"
@@ -66,15 +72,17 @@ export default function ProjectList({ project }) {
 
           <small>{project.comments.length}</small>
           <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="#a0a3b0"
+            strokeWidth={2}
           >
             <path
-              d="M20.3 20.3L18 18H4C3.45 18 2.97917 17.8042 2.5875 17.4125C2.19583 17.0208 2 16.55 2 16V4C2 3.45 2.19583 2.97917 2.5875 2.5875C2.97917 2.19583 3.45 2 4 2H20C20.55 2 21.0208 2.19583 21.4125 2.5875C21.8042 2.97917 22 3.45 22 4V19.575C22 20.025 21.7958 20.3375 21.3875 20.5125C20.9792 20.6875 20.6167 20.6167 20.3 20.3ZM4 4V16H18.825L20 17.175V4H4Z"
-              fill="#a0a3b0"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
             />
           </svg>
         </div>

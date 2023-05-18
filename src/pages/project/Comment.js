@@ -74,8 +74,8 @@ export default function Comment({ project }) {
       </ul>
 
       <form onSubmit={handleSubmit}>
+        <Avatar src={user.photoURL} />
         <label>
-          <Avatar src={user.photoURL} />
           <textarea
             required
             placeholder="comment"
