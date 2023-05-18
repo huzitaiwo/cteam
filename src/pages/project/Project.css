@@ -80,6 +80,10 @@
   display: flex;
   align-items: center;
 }
+.tasks__list svg.checked {
+  fill: #60b158;
+  stroke: #fff;
+}
 
 /* comments component */
 .comments li {

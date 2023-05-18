@@ -40,7 +40,7 @@ export default function ProjectDetails({ project }) {
             {project.dueDate.toDate().toDateString().slice(4)}
           </span>
         </li>
-        <li>
+        <li className="user__list">
           <h5>
             <span>Assigned to</span>:
           </h5>

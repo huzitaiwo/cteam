@@ -143,6 +143,8 @@
 .tasks.dark .h3 {
   border-color: #32363b;
 }
+
+/* media query */
 @media (max-width: 1200px) {
   .tasks a,
   .tasks .h3 {

@@ -89,16 +89,11 @@
   background: #3e4246;
 }
 
-/* @media (max-width: 810px) {
-  .project__info > li {
-    list-style: none;
+@media (max-width: 550px) {
+  .project__info > li.user__list {
     display: block;
-    margin-bottom: 20px;
   }
-  .project__info h5 {
-    margin-bottom: 5px;
+  .project__info > li.user__list h5 {
+    margin-bottom: 10px;
   }
-  .project__info h5 span {
-    display: inline;
-  }
-} */
+}
