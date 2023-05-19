@@ -6,6 +6,7 @@ import { v4 as uuid } from "uuid";
 // hooks
 import { useFirestore } from "../../hooks/useFirestore";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import { useTheme } from "../../hooks/useTheme";
 
 // firebase function
 import { timestamp } from "../../firebase/config";
@@ -17,9 +18,14 @@ import Avatar from "../../components/Avatar";
 import "./Project.css";
 
 export default function Comment({ project }) {
-  const [newComment, setNewComment] = useState("");
   const { user } = useAuthContext();
+  const { mode } = useTheme();
+  const [newComment, setNewComment] = useState("");
   const { updateDocument, response } = useFirestore("projects");
+
+  const usersList = project.assignedUsersList.filter((u) => {
+    return u.id === user.uid;
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,7 +49,7 @@ export default function Comment({ project }) {
   };
 
   return (
-    <div className="comments">
+    <div className={`comments ${mode}`}>
       <ul>
         {project.comments.map((comment) => (
           <li key={comment.id}>
@@ -73,33 +79,35 @@ export default function Comment({ project }) {
         ))}
       </ul>
 
-      <form onSubmit={handleSubmit}>
-        <Avatar src={user.photoURL} />
-        <label>
-          <textarea
-            required
-            placeholder="comment"
-            onChange={(e) => {
-              setNewComment(e.target.value);
-            }}
-            value={newComment}
-          ></textarea>
-          {!response.isLoading && (
-            <button className="btn">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-6 h-6"
-              >
-                <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
-              </svg>
-            </button>
-          )}
-          {response.isLoading && <button className="btn">...</button>}
-        </label>
-        {response.error && <div className="error">{response.error}</div>}
-      </form>
+      {usersList.length !== 0 && (
+        <form onSubmit={handleSubmit}>
+          <Avatar src={user.photoURL} />
+          <label>
+            <textarea
+              required
+              placeholder="comment"
+              onChange={(e) => {
+                setNewComment(e.target.value);
+              }}
+              value={newComment}
+            ></textarea>
+            {!response.isLoading && (
+              <button className={`send ${mode}`}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+                </svg>
+              </button>
+            )}
+            {response.isLoading && <button className="btn">...</button>}
+          </label>
+          {response.error && <div className="error">{response.error}</div>}
+        </form>
+      )}
     </div>
   );
 }

@@ -1,0 +1,39 @@
+.card__progress {
+  margin-bottom: 20px;
+}
+.card__progress p {
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+.progress__bar {
+  height: 5px;
+  width: 100%;
+  border-radius: 20px;
+}
+.progress__high {
+  background: #f1e5e6;
+}
+.progress__medium {
+  background: #eef6ff;
+}
+.progress__low {
+  background: #e8eaf2;
+}
+.bar {
+  height: 100%;
+  /* width: 75%; */
+  border-radius: 20px;
+}
+.bar__high {
+  background: #ff7782;
+}
+.bar__medium {
+  background: #45bfff;
+}
+.bar__low {
+  background: #717eee;
+}
+/* __________dark mode_________ */
+.dashboard.dark .progress__bar {
+  background: #3e4246;
+}

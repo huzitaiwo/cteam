@@ -47,47 +47,12 @@
   line-height: 1.1;
 }
 .card__status {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .card__status span,
 .msg {
   text-transform: uppercase;
   font-weight: 500;
-}
-.card__progress {
-  margin-bottom: 20px;
-}
-.card__progress p {
-  margin-bottom: 15px;
-  font-weight: 500;
-}
-.progress__bar {
-  height: 5px;
-  width: 100%;
-  border-radius: 20px;
-}
-.progress__high {
-  background: #f1e5e6;
-}
-.progress__medium {
-  background: #eef6ff;
-}
-.progress__low {
-  background: #e8eaf2;
-}
-.bar {
-  height: 100%;
-  width: 75%;
-  border-radius: 20px;
-}
-.bar__high {
-  background: #ff7782;
-}
-.bar__medium {
-  background: #45bfff;
-}
-.bar__low {
-  background: #717eee;
 }
 .card__category span {
   display: inline-block;
@@ -133,15 +98,15 @@
   background: #fff;
   color: #a0a3b0;
   font-weight: 600;
-  width: 35px;
-  height: 35px;
+  width: 33px;
+  height: 33px;
 }
-
 .card__users {
   display: flex;
   margin: 15px 0;
   list-style: none;
 }
+.card__users li,
 .users__more {
   margin-left: -8px;
 }
@@ -149,10 +114,50 @@
   width: 30px;
   height: 30px;
 }
+.card__tasks {
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 1rem;
+  padding: 15px 0;
+  box-shadow: 5px 5px 15px #f7f6f4;
+}
+.card__tasks h3 {
+  margin: 0 0 15px 15px;
+  font-size: 1.2rem;
+}
+.card__tasks .taskLength {
+  color: #a0a3b0;
+  margin-left: 5px;
+  font-size: 12px;
+}
+.card__tasks .taskLength span {
+  font-size: 12px;
+}
+.card__tasks a {
+  color: #414757;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #f0f2f7;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+}
+.card__tasks a:last-of-type {
+  border: none;
+}
+.card__tasks small {
+  margin-right: 15px;
+  font-weight: 600;
+}
+.card__tasks p {
+  flex: 1;
+  font-weight: 600;
+}
 
 /* __________dark mode__________ */
 .dashboard.dark .dashboard__card,
-.projects.dark .projects__card {
+.projects.dark .projects__card,
+.dashboard.dark .card__tasks {
   background: #2b2f33;
   border-color: #4b5563;
   box-shadow: none;
@@ -160,9 +165,6 @@
 .dashboard.dark .card__name h2,
 .projects.dark .projects__name h2 {
   color: #fff;
-}
-.dashboard.dark .progress__bar {
-  background: #3e4246;
 }
 .card__category.dark span {
   background: transparent;
@@ -194,7 +196,12 @@
 .users__more.dark {
   background: #212529;
 }
+.dashboard.dark .card__tasks a {
+  color: #fff;
+  border-color: #4b5563;
+}
 
+/* __________media query__________ */
 @media (max-width: 1200px) {
   .dashboard__card,
   .projects__card {

@@ -80,7 +80,7 @@
   display: flex;
   align-items: center;
 }
-.tasks__list svg.checked {
+svg.checked {
   fill: #60b158;
   stroke: #fff;
 }
@@ -91,7 +91,6 @@
   background: #fff;
   color: #4e5157;
   padding: 15px;
-  /* border: 2px solid #fff; */
 }
 .comments li:nth-child(even) {
   background: #fafafa;
@@ -115,21 +114,33 @@
   display: flex;
   align-items: center;
 }
+.comments form .avatar {
+  margin-right: 10px;
+}
 .comments label {
   background: #fff;
   border-radius: 5px;
   display: flex;
-  justify-content: space-between;
   flex: 1;
+  padding: 2px;
 }
 .comments textarea {
   resize: none;
   outline: none;
   border: none;
   display: block;
-  height: 100%;
   width: 100%;
   flex: 1;
+  padding: 2px 5px;
+}
+.send {
+  background: #fd8b51;
+  padding: 0 10px;
+  color: #fff;
+  border-radius: 5px;
+}
+.send svg {
+  transform: rotateZ(-45deg);
 }
 
 /* dark mode */
@@ -138,4 +149,30 @@
 }
 .project.dark .tasks__list {
   box-shadow: none;
+}
+.comments.dark li {
+  background: #2b2f33;
+  color: #fff;
+}
+.comments.dark li:nth-child(even) {
+  background: #3e4246;
+}
+.comments.dark label,
+.comments.dark textarea {
+  background: #2b2f33;
+  color: #ffff;
+}
+.comments.dark textarea::placeholder {
+  color: #ffff;
+}
+.send.dark {
+  background: #fd413c;
+}
+
+@media (max-width: 500px) {
+  .comments .avatar {
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+  }
 }

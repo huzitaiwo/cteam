@@ -26,7 +26,7 @@ export default function Task() {
   }
 
   if (documents && documents.length === 0) {
-    return <p className={`project-redirect ${mode}`}>No Tasks yet!</p>;
+    return <p className={`project-redirect error ${mode}`}>No Tasks yet!</p>;
   }
 
   return (

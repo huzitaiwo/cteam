@@ -13,9 +13,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 // components
 import TaskList from "./TaskList";
 import Comment from "./Comment";
-// import Avatar from "../../components/Avatar";
 import ProjectDetails from "../../components/ProjectDetails";
-// import Comment from './Comment'
 
 // styles
 import "./Project.css";

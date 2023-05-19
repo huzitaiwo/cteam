@@ -9,6 +9,9 @@
   object-position: top;
   border-radius: 5px;
 }
+.projects__head h3 {
+  font-size: 1.1rem;
+}
 .projects__head span {
   flex: 1;
   margin-left: 8px;
@@ -53,11 +56,5 @@
   .projects__image {
     height: 300px;
     border-radius: 7px;
-  }
-}
-@media (max-width: 1000px) {
-  .projects__image {
-    height: 150px;
-    border-radius: 5px;
   }
 }

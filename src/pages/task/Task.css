@@ -61,7 +61,7 @@
 .tasks svg {
   margin: 0 15px 0 10px;
 }
-.tasks svg.checked {
+svg.checked {
   fill: #60b158;
   stroke: #fff;
 }

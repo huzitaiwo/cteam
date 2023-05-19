@@ -11,16 +11,30 @@ import Avatar from "../../components/Avatar";
 
 // styles
 import "./Dashboard.css";
+import Progress from "../../components/Progress";
 
 export default function Dashboard() {
   const { mode } = useTheme();
   const { user } = useAuthContext();
   const { documents, isPending, error } = useCollection("projects");
+  const { documents: tasks } = useCollection("tasks");
 
   const myProjects = documents
     ? documents.filter((document) => {
         let assignedToMe = false;
         document.assignedUsersList.forEach((u) => {
+          if (user.uid === u.id) {
+            assignedToMe = true;
+          }
+        });
+        return assignedToMe;
+      })
+    : null;
+
+  const myTasks = tasks
+    ? tasks.filter((task) => {
+        let assignedToMe = false;
+        task.assignedUsersList.forEach((u) => {
           if (user.uid === u.id) {
             assignedToMe = true;
           }
@@ -39,8 +53,8 @@ export default function Dashboard() {
 
   if (documents && documents.length === 0) {
     return (
-      <p className={`project-redirect ${mode}`}>
-        No projects yet in your dashboard!
+      <p className={`project-redirect error ${mode}`}>
+        No activities yet in your dashboard!
       </p>
     );
   }
@@ -101,16 +115,7 @@ export default function Dashboard() {
                       <span className="md-none">Priority</span>
                     </span>
                   </div>
-                  <div className="card__progress">
-                    <p>Task Done: 75 / 100</p>
-                    <div
-                      className={`progress__bar progress__${project.priority}`}
-                    >
-                      <div
-                        className={`bar bar__${project.priority} ${mode}`}
-                      ></div>
-                    </div>
-                  </div>
+                  <Progress project={project} />
                   <div className={`card__category ${mode}`}>
                     {project.categories.map((catogory) => (
                       <span
@@ -139,7 +144,64 @@ export default function Dashboard() {
                 </Link>
               ))}
             </div>
-            <div className="grid__1">Grid 2</div>
+            <div className="grid__2">
+              {myTasks && (
+                <div className="card__tasks">
+                  <h3>
+                    My Tasks{" "}
+                    <span className="taskLength">
+                      (
+                      {myTasks.length !== 0 && myTasks.length < 10 && (
+                        <span>0</span>
+                      )}
+                      {myTasks.length})
+                    </span>
+                  </h3>
+                  <ul>
+                    {myTasks.map((task, i) => (
+                      <Link key={task.id} to={`projects/${task.projectID}`}>
+                        <small>
+                          {myTasks.length !== 0 && myTasks.length < 10 && 0}
+                          {i + 1}
+                        </small>
+                        <p>{task.name}</p>
+                        <div></div>
+                        {!task.isCompleted && (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="currentColor"
+                            className="w-6 h-6"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
+                            />
+                          </svg>
+                        )}
+                        {task.isCompleted && (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            className="w-6 h-6 checked"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        )}
+                      </Link>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
             <div className="grid__1">Grid 3</div>
           </div>
         </>

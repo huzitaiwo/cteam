@@ -56,7 +56,7 @@ export default function Projects() {
 
   if (projects && projects.length === 0) {
     return (
-      <p className={`project-redirect ${mode}`}>
+      <p className={`project-redirect error ${mode}`}>
         No projects yet! Add a new project <Link to="/create">here</Link>
       </p>
     );
