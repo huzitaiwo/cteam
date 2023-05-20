@@ -11,7 +11,7 @@ import Avatar from "../../components/Avatar";
 
 // styles
 import "./Dashboard.css";
-import Progress from "../../components/Progress";
+import ProgressBar from "../../components/ProgressBar";
 
 export default function Dashboard() {
   const { mode } = useTheme();
@@ -115,7 +115,7 @@ export default function Dashboard() {
                       <span className="md-none">Priority</span>
                     </span>
                   </div>
-                  <Progress project={project} />
+                  <ProgressBar project={project} />
                   <div className={`card__category ${mode}`}>
                     {project.categories.map((catogory) => (
                       <span

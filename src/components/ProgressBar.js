@@ -1,14 +1,11 @@
-// react pakages
-import { useState } from "react";
-
 // hooks
 import { useTheme } from "../hooks/useTheme";
 import { useCollection } from "../hooks/useCollection";
 
 // styles
-import "./Progress.css";
+import "./ProgressBar.css";
 
-export default function Progress({ project }) {
+export default function ProgressBar({ project }) {
   const { mode } = useTheme();
   const { documents: tasks } = useCollection("tasks", [
     "projectID",
