@@ -79,11 +79,14 @@ body {
   border-color: #e7f4e6;
   padding: 5px 12px;
 }
-.w-6 {
+/* .w-6 {
   width: 23px;
 }
 .w-4 {
   width: 17px;
+} */
+svg {
+  width: 24px;
 }
 /* authentication form */
 .form__auth {

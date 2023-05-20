@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 // components
 import Header from "../../components/Header";
+import Loader from "../../components/Loader";
 import ProjectList from "../../components/ProjectList";
 
 // hooks
@@ -51,7 +52,7 @@ export default function Projects() {
   }
 
   if (isPending) {
-    return <h4>loading...</h4>;
+    return <Loader />;
   }
 
   if (projects && projects.length === 0) {

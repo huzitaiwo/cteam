@@ -33,25 +33,24 @@ header,
 }
 .btn:focus,
 .account a:focus {
-  outline: 2px solid #fd7b38;
+  outline: 1px solid #fd7b38;
 }
 .btn.dark {
   background: #2b2f33;
   color: #fd413c;
-  border: 2px solid #fd413c;
 }
 .btn.dark:focus,
 .account.dark a:focus {
-  outline: 2px solid #fd413c;
+  outline: 1px solid #fd413c;
 }
-.btn:hover {
+/* .btn:hover {
   color: #fff;
   background-color: #fd7b38;
 }
 .btn.dark:hover {
   color: #fff;
   background-color: #fd413c;
-}
+} */
 .account {
   margin-top: 30px;
 }

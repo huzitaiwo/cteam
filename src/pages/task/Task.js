@@ -2,12 +2,11 @@
 import { Link } from "react-router-dom";
 
 // components
-// import Header from "../../components/Header";
 import Avatar from "../../components/Avatar";
+import Loader from "../../components/Loader";
 
 // hooks
 import { useCollection } from "../../hooks/useCollection";
-// import { useDocument } from "../../hooks/useDocument";
 import { useTheme } from "../../hooks/useTheme";
 
 // styles
@@ -22,7 +21,7 @@ export default function Task() {
   }
 
   if (isPending) {
-    return <h4>loading...</h4>;
+    return <Loader />;
   }
 
   if (documents && documents.length === 0) {

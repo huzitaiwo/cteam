@@ -1,8 +1,9 @@
 // react packages
 import { useState, useEffect } from "react";
-
-// react-router packages
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+
+// other packages
+import { AnimatePresence } from "framer-motion";
 
 // hooks
 import { useAuthContext } from "./hooks/useAuthContext";
@@ -28,8 +29,9 @@ import Task from "./pages/task/Task";
 function App() {
   const { mode } = useTheme();
   const { user, authIsReady } = useAuthContext();
-  const [mobileMenu, setMobileMenu] = useState(false);
 
+  // states
+  const [mobileMenu, setMobileMenu] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -73,48 +75,50 @@ function App() {
               />
             )}
             <main>
-              <Switch>
-                <Route exact path="/">
-                  {!user && <Redirect to="/login" />}
-                  {user && <Dashboard />}
-                </Route>
-                <Route exact path="/projects">
-                  {!user && <Redirect to="/login" />}
-                  {user && <Projects />}
-                </Route>
-                <Route exact path="/projects/:id">
-                  {!user && <Redirect to="/login" />}
-                  {user && <Project />}
-                </Route>
-                <Route path="/tasks">
-                  {!user && <Redirect to="/login" />}
-                  {user && <Task />}
-                </Route>
-                <Route path="/calender">
-                  {!user && <Redirect to="/login" />}
-                  {user && <Calender />}
-                </Route>
-                <Route path="/create">
-                  {!user && <Redirect to="/login" />}
-                  {user && <Create />}
-                </Route>
-                <Route path="/projects/:id/create">
-                  {!user && <Redirect to="/login" />}
-                  {user && <CreateTask />}
-                </Route>
-                <Route path="/settings">
-                  {!user && <Redirect to="/login" />}
-                  {user && <Settings />}
-                </Route>
-                <Route path="/signup">
-                  {user && <Redirect to="/" />}
-                  {!user && <Signup />}
-                </Route>
-                <Route path="/login">
-                  {user && <Redirect to="/" />}
-                  {!user && <Login />}
-                </Route>
-              </Switch>
+              <AnimatePresence>
+                <Switch>
+                  <Route exact path="/">
+                    {!user && <Redirect to="/login" />}
+                    {user && <Dashboard />}
+                  </Route>
+                  <Route exact path="/projects">
+                    {!user && <Redirect to="/login" />}
+                    {user && <Projects />}
+                  </Route>
+                  <Route exact path="/projects/:id">
+                    {!user && <Redirect to="/login" />}
+                    {user && <Project />}
+                  </Route>
+                  <Route path="/tasks">
+                    {!user && <Redirect to="/login" />}
+                    {user && <Task />}
+                  </Route>
+                  <Route path="/calender">
+                    {!user && <Redirect to="/login" />}
+                    {user && <Calender />}
+                  </Route>
+                  <Route path="/create">
+                    {!user && <Redirect to="/login" />}
+                    {user && <Create />}
+                  </Route>
+                  <Route path="/projects/:id/create">
+                    {!user && <Redirect to="/login" />}
+                    {user && <CreateTask />}
+                  </Route>
+                  <Route path="/settings">
+                    {!user && <Redirect to="/login" />}
+                    {user && <Settings />}
+                  </Route>
+                  <Route path="/signup">
+                    {user && <Redirect to="/" />}
+                    {!user && <Signup />}
+                  </Route>
+                  <Route path="/login">
+                    {user && <Redirect to="/" />}
+                    {!user && <Login />}
+                  </Route>
+                </Switch>
+              </AnimatePresence>
             </main>
           </div>
         </BrowserRouter>

@@ -8,6 +8,7 @@ import { useTheme } from "../../hooks/useTheme";
 
 // components
 import Avatar from "../../components/Avatar";
+import Loader from "../../components/Loader";
 
 // styles
 import "./Dashboard.css";
@@ -48,7 +49,7 @@ export default function Dashboard() {
   }
 
   if (isPending) {
-    return <h4>loading...</h4>;
+    return <Loader />;
   }
 
   if (documents && documents.length === 0) {

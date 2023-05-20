@@ -13,6 +13,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 // components
 import TaskList from "./TaskList";
 import Comment from "./Comment";
+import Loader from "../../components/Loader";
 import ProjectDetails from "../../components/ProjectDetails";
 
 // styles
@@ -34,7 +35,7 @@ export default function Project() {
   }
 
   if (isPending) {
-    return <h4>loading...</h4>;
+    return <Loader />;
   }
 
   if (!project) {

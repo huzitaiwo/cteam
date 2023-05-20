@@ -2,6 +2,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+// framer motion
+import { motion } from "framer-motion";
+
 // hooks
 import { useTheme } from "../../hooks/useTheme";
 import { useLogin } from "../../hooks/useLogin";
@@ -76,7 +79,18 @@ export default function Login() {
           />
         </label>
 
-        {!isPending && <button className={`btn ${mode}`}>Login</button>}
+        {!isPending && (
+          <motion.button
+            className={`btn ${mode}`}
+            whileHover={{
+              scale: 1.1,
+              textShadow: "0 0 1px #fd413c",
+              boxShadow: "0 0 5px #fd413c",
+            }}
+          >
+            Login
+          </motion.button>
+        )}
         {isPending && (
           <button disabled className={`btn ${mode}`}>
             Loging in...
