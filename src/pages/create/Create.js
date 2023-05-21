@@ -139,10 +139,10 @@ export default function Create() {
 
     console.log(project, thumbnail);
 
-    // await addDocument(project, thumbnail);
-    // if (!response.error) {
-    //   history.push("/");
-    // }
+    await addDocument(project, thumbnail);
+    if (!response.error) {
+      history.push("/");
+    }
   };
 
   return (

@@ -9,10 +9,11 @@ import { useTheme } from "../../hooks/useTheme";
 // components
 import Avatar from "../../components/Avatar";
 import Loader from "../../components/Loader";
+import Calendar from "../../components/Calender";
+import ProgressBar from "../../components/ProgressBar";
 
 // styles
 import "./Dashboard.css";
-import ProgressBar from "../../components/ProgressBar";
 
 export default function Dashboard() {
   const { mode } = useTheme();
@@ -203,7 +204,9 @@ export default function Dashboard() {
                 </div>
               )}
             </div>
-            <div className="grid__1">Grid 3</div>
+            <div className="grid__1">
+              <Calendar />
+            </div>
           </div>
         </>
       )}

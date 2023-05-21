@@ -53,7 +53,7 @@
 .project .card__users li {
   display: flex;
   align-items: center;
-  margin-right: 15px;
+  margin: 0 15px 0 0;
   padding: 3px 6px;
   background: #fff;
   border: 1px solid #f7f6f4;
@@ -65,12 +65,13 @@
 .project .card__users p {
   margin-left: 5px;
 }
-.project .progress__bar {
-  max-width: 500px;
-}
 .deadline {
   color: #fd413c;
   font-weight: 600;
+}
+
+.progress .card__progress {
+  width: 100%;
 }
 
 /* dark mode */
@@ -80,20 +81,26 @@
 .project.dark .card__users li {
   background: #212529;
   color: #85878a;
-  border: 1px solid #4b5563;
-  border-radius: 3px;
-  font-weight: 600;
-  text-transform: uppercase;
+  border-color: #4b5563;
 }
 .project.dark .progress__bar {
   background: #3e4246;
 }
 
 @media (max-width: 550px) {
-  .project__info > li.user__list {
+  .project__info h5 {
+    margin-right: 10px;
+    min-width: 80px;
+  }
+  .project__info h5 span {
+    display: inline;
+  }
+  .project__info li.user__list,
+  .project__info li.progress {
     display: block;
   }
-  .project__info > li.user__list h5 {
+  .project__info li.user__list h5,
+  .project__info li.progress h5 {
     margin-bottom: 10px;
   }
 }

@@ -96,7 +96,7 @@ export default function Login() {
             Loging in...
           </button>
         )}
-        {error && <div className="error">{error}</div>}
+        {error && <div className={`error ${mode}`}>{error}</div>}
 
         <div className="account">
           <p>You don't have an account?</p>

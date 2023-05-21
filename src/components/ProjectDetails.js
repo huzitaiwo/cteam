@@ -6,6 +6,7 @@ import { useTheme } from "../hooks/useTheme";
 
 // styles
 import "./ProjectDetails.css";
+import ProgressBar from "./ProgressBar";
 
 export default function ProjectDetails({ project }) {
   const { mode } = useTheme();
@@ -70,14 +71,15 @@ export default function ProjectDetails({ project }) {
             ))}
           </div>
         </li>
-        <li>
+        <li className="progress">
           <h5>
             <span>Progress</span>:
           </h5>
 
-          <div className={`progress__bar progress__${project.priority}`}>
+          {/* <div className={`progress__bar progress__${project.priority}`}>
             <div className={`bar bar__${project.priority} ${mode}`}></div>
-          </div>
+          </div> */}
+          <ProgressBar project={project} />
         </li>
         <li>
           <h5>

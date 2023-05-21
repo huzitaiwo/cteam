@@ -17,7 +17,7 @@ export default function Task() {
   const { documents, isPending, error } = useCollection("tasks");
 
   if (error) {
-    return <div className="error">{error}</div>;
+    return <div className={`error ${mode}`}>{error}</div>;
   }
 
   if (isPending) {

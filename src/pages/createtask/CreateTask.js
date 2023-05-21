@@ -181,7 +181,7 @@ export default function CreateTask() {
         {!response.isPending && (
           <button className={`btn ${mode}`}>Add Task</button>
         )}
-        {formError && <div className="error">{formError}</div>}
+        {formError && <div className={`error ${mode}`}>{formError}</div>}
       </form>
     </div>
   );

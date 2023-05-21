@@ -142,7 +142,9 @@ export default function Signup() {
             {!thumbnail && <span>Profile Image</span>}
             {thumbnail && <span>{thumbnail.name}</span>}
           </label>
-          {thumbnailError && <div className="error">{thumbnailError}</div>}
+          {thumbnailError && (
+            <div className={`error ${mode}`}>{thumbnailError}</div>
+          )}
         </div>
 
         {!isPending && <button className={`btn ${mode}`}>Sign up</button>}
@@ -151,7 +153,7 @@ export default function Signup() {
             Signing up...
           </button>
         )}
-        {error && <div className="error">{error}</div>}
+        {error && <div className={`error ${mode}`}>{error}</div>}
 
         <div className="account">
           <p>Already have an account?</p>

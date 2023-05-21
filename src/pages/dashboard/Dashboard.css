@@ -5,7 +5,8 @@
   gap: 30px;
 }
 .dashboard__card,
-.projects__card {
+.projects__card,
+.calender__card {
   display: block;
   background: #fff;
   border: 1px solid #fff;
@@ -110,6 +111,9 @@
 .users__more {
   margin-left: -8px;
 }
+.card__users li:first-of-type {
+  margin: 0;
+}
 .card__users .avatar {
   width: 30px;
   height: 30px;
@@ -120,6 +124,7 @@
   border-radius: 1rem;
   padding: 15px 0;
   box-shadow: 5px 5px 15px #f7f6f4;
+  margin-bottom: 15px;
 }
 .card__tasks h3 {
   margin: 0 0 15px 15px;
@@ -156,6 +161,7 @@
 
 /* __________dark mode__________ */
 .dashboard.dark .dashboard__card,
+.dashboard.dark .calender__card,
 .projects.dark .projects__card,
 .dashboard.dark .card__tasks {
   background: #2b2f33;

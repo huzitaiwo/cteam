@@ -31,7 +31,7 @@ export default function Project() {
   const [projectTab, setProjectTab] = useState("task");
 
   if (error) {
-    return <div className="error">{error}</div>;
+    return <div className={`error ${mode}`}>{error}</div>;
   }
 
   if (isPending) {
