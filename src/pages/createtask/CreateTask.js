@@ -78,7 +78,7 @@ export default function CreateTask() {
 
     setFormError(null);
 
-    if (tag.length < 1) {
+    if (taskTags.length < 1) {
       setFormError("Please select atleast one task tag");
     }
 

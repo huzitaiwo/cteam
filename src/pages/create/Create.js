@@ -1,4 +1,4 @@
-// react packages
+// react packages & other packages
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Select from "react-select";
@@ -7,9 +7,9 @@ import Select from "react-select";
 import { useCollection } from "../../hooks/useCollection";
 import { useTheme } from "../../hooks/useTheme";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import { useFirestore } from "../../hooks/useFirestore";
 
 // firebase function
-import { useFirestore } from "../../hooks/useFirestore";
 import { timestamp } from "../../firebase/config";
 
 // images
@@ -74,10 +74,10 @@ export default function Create() {
 
     let file = e.target.files[0];
 
-    // if (!file) {
-    //   setThumbnailError("Please select an image file");
-    //   return;
-    // }
+    if (!file) {
+      setThumbnailError(null);
+      return;
+    }
     if (!file.type.includes("image")) {
       setThumbnailError("Selected file must be an image");
       return;
@@ -100,8 +100,8 @@ export default function Create() {
       setFormError("Please select project priority");
     }
 
-    if (category.length < 1) {
-      setFormError("Please select project categories");
+    if (projectCategories.length < 1) {
+      setFormError("Please select at least one project category");
       return;
     }
     if (assignedUsers.length < 1) {
@@ -137,10 +137,12 @@ export default function Create() {
       inProgress: false,
     };
 
-    await addDocument(project, thumbnail);
-    if (!response.error) {
-      history.push("/");
-    }
+    console.log(project, thumbnail);
+
+    // await addDocument(project, thumbnail);
+    // if (!response.error) {
+    //   history.push("/");
+    // }
   };
 
   return (
@@ -177,7 +179,7 @@ export default function Create() {
           />
           <label className="file" htmlFor="file">
             <img src={Thumbnail} alt="" className="thumbnail" />
-            {!thumbnail && <span>Project Image</span>}
+            {!thumbnail && <span>Project thumbnail</span>}
             {thumbnail && <span>{thumbnail.name}</span>}
           </label>
           {thumbnailError && <div className="error">{thumbnailError}</div>}
@@ -240,7 +242,7 @@ export default function Create() {
         {!response.isPending && (
           <button className={`btn ${mode}`}>Add Project</button>
         )}
-        {formError && <div className="error">{formError}</div>}
+        {formError && <div className={`error ${mode}`}>{formError}</div>}
       </form>
     </div>
   );

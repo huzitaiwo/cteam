@@ -29,14 +29,8 @@ body {
   margin: 10px 0;
   padding: 8px;
 }
-/* .high {
-  color: #f7423d;
-  background: #fff3ea;
-  border-color: #f7423d;
-} */
 .high {
   color: #ff7782;
-  /* background: #fff3ea; */
   border-color: #ff7782;
 }
 .success,
@@ -52,12 +46,10 @@ body {
 }
 .medium {
   color: #45bfff;
-  /* background: #fff3ea; */
   border-color: #45bfff;
 }
 .low {
   color: #717eee;
-  /* background: #f5ecf2; */
   border-color: #717eee;
 }
 .high,
@@ -68,9 +60,6 @@ body {
 }
 .progress_select {
   padding: 4px 12px;
-  /* color: #7078ba;
-  background: #d7dbfd;
-  border-color: #d7dbfd; */
   color: #9a9dac;
   background: #f1f2f4;
   border-color: #f1f2f4;
@@ -79,12 +68,6 @@ body {
   border-color: #e7f4e6;
   padding: 5px 12px;
 }
-/* .w-6 {
-  width: 23px;
-}
-.w-4 {
-  width: 17px;
-} */
 svg {
   width: 24px;
 }
@@ -152,19 +135,14 @@ svg {
 }
 
 /* dark mode */
+.error.dark {
+  background: #403034;
+}
 .success.dark,
 .completed.dark {
   color: #fff;
   background: #60b158;
   border-color: #60b158;
-}
-.card__status.dark .high {
-  color: #fd413c;
-  border-color: #fd413c;
-}
-.card__status.dark .medium {
-  color: #45bfff;
-  border-color: #45bfff;
 }
 .card__status.dark .progress_select {
   color: #b9b9bb;

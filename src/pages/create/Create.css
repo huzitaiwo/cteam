@@ -51,7 +51,7 @@
 .form__create.dark textarea {
   background-color: #2b2f33;
   border: 1px solid #858789;
-  color: #85878a;
+  color: #fff;
 }
 .form__create.dark .input__field:focus {
   outline: 1px solid #858789;
@@ -59,9 +59,41 @@
 /* .form__create.dark .css-6j8wv5-Input  */
 .form__create.dark .css-1s2u09g-control,
 .form__create.dark .css-1pahdxg-control,
+.form__create.dark #react-select-1-listbox,
+.form__create.dark #react-select-2-listbox,
+.form__create.dark #react-select-3-listbox,
+.form__create.dark #react-select-4-listbox,
+.form__create.dark #react-select-5-listbox,
+.form__create.dark #react-select-6-listbox,
+.form__create.dark #react-select-7-listbox,
+.form__create.dark #react-select-8-listbox,
+.form__create.dark #react-select-9-listbox,
+.form__create.dark #react-select-10-listbox,
+.form__create.dark #react-select-11-listbox,
+.form__create.dark #react-select-12-listbox,
+.form__create.dark #react-select-13-listbox,
+.form__create.dark #react-select-14-listbox,
+.form__create.dark #react-select-15-listbox,
+.form__create.dark #react-select-16-listbox,
+.form__create.dark #react-select-17-listbox,
+.form__create.dark #react-select-18-listbox,
+.form__create.dark #react-select-19-listbox,
+.form__create.dark #react-select-20-listbox,
+.form__create.dark #react-select-21-listbox,
+.form__create.dark #react-select-22-listbox,
+.form__create.dark #react-select-23-listbox,
+.form__create.dark #react-select-24-listbox,
+.form__create.dark #react-select-25-listbox,
+.form__create.dark #react-select-26-listbox,
 .form__create.dark #react-select-27-listbox,
+.form__create.dark #react-select-28-listbox,
 .form__create.dark #react-select-29-listbox,
-.form__create.dark #react-select-31-listbox {
+.form__create.dark #react-select-30-listbox,
+.form__create.dark #react-select-31-listbox,
+.form__create.dark #react-select-32-listbox,
+.form__create.dark #react-select-33-listbox,
+.form__create.dark #react-select-34-listbox,
+.form__create.dark #react-select-35-listbox {
   background-color: #2b2f33;
   border: 1px solid #858789;
   color: #85878a;
