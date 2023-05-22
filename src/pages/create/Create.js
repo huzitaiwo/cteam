@@ -182,7 +182,9 @@ export default function Create() {
             {!thumbnail && <span>Project thumbnail</span>}
             {thumbnail && <span>{thumbnail.name}</span>}
           </label>
-          {thumbnailError && <div className="error">{thumbnailError}</div>}
+          {thumbnailError && (
+            <div className={`error ${mode}`}>{thumbnailError}</div>
+          )}
         </div>
 
         <label>

@@ -51,7 +51,7 @@ export default function Task() {
               >
                 <div className={`task__name`}>
                   <span>
-                    {documents.length !== 0 && documents.length < 10 && 0}
+                    {documents.length < 10 && 0}
                     {i + 1}
                   </span>
                   {!task.isCompleted && (

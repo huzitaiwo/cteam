@@ -15,7 +15,7 @@
   color: #4e5157;
   border-radius: 1rem;
   margin-bottom: 15px;
-  box-shadow: 5px 5px 15px #f7f6f4;
+  box-shadow: 0 1em 3em rgba(156, 136, 255, 0.2);
 }
 .card__head,
 .projects__head {

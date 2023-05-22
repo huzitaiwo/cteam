@@ -10,20 +10,35 @@ import { motion, AnimatePresence } from "framer-motion";
 // styles
 import "./Sidebar.css";
 
-const svg = {
-  initial: { rotate: -180 },
-  animate: {
-    rotate: 0,
-    transition: { duration: 1 },
-  },
-};
+// const svg = {
+//   initial: { rotate: -180 },
+//   animate: {
+//     rotate: 0,
+//     transition: { duration: 1 },
+//   },
+// };
 
 const path = {
   initial: { opacity: 0, pathLength: 0 },
   animate: {
     opacity: 1,
     pathLength: 1,
-    transition: { duration: 2, ease: "easeInOut" },
+    transition: { duration: 1, ease: "easeInOut" },
+  },
+};
+
+const sidebar = {
+  hidden: {
+    opacity: 0,
+    x: "-100vw",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.5,
+    },
   },
 };
 
@@ -37,6 +52,9 @@ export default function Sidebar({ mobileMenu, setMobileMenu, screenWidth }) {
           <motion.div
             exit={{ x: "-100%", opacity: 0, transition: { ease: "easeInOut" } }}
             className={`sidebar ${mode}`}
+            variants={sidebar}
+            initial="hidden"
+            animate="visible"
           >
             <div className="logo">
               <motion.svg
@@ -45,7 +63,6 @@ export default function Sidebar({ mobileMenu, setMobileMenu, screenWidth }) {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 strokeWidth={1.5}
-                variants={svg}
                 initial="initial"
                 animate="animate"
               >
@@ -53,12 +70,6 @@ export default function Sidebar({ mobileMenu, setMobileMenu, screenWidth }) {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
-                  variants={path}
-                />
-                <motion.path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"
                   variants={path}
                 />
               </motion.svg>

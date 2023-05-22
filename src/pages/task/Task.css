@@ -16,10 +16,10 @@
   align-items: center;
   padding: 10px;
   border-bottom: 1px solid #f3f3f3;
-  box-shadow: 5px 5px 15px #f3f3f3;
+  box-shadow: 0 1em 3em rgba(156, 136, 255, 0.2);
   margin-top: 10px;
   text-transform: uppercase;
-  border-radius: 7px 7px 0 0;
+  border-radius: 3px 3px 0 0;
   font-size: 1rem;
 }
 .tasks .h3 span {
@@ -36,7 +36,7 @@
 .td {
   display: grid;
   grid-template-columns: 3.5fr 1.5fr 0.9fr 0.8fr;
-  box-shadow: 5px 5px 15px #f3f3f3;
+  box-shadow: 0 1em 3em rgba(156, 136, 255, 0.2);
   background: #fff;
 }
 .thead > div,
