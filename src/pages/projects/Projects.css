@@ -52,9 +52,9 @@
 }
 
 /* media query */
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
   .projects__image {
     height: 300px;
     border-radius: 7px;
   }
-}
+} */

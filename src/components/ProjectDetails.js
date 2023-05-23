@@ -3,6 +3,7 @@ import Avatar from "./Avatar";
 
 // hooks
 import { useTheme } from "../hooks/useTheme";
+import { useFirestore } from "../hooks/useFirestore";
 
 // styles
 import "./ProjectDetails.css";
@@ -10,6 +11,15 @@ import ProgressBar from "./ProgressBar";
 
 export default function ProjectDetails({ project }) {
   const { mode } = useTheme();
+  const { updateDocument } = useFirestore("projects");
+
+  const startProject = async () => {
+    await updateDocument(project.id, {
+      inProgress: true,
+    });
+  };
+
+  console.log(project);
 
   return (
     <div>
@@ -76,9 +86,6 @@ export default function ProjectDetails({ project }) {
             <span>Progress</span>:
           </h5>
 
-          {/* <div className={`progress__bar progress__${project.priority}`}>
-            <div className={`bar bar__${project.priority} ${mode}`}></div>
-          </div> */}
           <ProgressBar project={project} />
         </li>
         <li>
@@ -93,7 +100,9 @@ export default function ProjectDetails({ project }) {
             <span className="status progress_select">In progress</span>
           )}
           {!project.isCompleted && !project.inProgress && (
-            <span className="status progress_select">Start Project</span>
+            <button onClick={startProject} className="status progress_select">
+              Start Project
+            </button>
           )}
         </li>
         <li>

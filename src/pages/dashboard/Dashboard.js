@@ -1,6 +1,6 @@
 // react packages
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 // hooks
 import { useCollection } from "../../hooks/useCollection";
@@ -63,7 +63,7 @@ export default function Dashboard() {
   }
 
   return (
-    <motion.div className={`dashboard ${mode}`}>
+    <div className={`dashboard ${mode}`}>
       {documents && (
         <>
           <div className="dashboard__grid">
@@ -211,6 +211,6 @@ export default function Dashboard() {
           </div>
         </>
       )}
-    </motion.div>
+    </div>
   );
 }

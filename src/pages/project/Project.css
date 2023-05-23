@@ -30,7 +30,7 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  box-shadow: 5px 5px 15px #f7f6f4;
+  box-shadow: 0 1em 3em rgba(156, 136, 255, 0.2);
 }
 .tasks__list li:last-of-type {
   margin-bottom: 0;
@@ -91,6 +91,11 @@ svg.checked {
   background: #fff;
   color: #4e5157;
   padding: 15px;
+  border: 1px solid #f7f6f4;
+  border-bottom: none;
+}
+.comments li:last-of-type {
+  border: 1px solid #f7f6f4;
 }
 .comments li:nth-child(even) {
   background: #fafafa;
@@ -153,6 +158,7 @@ svg.checked {
 .comments.dark li {
   background: #2b2f33;
   color: #fff;
+  border-color: #4b5563;
 }
 .comments.dark li:nth-child(even) {
   background: #3e4246;

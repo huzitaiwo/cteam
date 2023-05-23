@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+// react packages
+import { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 
 // hooks
 import { useTheme } from "../hooks/useTheme";
@@ -10,8 +12,19 @@ import Avatar from "./Avatar";
 import "./Navbar.css";
 
 export default function Navbar({ mobileMenu, setMobileMenu, screenWidth }) {
-  const { user } = useAuthContext();
   const { mode } = useTheme();
+  const { user } = useAuthContext();
+  const history = useHistory();
+
+  const [term, setTerm] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    history.push(`/search?q=${term}`);
+
+    setTerm("");
+  };
 
   return (
     <div className={`navbar ${mode}`}>
@@ -56,7 +69,7 @@ export default function Navbar({ mobileMenu, setMobileMenu, screenWidth }) {
           </svg>
         </button>
 
-        <form className="search">
+        <form className="search" onSubmit={handleSearch}>
           <input type="text" placeholder="search" />
         </form>
 

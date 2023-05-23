@@ -10,20 +10,12 @@ import { motion, AnimatePresence } from "framer-motion";
 // styles
 import "./Sidebar.css";
 
-// const svg = {
-//   initial: { rotate: -180 },
-//   animate: {
-//     rotate: 0,
-//     transition: { duration: 1 },
-//   },
-// };
-
 const path = {
   initial: { opacity: 0, pathLength: 0 },
   animate: {
     opacity: 1,
     pathLength: 1,
-    transition: { duration: 1, ease: "easeInOut" },
+    transition: { duration: 1.5, ease: "easeInOut" },
   },
 };
 
@@ -36,8 +28,8 @@ const sidebar = {
     opacity: 1,
     x: 0,
     transition: {
-      ease: "easeInOut",
-      duration: 0.5,
+      ease: "easeOut",
+      duration: 0.3,
     },
   },
 };

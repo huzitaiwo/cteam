@@ -10,6 +10,7 @@
 .logo svg {
   width: 80px;
   stroke: #64666c;
+  transform: rotateZ(45deg);
 }
 .navigation-links li {
   list-style: none;
@@ -83,6 +84,9 @@
   .sidebar .logo svg {
     width: 50px;
   }
+  .navigation-links svg {
+    width: 40px;
+  }
   .navigation-links span {
     display: none;
   }
@@ -104,6 +108,9 @@
   }
   .sidebar.dark {
     box-shadow: none;
+  }
+  .navigation-links svg {
+    width: 24px;
   }
   .navigation-links span {
     display: initial;

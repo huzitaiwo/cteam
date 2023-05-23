@@ -34,10 +34,18 @@ export default function ProgressBar({ project }) {
             Task Done: {completedTasks.length * 10} / {tasks.length * 10}
           </p>
           <div className={`progress__bar progress__${project.priority}`}>
-            <div
-              style={{ width: `${progress}%` }}
-              className={`bar bar__${project.priority} ${mode}`}
-            ></div>
+            {completedTasks.length === 0 && tasks.length === 0 && (
+              <div
+                style={{ width: 0 }}
+                className={`bar bar__${project.priority} ${mode}`}
+              ></div>
+            )}
+            {tasks.length > 0 && (
+              <div
+                style={{ width: `${progress}%` }}
+                className={`bar bar__${project.priority} ${mode}`}
+              ></div>
+            )}
           </div>
         </div>
       )}

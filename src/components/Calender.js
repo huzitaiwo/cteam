@@ -6,16 +6,13 @@ import { useCollection } from "../hooks/useCollection";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useTheme } from "../hooks/useTheme";
 
-// // components
-import Loader from "./Loader";
-
 // styles
 import "./Calender.css";
 
 export default function Calender() {
   const { mode } = useTheme();
   const { user } = useAuthContext();
-  const { documents, isPending, error } = useCollection("projects");
+  const { documents } = useCollection("projects");
 
   const projects = documents
     ? documents.filter((project) => {
@@ -40,27 +37,10 @@ export default function Calender() {
       preselectedDays.push({ year, month, day });
     });
 
-  console.log(preselectedDays);
-
-  if (error) {
-    return <div className="error">{error}</div>;
-  }
-  if (isPending) {
-    return <Loader />;
-  }
-  if (projects && projects.length === 0) {
-    return (
-      <p className={`project-redirect error ${mode}`}>
-        No deadlines means no project in hand!
-      </p>
-    );
-  }
-
   return (
     <div className={`calender ${mode}`}>
       <Calendar
         value={preselectedDays}
-        // colorPrimary="#fd8b51"
         calendarClassName="custom-calendar"
         calendarTodayClassName="custom-today-day"
         shouldHighlightWeekends

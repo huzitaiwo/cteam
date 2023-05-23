@@ -79,7 +79,7 @@ export default function Comment({ project }) {
         ))}
       </ul>
 
-      {usersList.length !== 0 && (
+      {(project.createdBy.id === user.uid || usersList.length !== 0) && (
         <form onSubmit={handleSubmit}>
           <Avatar src={user.photoURL} />
           <label>
@@ -103,9 +103,13 @@ export default function Comment({ project }) {
                 </svg>
               </button>
             )}
-            {response.isLoading && <button className={`send ${mode}`}>...</button>}
+            {response.isLoading && (
+              <button className={`send ${mode}`}>...</button>
+            )}
           </label>
-          {response.error && <div className={`error ${mode}`}>{response.error}</div>}
+          {response.error && (
+            <div className={`error ${mode}`}>{response.error}</div>
+          )}
         </form>
       )}
     </div>
