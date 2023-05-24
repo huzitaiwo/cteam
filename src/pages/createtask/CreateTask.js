@@ -109,7 +109,6 @@ export default function CreateTask() {
       assignedUsersList,
       createdBy,
       isCompleted: false,
-      inProgress: false,
       projectID: project.id,
     };
 

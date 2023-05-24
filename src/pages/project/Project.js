@@ -53,7 +53,7 @@ export default function Project() {
 
   return (
     <div className={`project ${mode}`}>
-      <ProjectDetails project={project} />
+      {project && <ProjectDetails project={project} tasks={tasks} />}
       {tasks && (
         <>
           <div className="project__header">

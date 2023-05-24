@@ -41,6 +41,7 @@ export default function Calender() {
     <div className={`calender ${mode}`}>
       <Calendar
         value={preselectedDays}
+        colorPrimary="#fd8b51"
         calendarClassName="custom-calendar"
         calendarTodayClassName="custom-today-day"
         shouldHighlightWeekends

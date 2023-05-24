@@ -3,7 +3,17 @@
   max-width: none;
   border: 1px solid #fff;
 }
+.custom-calendar * {
+  font-weight: 500;
+  font-size: 12px !important;
+}
+.Calendar {
+  padding-top: 0 !important;
+}
 .Calendar__header {
+  border-radius: 0.6rem 0.6rem 0 0;
+}
+.Calendar__header div {
   padding: 15px;
 }
 .Calendar__weekDays {
@@ -19,6 +29,13 @@
 .custom-today-day::after {
   visibility: hidden;
 }
+.Calendar__sectionWrapper {
+  min-height: 220px;
+}
+/* .Calendar__sectionWrapper *,
+.Calendar__weekDays * {
+  font-size: 12px !important;
+} */
 
 /* __________dark mode __________ */
 .calender.dark .custom-calendar {

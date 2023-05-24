@@ -1,32 +1,57 @@
-// components
+// react packages
+import { useState } from "react";
+
+// components & hooks
 import Avatar from "../../components/Avatar";
+import { useFirestore } from "../../hooks/useFirestore";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 // styles
 import "./Project.css";
 
 export default function TaskList({ tasks, project }) {
+  const { user } = useAuthContext();
+  const { updateDocument, deleteDocument } = useFirestore("tasks");
+
+  const [popup, setPopup] = useState({});
+
+  const handlePopup = (index) => {
+    setPopup((state) => ({
+      ...state, // <-- copy previous state
+      [index]: !state[index], // <-- update value by index key
+    }));
+  };
+
+  const handleComplete = async (id) => {
+    await updateDocument(id, {
+      isCompleted: true,
+    });
+    setPopup(false);
+  };
+  const handleDelete = async (id) => {
+    await deleteDocument(id);
+    setPopup(false);
+  };
+
   return (
     <ul className="tasks__grid">
-      {tasks.map((task) => (
+      {tasks.map((task, index) => (
         <li className={`tasks__list tasks__${project.priority}`} key={task.id}>
           <div className="tasks__head">
             <p>{task.dueDate.toDate().toDateString().slice(4)}</p>
-            {!task.isCompleted && (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
-                />
-              </svg>
+            {task.createdBy.id === user.uid && !task.isCompleted && (
+              <button onClick={() => handlePopup(index)} className="more">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+                </svg>
+              </button>
             )}
+
             {task.isCompleted && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -40,6 +65,57 @@ export default function TaskList({ tasks, project }) {
                   clipRule="evenodd"
                 />
               </svg>
+            )}
+
+            {popup[index] && (
+              <div className="handleFunction">
+                <ul>
+                  <li>
+                    <button
+                      onClick={() => handleComplete(task.id)}
+                      className="mark"
+                    >
+                      mark as complete{" "}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => handleDelete(task.id)}
+                      className="delete"
+                    >
+                      delete{" "}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-6 h-6"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </div>
             )}
           </div>
           <h3 className="tasks__name">{task.name}</h3>
