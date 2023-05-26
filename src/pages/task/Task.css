@@ -10,7 +10,8 @@
 .tasks a:hover {
   background: #f7f6f4;
 }
-.tasks .h3 {
+.tasks .h3,
+.users .h3 {
   background: #fff;
   display: flex;
   align-items: center;
@@ -30,7 +31,7 @@
 .thead {
   color: #9c9fad;
   font-weight: 600;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .thead,
 .td {
@@ -155,19 +156,27 @@ svg.checked {
 
 /* dark mode */
 .tasks.dark,
-.tasks.dark .td {
+.tasks.dark .td,
+.users.dark,
+.users.dark .td {
   color: #abadae;
   stroke: #abadae;
 }
 .tasks.dark .h3,
 .tasks.dark .thead,
-.tasks.dark .td {
+.tasks.dark .td,
+.users.dark .h3,
+.users.dark .thead,
+.users.dark .td {
   background: #2b2f33;
   box-shadow: none;
 }
 .tasks.dark .thead > div,
 .tasks.dark .td > *,
-.tasks.dark .h3 {
+.tasks.dark .h3,
+.users.dark .thead > div,
+.users.dark .td > *,
+.users.dark .h3 {
   border-color: #32363b;
 }
 
@@ -177,13 +186,13 @@ svg.checked {
   .tasks .h3 {
     margin-bottom: 10px;
   }
-  .thead {
+  .tasks thead {
     display: none;
   }
-  .td {
+  .tasks td {
     grid-template-columns: 1fr;
   }
-  .td > div:first-of-type {
+  .tasks td > div:first-of-type {
     width: 100%;
   }
 }

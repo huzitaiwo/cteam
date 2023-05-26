@@ -28,7 +28,7 @@ const tags = [
   { value: "html", label: "Html" },
   { value: "id", label: "InDesign" },
   { value: "iv", label: "InVision" },
-  { value: "illustrator", label: "Adobe Illustrator" },
+  { value: "illustrator", label: "Illustrator" },
   { value: "javascript", label: "Js" },
   { value: "laravel", label: "Laravel" },
   { value: "native", label: "React Native" },

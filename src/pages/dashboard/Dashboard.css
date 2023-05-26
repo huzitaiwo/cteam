@@ -23,12 +23,13 @@
 }
 .card__head {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
 .card__logo {
   background: #fff3ed;
-  border-radius: 5px;
-  padding: 7px;
+  border-radius: 10px;
+  padding: 7px 7px 2px 7px;
+  margin-right: 10px;
 }
 .card__status,
 .projects__head,
@@ -171,6 +172,9 @@
   background: #2b2f33;
   border-color: #4b5563;
   box-shadow: none;
+}
+.dashboard.dark .card__logo {
+  background: #3c4247;
 }
 .dashboard.dark .card__name h2,
 .projects.dark .projects__name h2 {

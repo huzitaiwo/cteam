@@ -22,6 +22,16 @@ export default function Dashboard() {
   const { documents, isPending, error } = useCollection("projects");
   const { documents: tasks } = useCollection("tasks");
 
+  // const successCallback = (position) => {
+  //   console.log(position);
+  // };
+
+  // const errorCallback = (error) => {
+  //   console.log(error);
+  // };
+
+  // navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
   const myProjects = documents
     ? documents.filter((document) => {
         let assignedToMe = false;
