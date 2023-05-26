@@ -37,8 +37,9 @@ export const useSignup = () => {
 
       // create a user document
       await firebaseFirestore.collection("users").doc(res.user.uid).set({
-        online: true,
         displayName,
+        email,
+        online: true,
         photoURL,
       });
 

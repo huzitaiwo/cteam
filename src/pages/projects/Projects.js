@@ -74,10 +74,7 @@ export default function Projects() {
                 <div className="projects__head">
                   <h3>Working</h3>
                   <span>
-                    (
-                    {workingProjects.length !== 0 &&
-                      workingProjects.length < 10 &&
-                      0}
+                    ({workingProjects.length < 10 && 0}
                     {workingProjects.length})
                   </span>
                   <svg
@@ -95,6 +92,11 @@ export default function Projects() {
                     />
                   </svg>
                 </div>
+                {workingProjects.length === 0 && (
+                  <p className={`error ${mode}`}>
+                    You have no project in hand!
+                  </p>
+                )}
                 {workingProjects.map((project) => (
                   <ProjectList project={project} key={project.id} />
                 ))}
@@ -103,10 +105,7 @@ export default function Projects() {
                 <div className="projects__head">
                   <h3>In Progress</h3>
                   <span>
-                    (
-                    {projectsInProgress.length !== 0 &&
-                      projectsInProgress.length < 10 &&
-                      0}
+                    ({projectsInProgress.length < 10 && 0}
                     {projectsInProgress.length})
                   </span>
 
@@ -125,6 +124,11 @@ export default function Projects() {
                     />
                   </svg>
                 </div>
+                {projectsInProgress.length === 0 && (
+                  <p className={`error ${mode}`}>
+                    You haven't started any project yet!
+                  </p>
+                )}
                 {projectsInProgress.map((project) => (
                   <ProjectList project={project} key={project.id} />
                 ))}
@@ -133,10 +137,7 @@ export default function Projects() {
                 <div className="projects__head">
                   <h3>Completed</h3>
                   <span>
-                    (
-                    {completedProjects.length !== 0 &&
-                      completedProjects.length < 10 &&
-                      0}
+                    ({completedProjects.length < 10 && 0}
                     {completedProjects.length})
                   </span>
                   <svg
@@ -154,6 +155,11 @@ export default function Projects() {
                     />
                   </svg>
                 </div>
+                {completedProjects.length === 0 && (
+                  <p className={`error ${mode}`}>
+                    You haven't completed any project yet!
+                  </p>
+                )}
                 {completedProjects.map((project) => (
                   <ProjectList project={project} key={project.id} />
                 ))}

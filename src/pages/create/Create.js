@@ -13,7 +13,15 @@ import { useFirestore } from "../../hooks/useFirestore";
 import { timestamp } from "../../firebase/config";
 
 // images
-import Thumbnail from "../../assets/img/thumbnail.png";
+import Apple from "../../assets/brand/apple.svg";
+import Placeholder from "../../assets/brand/placeholder.svg";
+import Discord from "../../assets/brand/discord.svg";
+import Facebook from "../../assets/brand/facebook.svg";
+import Github from "../../assets/brand/github.svg";
+import Google from "../../assets/brand/google.svg";
+import LinkedIn from "../../assets/brand/linkedin.svg";
+import Slack from "../../assets/brand/slack.svg";
+import Twitter from "../../assets/brand/twitter.svg";
 
 // styles
 import "./Create.css";
@@ -22,12 +30,24 @@ const categories = [
   { value: "andriod", label: "Andriod" },
   { value: "ar", label: "AR" },
   { value: "branding", label: "Branding" },
+  { value: "graphics", label: "Graphics" },
   { value: "ios", label: "IOS app" },
   { value: "iot", label: "IOT" },
-  { value: "marketing", label: "Marketing" },
   { value: "sales", label: "Sales" },
   { value: "uiux", label: "ui/ux" },
   { value: "website", label: "Website" },
+];
+
+const brands = [
+  { value: "default", label: "Default", image: Placeholder },
+  { value: "apple", label: "Apple", image: Apple },
+  { value: "discord", label: "Discord", image: Discord },
+  { value: "facebook", label: "Facebook", image: Facebook },
+  { value: "github", label: "Github", image: Github },
+  { value: "google", label: "Google", image: Google },
+  { value: "linkedin", label: "LinkedIn", image: LinkedIn },
+  { value: "slack", label: "Slack", image: Slack },
+  { value: "twitter", label: "Twitter", image: Twitter },
 ];
 
 const priorities = [
@@ -56,6 +76,7 @@ export default function Create() {
   const [dueDate, setDueDate] = useState("");
   const [priority, setPriority] = useState("");
   const [projectCategories, setProjectCategories] = useState([]);
+  const [companyBrand, setCompanyBrand] = useState([]);
   const [assignedUsers, setAssignedUsers] = useState([]);
   const [formError, setFormError] = useState(null);
 
@@ -126,6 +147,7 @@ export default function Create() {
     const project = {
       name,
       companyName,
+      companyBrand: companyBrand.image,
       details,
       categories: projectCategories,
       dueDate: timestamp.fromDate(new Date(dueDate)),
@@ -169,6 +191,21 @@ export default function Create() {
           />
         </label>
 
+        <label>
+          <span>Company logo:</span>
+          <Select
+            className="select"
+            onChange={(option) => setCompanyBrand(option)}
+            options={brands}
+            formatOptionLabel={(brand) => (
+              <div className="brand__option">
+                <img src={brand.image} alt="brand" />
+                <span>{brand.label}</span>
+              </div>
+            )}
+          />
+        </label>
+
         <div className="label">
           <span>project thumbnail:</span>
           <input
@@ -178,7 +215,7 @@ export default function Create() {
             onChange={handleFileChange}
           />
           <label className="file" htmlFor="file">
-            <img src={Thumbnail} alt="" className="thumbnail" />
+            <img src={Placeholder} alt="" className="thumbnail" />
             {!thumbnail && <span>Project thumbnail</span>}
             {thumbnail && <span>{thumbnail.name}</span>}
           </label>

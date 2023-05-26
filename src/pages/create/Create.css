@@ -35,14 +35,22 @@
   margin: 3px 0 20px;
 }
 .form__create .thumbnail {
-  width: 100px;
+  margin-right: 10px;
 }
 .form__create .file {
   text-align: center;
-  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+.brand__option {
+  display: flex;
+  align-items: center;
+}
+.brand__option img {
+  width: 20px;
+  margin-right: 5px;
 }
 
 /*__________ dark mode __________*/

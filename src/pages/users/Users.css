@@ -1,0 +1,30 @@
+.Users__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+.Users li {
+  list-style: none;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  box-shadow: 0 1em 3em rgba(156, 136, 255, 0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.Users img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px 0 0 10px;
+}
+.Users .details {
+  padding: 10px;
+}
+.Users h2 {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  font-weight: 300;
+}

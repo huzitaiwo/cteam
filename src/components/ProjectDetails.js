@@ -30,20 +30,20 @@ export default function ProjectDetails({ project, tasks }) {
   };
 
   const handleComplete = async (id) => {
+    setPopup({});
     await updateDocument(id, {
       isCompleted: true,
       inProgress: false,
     });
-    setPopup(false);
   };
   const handleDelete = async (id) => {
+    setPopup({});
     await deleteDocument(id);
 
     tasks.forEach(async (task) => {
       await deleteTask(task.id);
     });
 
-    setPopup(false);
     history.push("/projects");
   };
 

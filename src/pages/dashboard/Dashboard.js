@@ -68,6 +68,11 @@ export default function Dashboard() {
         <>
           <div className="dashboard__grid">
             <div className="grid__1">
+              {myProjects.length === 0 && (
+                <p className={`error ${mode}`}>
+                  You haven't been asigned any project
+                </p>
+              )}
               {myProjects.map((project) => (
                 <Link
                   to={`/projects/${project.id}`}
@@ -75,7 +80,9 @@ export default function Dashboard() {
                   className="dashboard__card"
                 >
                   <div className="card__head">
-                    {/* <div className="card__logo"></div> */}
+                    <div className="card__logo">
+                      <img src={project.companyBrand} alt="company brand" />
+                    </div>
                     <div className="card__name">
                       <h2>{project.name}</h2>
                       <p>{project.companyName}</p>
@@ -148,7 +155,12 @@ export default function Dashboard() {
               ))}
             </div>
             <div className="grid__2">
-              {myTasks && (
+              {myTasks.length === 0 && (
+                <p className={`error ${mode}`}>
+                  You haven't been asigned any task
+                </p>
+              )}
+              {myTasks.length > 0 && (
                 <div className="card__tasks">
                   <h3>
                     My Tasks{" "}

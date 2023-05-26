@@ -23,14 +23,14 @@ export default function TaskList({ tasks, project }) {
   };
 
   const handleComplete = async (id) => {
+    setPopup({});
     await updateDocument(id, {
       isCompleted: true,
     });
-    setPopup(false);
   };
   const handleDelete = async (id) => {
+    setPopup({});
     await deleteDocument(id);
-    setPopup(false);
   };
 
   return (
@@ -39,7 +39,7 @@ export default function TaskList({ tasks, project }) {
         <li className={`tasks__list tasks__${project.priority}`} key={task.id}>
           <div className="tasks__head">
             <p>{task.dueDate.toDate().toDateString().slice(4)}</p>
-            {task.createdBy.id === user.uid && !task.isCompleted && (
+            {task.createdBy.id === user.uid && (
               <button onClick={() => handlePopup(index)} className="more">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

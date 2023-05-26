@@ -13,6 +13,14 @@
 .Calendar__header {
   border-radius: 0.6rem 0.6rem 0 0;
 }
+.Calendar__monthYearContainer * {
+  font-size: 1.4rem !important;
+}
+button.Calendar__monthArrowWrapper.-right,
+button.Calendar__monthArrowWrapper.-left {
+  padding: 5px;
+  border-radius: 5px;
+}
 .Calendar__header div {
   padding: 15px;
 }
@@ -32,10 +40,6 @@
 .Calendar__sectionWrapper {
   min-height: 220px;
 }
-/* .Calendar__sectionWrapper *,
-.Calendar__weekDays * {
-  font-size: 12px !important;
-} */
 
 /* __________dark mode __________ */
 .calender.dark .custom-calendar {
@@ -43,15 +47,16 @@
   background: #2b2f33;
   border-color: #4b5563;
 }
-.calender.dark .Calendar__header {
+.calender.dark button.Calendar__monthArrowWrapper.-right,
+.calender.dark button.Calendar__monthArrowWrapper.-left {
   background: #4b5563;
-  margin-bottom: 10px;
 }
+.calender.dark .Calendar__monthYearContainer *,
 .calender.dark .Calendar__day {
   color: #fff !important;
 }
-.calender.dark .Calendar__day.-selected {
-  background: #f7423d;
+.calender.dark .Calendar__day {
+  color: #fff !important;
 }
 .calender.dark
   .Calendar__day.-weekend:not(.-selected):not(.-blank):not(.-selectedStart):not(

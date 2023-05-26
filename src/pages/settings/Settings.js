@@ -10,7 +10,7 @@ import "./Settings.css";
 
 export default function Settings() {
   const { mode } = useTheme();
-  const { logout, isPending } = useLogout();
+  const { logout, isPending, error } = useLogout();
 
   return (
     <div>
@@ -23,6 +23,7 @@ export default function Settings() {
         )}
         {isPending && <button className={`btn ${mode}`}>Logging out...</button>}
       </div>
+      {error && <p className={`error ${mode}`}>{error}</p>}
     </div>
   );
 }

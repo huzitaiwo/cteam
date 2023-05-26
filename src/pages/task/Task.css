@@ -75,37 +75,64 @@ svg.checked {
   text-transform: uppercase;
   margin-bottom: 3px;
 }
-.html,
-.javascript,
-.firebase {
-  color: #ffbb55;
-  border-color: #ffbb55;
+.ae {
+  border-color: #9999ff;
+  color: #9999ff;
+}
+.bootstrap,
+.php,
+.scss {
+  border-color: #a259ff;
+  color: #a259ff;
+}
+.corel,
+.node,
+.vue {
+  color: #0acf83;
+  border-color: #0acf83;
 }
 .css,
-.react,
-.python,
-.photoshop,
-.native {
-  color: #45bfff;
-  border-color: #45bfff;
-}
-.vue,
-.node,
-.tailwind {
-  color: #60b158;
-  border-color: #60b158;
-}
 .figma,
-.bootstrap,
 .flutter,
-.scss {
-  color: #717eee;
-  border-color: #717eee;
+.fb,
+.native,
+.react,
+.tailwind {
+  color: #1abcfe;
+  border-color: #1abcfe;
 }
-.xd,
-.php {
-  color: #9f7dd9;
-  border-color: #9f7dd9;
+.html,
+.google,
+.laravel {
+  color: #f25d50;
+  border-color: #f25d50;
+}
+.firebase,
+.sketch {
+  border-color: #f5820d;
+  color: #f5820d;
+}
+.id,
+.iv {
+  color: #ff3366;
+  border-color: #ff3366;
+}
+.illustrator {
+  color: #ff9a00;
+  border-color: #ff9a00;
+}
+.photoshop {
+  color: #31a8ff;
+  border-color: #31a8ff;
+}
+.javascript,
+.python {
+  color: #fcde00;
+  border-color: #fcde00;
+}
+.xd {
+  color: #ff61f6;
+  border-color: #ff61f6;
 }
 .tasks ul {
   display: flex;

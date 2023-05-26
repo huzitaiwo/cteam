@@ -26,6 +26,7 @@ import Create from "./pages/create/Create";
 import Navbar from "./components/Navbar";
 import Login from "./pages/login/Login";
 import Task from "./pages/task/Task";
+import Users from "./pages/users/Users";
 
 function App() {
   const { mode } = useTheme();
@@ -113,6 +114,10 @@ function App() {
                   <Route path="/settings">
                     {!user && <Redirect to="/login" />}
                     {user && <Settings />}
+                  </Route>
+                  <Route path="/users">
+                    {!user && <Redirect to="/login" />}
+                    {user && <Users />}
                   </Route>
                   <Route path="/signup">
                     {user && <Redirect to="/" />}

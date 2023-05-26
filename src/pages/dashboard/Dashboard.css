@@ -25,6 +25,11 @@
   display: flex;
   justify-content: space-between;
 }
+.card__logo {
+  background: #fff3ed;
+  border-radius: 5px;
+  padding: 7px;
+}
 .card__status,
 .projects__head,
 .projects__name,
@@ -55,43 +60,42 @@
   text-transform: uppercase;
   font-weight: 500;
 }
-.card__category span {
+.category {
   display: inline-block;
   margin: 2px 10px 2px 0;
-  padding: 3px 12px;
+  padding: 3px 9px;
   background: #fff;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 4px;
   font-weight: 600;
   text-transform: uppercase;
 }
-.category.website,
-.category.uiux,
-.category.ar {
-  background: #edf1ff;
+.andriod {
+  color: #0acf83;
+  background: #e7f4e6;
+}
+.ar,
+.uiux,
+.website {
   color: #2c5bff;
+  background: #edf1ff;
 }
-.category.iot,
-.category.illustrator,
-.category.ad {
-  color: #9f7dd9;
-  background: #f6f2fc;
-}
-.category.ios,
-.category.marketing {
-  color: #fd7b38;
-  background: #fff3ed;
-}
-.category.branding,
-.category.sales {
+.branding,
+.sales {
   color: #7078ba;
   background: #d7dbfd;
 }
-.category.andriod,
-.category.corel {
-  color: #60b158;
-  background: #e7f4e6;
+
+.ios,
+.graphics {
+  color: #ff7262;
+  background: #ffe3e0;
 }
+.iot {
+  color: #9f7dd9;
+  background: #f6f2fc;
+}
+
 .users__more {
   display: flex;
   align-items: center;
@@ -175,29 +179,32 @@
 .card__category.dark span {
   background: transparent;
 }
-.category.dark.website,
-.category.dark.uiux,
-.category.dark.ar {
+.andriod.dark {
+  color: #0acf83;
+  border-color: #0acf83;
+}
+.ar.dark,
+.uiux.dark,
+.website.dark {
   color: #2c5bff;
   border-color: #2c5bff;
 }
-.category.dark.iot {
-  color: #9f7dd9;
-  border-color: #9f7dd9;
-}
-.category.dark.ios,
-.category.dark.marketing {
-  color: #fd7b38;
-  border-color: #fd7b38;
-}
-.category.dark.branding,
-.category.dark.sales {
+.branding.dark,
+.sales.dark {
   color: #7078ba;
   border-color: #7078ba;
 }
-.category.dark.andriod {
-  color: #60b158;
-  border-color: #60b158;
+.graphics.dark {
+  color: #fd7b38;
+  border-color: #fd7b38;
+}
+.ios.dark {
+  color: #ff7262;
+  border-color: #ff7262;
+}
+.iot.dark {
+  color: #9f7dd9;
+  border-color: #9f7dd9;
 }
 .users__more.dark {
   background: #212529;
