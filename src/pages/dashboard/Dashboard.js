@@ -155,12 +155,12 @@ export default function Dashboard() {
               ))}
             </div>
             <div className="grid__2">
-              {myTasks.length === 0 && (
+              {myTasks && myTasks.length === 0 && (
                 <p className={`error ${mode}`}>
                   You haven't been asigned any task
                 </p>
               )}
-              {myTasks.length > 0 && (
+              {myTasks && myTasks.length > 0 && (
                 <div className="card__tasks">
                   <h3>
                     My Tasks{" "}

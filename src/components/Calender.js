@@ -31,21 +31,27 @@ export default function Calender() {
   projects &&
     projects.forEach((project) => {
       const year = project.dueDate.toDate().getFullYear();
-      const month = project.dueDate.toDate().getMonth();
-      const day = project.dueDate.toDate().getDay();
+      const month = project.dueDate.toDate().getMonth() + 1;
+      const day = project.dueDate.toDate().getDate();
 
       preselectedDays.push({ year, month, day });
     });
 
   return (
     <div className={`calender ${mode}`}>
-      <Calendar
-        value={preselectedDays}
-        colorPrimary="#fd8b51"
-        calendarClassName="custom-calendar"
-        calendarTodayClassName="custom-today-day"
-        shouldHighlightWeekends
-      />
+      {preselectedDays.length === 0 && (
+        <p className={`error ${mode}`}>No project means no deadline</p>
+      )}
+
+      {preselectedDays.length > 0 && (
+        <Calendar
+          value={preselectedDays}
+          colorPrimary="#fd8b51"
+          calendarClassName="custom-calendar"
+          calendarTodayClassName="custom-today-day"
+          shouldHighlightWeekends
+        />
+      )}
     </div>
   );
 }

@@ -49,7 +49,7 @@ button.Calendar__monthArrowWrapper.-left {
 }
 .calender.dark button.Calendar__monthArrowWrapper.-right,
 .calender.dark button.Calendar__monthArrowWrapper.-left {
-  background: #4b5563;
+  background: #fff;
 }
 .calender.dark .Calendar__monthYearContainer *,
 .calender.dark .Calendar__day {
@@ -63,4 +63,16 @@ button.Calendar__monthArrowWrapper.-left {
     .-selectedEnd
   ):not(.-selectedBetween) {
   color: #f7423d !important;
+}
+.calender.dark .Calendar__monthSelector,
+.calender.dark .Calendar__yearSelector {
+  background: #2b2f33;
+}
+.calender.dark .Calendar__monthSelector *,
+.calender.dark .Calendar__yearSelector * {
+  color: #fff !important;
+}
+.calender.dark .Calendar__yearSelectorWrapper::after,
+.calender.dark .Calendar__yearSelectorWrapper.-faded::before {
+  background: #2b2f33;
 }
