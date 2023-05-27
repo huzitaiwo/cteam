@@ -46,7 +46,7 @@ export default function TaskList({ tasks, project }) {
             )}
 
             {task.isCompleted && (
-              <i className="fi fi-ss-badge-check checked"></i>
+              <i className="fi fi-sr-badge-check checked"></i>
             )}
 
             {popup[index] && (

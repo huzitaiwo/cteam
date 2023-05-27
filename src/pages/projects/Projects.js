@@ -77,20 +77,7 @@ export default function Projects() {
                     ({workingProjects.length < 10 && 0}
                     {workingProjects.length})
                   </span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                    />
-                  </svg>
+                  <i className="fi fi-br-menu-dots"></i>
                 </div>
                 {workingProjects.length === 0 && (
                   <p className={`error ${mode}`}>
@@ -109,20 +96,7 @@ export default function Projects() {
                     {projectsInProgress.length})
                   </span>
 
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                    />
-                  </svg>
+                  <i className="fi fi-br-menu-dots"></i>
                 </div>
                 {projectsInProgress.length === 0 && (
                   <p className={`error ${mode}`}>
@@ -140,20 +114,7 @@ export default function Projects() {
                     ({completedProjects.length < 10 && 0}
                     {completedProjects.length})
                   </span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                    />
-                  </svg>
+                  <i className="fi fi-br-menu-dots"></i>
                 </div>
                 {completedProjects.length === 0 && (
                   <p className={`error ${mode}`}>

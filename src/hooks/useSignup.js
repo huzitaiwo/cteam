@@ -12,7 +12,7 @@ export const useSignup = () => {
   const [error, setError] = useState(null);
   const { dispatch } = useAuthContext();
 
-  const signup = async (email, password, displayName, thumbnail) => {
+  const signup = async (email, password, displayName, thumbnail, location) => {
     setError(null);
     setIsPending(true);
 
@@ -33,7 +33,7 @@ export const useSignup = () => {
       const photoURL = await photo.ref.getDownloadURL();
 
       // add displayName and photoURL to user
-      await res.user.updateProfile({ displayName, photoURL });
+      await res.user.updateProfile({ displayName, photoURL, location });
 
       // create a user document
       await firebaseFirestore.collection("users").doc(res.user.uid).set({
@@ -41,6 +41,7 @@ export const useSignup = () => {
         email,
         online: true,
         photoURL,
+        location,
       });
 
       // dispatch login action

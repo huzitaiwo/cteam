@@ -27,12 +27,17 @@ export default function Signup() {
 
     let file = e.target.files[0];
 
+    if (!file) {
+      setThumbnailError("Please select an image");
+      return;
+    }
+
     if (!file.type.includes("image")) {
       setThumbnailError("Selected file must be an image");
       return;
     }
-    if (file.size > 1000000) {
-      setThumbnailError("Image file size must be less than 1MB");
+    if (file.size > 5000000) {
+      setThumbnailError("Image file size must be less than 5MB");
       return;
     }
 
@@ -42,7 +47,27 @@ export default function Signup() {
 
   const handleSignup = (e) => {
     e.preventDefault();
-    signup(email, password, displayName, thumbnail);
+
+    const successCallback = async (position) => {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+
+      const res = await fetch(
+        `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+      );
+
+      const { countryName, principalSubdivision } = await res.json();
+
+      const location = { countryName, principalSubdivision };
+
+      signup(email, password, displayName, thumbnail, location);
+    };
+
+    const errorCallback = (error) => {
+      console.log(error);
+    };
+
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   };
 
   return (
@@ -103,7 +128,7 @@ export default function Signup() {
 
           <label className="input__field file" htmlFor="file">
             <img src={Placeholder} alt="" className="thumbnail" />
-            {!thumbnail && <span>Chooose profile picture</span>}
+            {!thumbnail && <span>Choose profile picture</span>}
             {thumbnail && <span>{thumbnail.name}</span>}
           </label>
           {thumbnailError && (

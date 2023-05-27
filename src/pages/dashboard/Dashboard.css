@@ -53,6 +53,9 @@
   color: #a0a3b0;
   line-height: 1.1;
 }
+.card__option .fi-br-menu-dots-vertical {
+  font-size: 18px;
+}
 .card__status {
   margin-bottom: 20px;
 }

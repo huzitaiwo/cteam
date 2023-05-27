@@ -1,7 +1,7 @@
 .users .thead,
 .users .td {
   display: grid;
-  grid-template-columns: 4fr 1.5fr 1fr 1fr;
+  grid-template-columns: 3fr 2fr 1fr 1.5fr;
   box-shadow: 0 1em 3em rgba(156, 136, 255, 0.2);
   background: #fff;
 }
@@ -16,10 +16,10 @@
   padding: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding-left: 15px;
 }
 .user__name {
-  justify-content: flex-start !important;
+  padding-left: 0 !important;
 }
 .user__name h2 {
   font-size: 1rem;
@@ -39,33 +39,21 @@
 }
 
 /* _________media query */
-@media (max-width: 1000px) {
-  .users .thead,
-  .users .td {
-    grid-template-columns: 3fr 1.5fr 1fr 1fr;
-  }
-}
 @media (max-width: 900px) {
   .users .thead,
   .users .td {
-    grid-template-columns: 2fr 1.5fr 1fr 1fr;
+    grid-template-columns: 1fr;
   }
-}
-@media (max-width: 700px) {
   .users .thead {
     display: none;
   }
-  .users .td {
-    margin-bottom: 10px;
-  }
-  .users .td {
-    grid-template-columns: 1fr;
-  }
-  .users .td > p,
-  .users .td > h3 {
-    padding: 0 10px;
+  .users .h3 {
+    margin-bottom: 15px;
   }
   .users .td > * {
-    justify-content: flex-start;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    padding: 10px 0 10px 15px;
   }
 }

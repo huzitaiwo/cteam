@@ -8,30 +8,28 @@
 .layout button {
   border: 1px solid #5f6365;
   border-radius: 7px;
-  padding: 3px 5px 0 5px;
+  padding: 3px 7px 0 7px;
+}
+.layout button i {
+  font-size: 18px;
 }
 .layout .list,
 .layout .grid {
   background: #fff;
   border-color: #fff;
 }
-.layout .list svg,
-.layout .grid svg {
-  stroke: #64666c;
-}
 .layout .active {
   background: #fff3ed;
   border-color: #fd7b38;
-}
-.layout .active svg {
-  stroke: #fd7b38;
+  color: #fd7b38;
 }
 .layout .add {
   background: #fd7b38;
   border-color: #fd7b38;
 }
-.layout .add svg {
-  stroke: #fff;
+.layout .add a {
+  color: #fff;
+  text-decoration: none;
 }
 
 /* dark */

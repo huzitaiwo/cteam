@@ -1,6 +1,5 @@
 // react packages
-import { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // hooks
 import { useTheme } from "../hooks/useTheme";
@@ -14,7 +13,6 @@ import "./Navbar.css";
 export default function Navbar({ mobileMenu, setMobileMenu, screenWidth }) {
   const { mode } = useTheme();
   const { user } = useAuthContext();
-  const history = useHistory();
 
   return (
     <div className={`navbar ${mode}`}>
@@ -25,7 +23,7 @@ export default function Navbar({ mobileMenu, setMobileMenu, screenWidth }) {
             setMobileMenu(true);
           }}
         >
-          <i className="fi fi-br-menu-burger"></i>
+          <i className="fi fi-br-bars-sort"></i>
         </button>
       )}
       <header>

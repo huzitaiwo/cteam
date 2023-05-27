@@ -55,12 +55,18 @@ export default function Users() {
                   )}
                   {!user.online && (
                     <p>
-                      <span className="offline"></span>online
+                      <span className="offline"></span>offline
                     </p>
                   )}
                 </>
                 <>
-                  {user.location && <p>{user.location}</p>}
+                  {user.location && (
+                    <p>
+                      {user.location.principalSubdivision +
+                        ", " +
+                        user.location.countryName}
+                    </p>
+                  )}
                   {!user.location && <p>Not specified</p>}
                 </>
               </li>
