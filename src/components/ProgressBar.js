@@ -31,7 +31,9 @@ export default function ProgressBar({ project }) {
       {tasks && completedTasks && (
         <div className="card__progress">
           <p>
-            Task Done: {completedTasks.length * 10} / {tasks.length * 10}
+            Task Done:{" "}
+            <span className="done">{completedTasks.length * 10}</span> /{" "}
+            {tasks.length * 10}
           </p>
           <div className={`progress__bar progress__${project.priority}`}>
             {completedTasks.length === 0 && tasks.length === 0 && (

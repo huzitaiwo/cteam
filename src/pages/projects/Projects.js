@@ -15,7 +15,11 @@ import "./Projects.css";
 
 export default function Projects() {
   const { mode } = useTheme();
-  const { documents: projects, isPending, error } = useCollection("projects");
+  const {
+    documents: projects,
+    isPending,
+    error,
+  } = useCollection("projects", "", ["createdAt"]);
 
   const completedProjects = projects
     ? projects.filter((document) => {

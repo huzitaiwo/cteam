@@ -39,15 +39,14 @@
   border-color: #2b2f33;
 }
 .layout.dark .active {
-  /* background: #fff; */
   border-color: #f7423d;
 }
-.layout.dark .list svg,
-.layout.dark .grid svg {
-  stroke: #fff;
+.layout.dark .list,
+.layout.dark .grid {
+  color: #fff;
 }
-.layout.dark .active svg {
-  stroke: #f7423d;
+.layout.dark .active {
+  color: #f7423d;
 }
 .layout.dark .add {
   background: #f7423d;

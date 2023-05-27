@@ -30,7 +30,7 @@ const categories = [
   { value: "andriod", label: "Andriod" },
   { value: "ar", label: "AR" },
   { value: "branding", label: "Branding" },
-  { value: "graphics", label: "Graphics" },
+  { value: "desktop", label: "Desktop" },
   { value: "ios", label: "IOS app" },
   { value: "iot", label: "IOT" },
   { value: "sales", label: "Sales" },
@@ -159,9 +159,8 @@ export default function Create() {
       inProgress: false,
     };
 
-    console.log(project, thumbnail);
-
     await addDocument(project, thumbnail);
+
     if (!response.error) {
       history.push("/");
     }

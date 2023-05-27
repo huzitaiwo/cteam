@@ -74,9 +74,9 @@
   color: #fd413c;
   font-weight: 600;
 }
-
 .progress .card__progress {
   width: 100%;
+  margin-bottom: 5px;
 }
 
 /* dark mode */

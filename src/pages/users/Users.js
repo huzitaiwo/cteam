@@ -10,7 +10,11 @@ import "./Users.css";
 
 export default function Users() {
   const { mode } = useTheme();
-  const { documents: users, isPending, error } = useCollection("users");
+  const {
+    documents: users,
+    isPending,
+    error,
+  } = useCollection("users", "", ["displayName"]);
 
   if (isPending) {
     return <Loader />;

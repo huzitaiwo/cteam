@@ -47,6 +47,13 @@ button.Calendar__monthArrowWrapper.-left {
   background: #2b2f33;
   border-color: #4b5563;
 }
+.calender.dark .Calendar__day.-selected,
+.calender.dark
+  .Calendar__monthSelectorItem.-active
+  .Calendar__monthSelectorItemText,
+.calender.dark .Calendar__yearSelectorItem.-active .Calendar__yearSelectorText {
+  background-color: #f7423d;
+}
 .calender.dark button.Calendar__monthArrowWrapper.-right,
 .calender.dark button.Calendar__monthArrowWrapper.-left {
   background: #fff;

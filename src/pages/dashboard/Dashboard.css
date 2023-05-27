@@ -84,17 +84,17 @@
   color: #2c5bff;
   background: #edf1ff;
 }
-.branding,
-.sales {
+.branding {
   color: #7078ba;
   background: #d7dbfd;
 }
 .ios,
-.graphics {
+.desktop {
   color: #ff7262;
   background: #ffe3e0;
 }
-.iot {
+.iot,
+.sales {
   color: #9f7dd9;
   background: #f6f2fc;
 }
@@ -194,20 +194,17 @@
   color: #2c5bff;
   border-color: #2c5bff;
 }
-.branding.dark,
-.sales.dark {
+.branding.dark {
   color: #7078ba;
   border-color: #7078ba;
 }
-.graphics.dark {
-  color: #fd7b38;
-  border-color: #fd7b38;
-}
-.ios.dark {
+.ios.dark,
+.desktop.dark {
   color: #ff7262;
   border-color: #ff7262;
 }
-.iot.dark {
+.iot.dark,
+.sales.dark {
   color: #9f7dd9;
   border-color: #9f7dd9;
 }
@@ -223,7 +220,7 @@
 @media (max-width: 1200px) {
   .dashboard__card,
   .projects__card {
-    padding: 15px 10px;
+    padding: 10px;
   }
   .md-none {
     display: none;

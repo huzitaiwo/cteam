@@ -197,6 +197,10 @@ button.more {
 .send:focus {
   outline-color: #f7f6f4;
 }
+.send i {
+  display: inline-block;
+  margin-bottom: -10px;
+}
 
 /* dark mode */
 .project.dark .popup {
