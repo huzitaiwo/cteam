@@ -86,7 +86,6 @@
   color: #7078ba;
   background: #d7dbfd;
 }
-
 .ios,
 .graphics {
   color: #ff7262;
@@ -96,7 +95,6 @@
   color: #9f7dd9;
   background: #f6f2fc;
 }
-
 .users__more {
   display: flex;
   align-items: center;

@@ -1,4 +1,9 @@
+/* font import */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap");
+/* icons import */
+@import url("https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css");
 
 * {
   padding: 0;
@@ -71,6 +76,9 @@ body {
 svg {
   width: 24px;
 }
+i {
+  font-size: 22px;
+}
 /* authentication form */
 .form__auth {
   max-width: 500px;
@@ -115,7 +123,15 @@ svg {
 .input__field span {
   color: #abafb5;
 }
-.input__field.file {
+.form__auth .thumbnail {
+  margin-right: 10px;
+  width: 50px;
+}
+.form__auth .file {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 .input__icon {
@@ -123,12 +139,7 @@ svg {
   padding: 6px 8px 0 8px;
   border-radius: 5px;
   margin-right: 10px;
-}
-.input__field svg {
-  stroke: #fff;
-}
-.thumbnail {
-  width: 60px;
+  color: #fff;
 }
 .account a {
   text-decoration: none;

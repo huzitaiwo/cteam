@@ -36,11 +36,11 @@
   align-items: center;
   color: #a0a3b0;
 }
-.card__info svg:first-of-type {
-  margin-right: 10px;
+.card__info i {
+  margin-left: 5px;
 }
-.card__info svg:last-of-type {
-  margin-left: 4px;
+.card__info .fi-rr-paperclip-vertical {
+  margin: 0 10px 0 0;
 }
 
 /* dark mode */

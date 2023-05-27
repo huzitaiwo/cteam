@@ -216,7 +216,7 @@ export default function Create() {
           />
           <label className="file" htmlFor="file">
             <img src={Placeholder} alt="" className="thumbnail" />
-            {!thumbnail && <span>Project thumbnail</span>}
+            {!thumbnail && <span>Chosse project thumbnail</span>}
             {thumbnail && <span>{thumbnail.name}</span>}
           </label>
           {thumbnailError && (

@@ -35,38 +35,12 @@ export default function Navbar({ mobileMenu, setMobileMenu, screenWidth }) {
             setMobileMenu(true);
           }}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"
-            />
-          </svg>
+          <i className="fi fi-br-menu-burger"></i>
         </button>
       )}
       <header>
         <button className="searchButton">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-            />
-          </svg>
+          <i className="fi fi-br-search"></i>
         </button>
 
         <form className="search" onSubmit={handleSearch}>
@@ -74,20 +48,7 @@ export default function Navbar({ mobileMenu, setMobileMenu, screenWidth }) {
         </form>
 
         <button className="notification">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-            />
-          </svg>
+          <i className="fi fi-br-bell-ring"></i>
         </button>
 
         <Link to="/settings">

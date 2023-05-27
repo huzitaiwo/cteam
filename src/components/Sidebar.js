@@ -10,15 +10,6 @@ import { motion, AnimatePresence } from "framer-motion";
 // styles
 import "./Sidebar.css";
 
-const path = {
-  initial: { opacity: 0, pathLength: 0 },
-  animate: {
-    opacity: 1,
-    pathLength: 1,
-    transition: { duration: 1.5, ease: "easeInOut" },
-  },
-};
-
 const sidebar = {
   hidden: {
     opacity: 0,
@@ -49,22 +40,16 @@ export default function Sidebar({ mobileMenu, setMobileMenu, screenWidth }) {
             animate="visible"
           >
             <div className="logo">
-              <motion.svg
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
-                fill="none"
+                id="Layer_1"
+                data-name="Layer 1"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={1.5}
-                initial="initial"
-                animate="animate"
+                width="50"
+                height="50"
               >
-                <motion.path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
-                  variants={path}
-                />
-              </motion.svg>
+                <path d="m18.5,0H5.5C2.467,0,0,2.467,0,5.5v13c0,3.033,2.467,5.5,5.5,5.5h13c3.033,0,5.5-2.467,5.5-5.5V5.5c0-3.033-2.467-5.5-5.5-5.5Zm2.5,18.5c0,1.378-1.122,2.5-2.5,2.5H5.5c-1.378,0-2.5-1.122-2.5-2.5V5.5c0-1.378,1.122-2.5,2.5-2.5h13c1.378,0,2.5,1.122,2.5,2.5v13Zm-11.985-7.5v2c0,1.682,1.297,3,2.953,3h.5c1.003,0,1.936-.499,2.496-1.334.46-.688,1.394-.873,2.081-.411.688.461.873,1.393.411,2.081-1.118,1.668-2.982,2.665-4.988,2.665h-.5c-3.283,0-5.953-2.691-5.953-6v-2c0-3.309,2.67-6,5.953-6h.5c2.007,0,3.872.997,4.989,2.666.461.688.276,1.62-.412,2.081-.69.46-1.621.276-2.081-.412-.559-.835-1.492-1.334-2.496-1.334h-.5c-1.656,0-2.953,1.318-2.953,3Z" />
+              </svg>
             </div>
             <nav>
               <ul className="navigation-links">
@@ -79,20 +64,7 @@ export default function Sidebar({ mobileMenu, setMobileMenu, screenWidth }) {
                     exact
                     to="/"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
-                      />
-                    </svg>
+                    <i className="fi fi-rr-apps"></i>
                     <span>Dashboard</span>
                   </NavLink>
                 </motion.li>
@@ -106,20 +78,7 @@ export default function Sidebar({ mobileMenu, setMobileMenu, screenWidth }) {
                     }}
                     to="/projects"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
-                      />
-                    </svg>
+                    <i className="fi fi-rr-folder-open"></i>
                     <span>Projects</span>
                   </NavLink>
                 </motion.li>
@@ -133,49 +92,8 @@ export default function Sidebar({ mobileMenu, setMobileMenu, screenWidth }) {
                     }}
                     to="/tasks"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                      />
-                    </svg>
+                    <i className="fi fi-rr-settings-sliders"></i>
                     <span>Tasks</span>
-                  </NavLink>
-                </motion.li>
-                <motion.li
-                  whileHover={{ scale: 1.15, originX: 0 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <NavLink
-                    onClick={() => {
-                      setMobileMenu(false);
-                    }}
-                    to="/calender"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"
-                      />
-                    </svg>
-
-                    <span>Calender</span>
                   </NavLink>
                 </motion.li>
                 <motion.li
@@ -188,21 +106,7 @@ export default function Sidebar({ mobileMenu, setMobileMenu, screenWidth }) {
                     }}
                     to="/settings"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-6.063 16.658l.26-1.477m2.605-14.772l.26-1.477m0 17.726l-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205L12 12m6.894 5.785l-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864l-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495"
-                      />
-                    </svg>
-
+                    <i className="fi fi-rr-settings"></i>
                     <span>Settings</span>
                   </NavLink>
                 </motion.li>
@@ -216,21 +120,7 @@ export default function Sidebar({ mobileMenu, setMobileMenu, screenWidth }) {
                     }}
                     to="/users"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"
-                      />
-                    </svg>
-
+                    <i className="fi fi-rr-users-alt"></i>
                     <span>Users</span>
                   </NavLink>
                 </motion.li>

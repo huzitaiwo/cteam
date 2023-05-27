@@ -9,14 +9,13 @@
 }
 .logo svg {
   width: 80px;
-  stroke: #64666c;
-  transform: rotateZ(45deg);
+  fill: #64666c;
 }
 .navigation-links li {
   list-style: none;
   margin-bottom: 20px;
 }
-.navigation-links svg {
+.navigation-links i {
   margin-right: 10px;
 }
 .navigation-links a {
@@ -42,14 +41,14 @@
 
 /* dark mode */
 .sidebar.dark .logo svg {
-  stroke: #fff;
+  fill: #85878a;
 }
-.sidebar.dark .navigation-links svg {
-  stroke: #85878a;
+.sidebar.dark .navigation-links i {
+  color: #85878a;
 }
-.sidebar.dark .navigation-links a.active svg,
-.sidebar.dark .navigation-links a:hover svg {
-  stroke: #f7423d;
+.sidebar.dark .navigation-links a.active i,
+.sidebar.dark .navigation-links a:hover i {
+  color: #f7423d;
 }
 .sidebar.dark .navigation-links a {
   color: #85878a;
@@ -84,11 +83,11 @@
   .sidebar .logo svg {
     width: 50px;
   }
-  .navigation-links svg {
-    width: 40px;
-  }
   .navigation-links span {
     display: none;
+  }
+  .navigation-links a {
+    padding: 10px 25px 0 20px;
   }
   .navigation-links a.active,
   .navigation-links a:hover {
@@ -108,9 +107,6 @@
   }
   .sidebar.dark {
     box-shadow: none;
-  }
-  .navigation-links svg {
-    width: 24px;
   }
   .navigation-links span {
     display: initial;

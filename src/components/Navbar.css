@@ -18,9 +18,6 @@ header {
   margin: 0 15px 0 0;
   background: #fff;
 }
-.hamburger svg {
-  width: 30px;
-}
 form.search {
   margin-right: auto;
   width: 100%;
@@ -50,10 +47,8 @@ form.search input {
 .navbar.dark .hamburger {
   background: #2b2f33;
 }
-.navbar.dark .notification svg,
-.navbar.dark .hamburger svg,
-.navbar.dark .searchButton svg {
-  stroke: #858789;
+.navbar.dark i {
+  color: #858789;
 }
 
 @media (max-width: 500px) {

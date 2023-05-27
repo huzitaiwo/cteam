@@ -17,13 +17,13 @@
 .project__header button.active {
   border-bottom-color: #fd8b51;
 }
+
+/* tasks component */
 .tasks__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
 }
-
-/* tasks component */
 .tasks__list {
   padding: 10px 15px;
   border-radius: 10px;
@@ -35,6 +35,10 @@
 }
 .tasks__list li:last-of-type {
   margin-bottom: 0;
+}
+.tasks__list .fi,
+.popup .fi {
+  font-size: 18px;
 }
 .tasks__high {
   background: #ff7782;
@@ -57,18 +61,27 @@
 button.more {
   color: #fff;
 }
-.handleFunction {
+.popup {
   box-shadow: 0 1em 3em rgba(156, 136, 255, 0.2);
   border-radius: 5px;
   position: absolute;
   top: 40px;
   right: 20px;
+  background: #fff;
 }
-.handleFunction li {
+.popup li {
   list-style: none;
+}
+.popup li:hover {
+  list-style: none;
+  background: #f7f6f4;
   border-radius: 5px;
 }
-.handleFunction button {
+.popup li:first-of-type {
+  list-style: none;
+  border-bottom: 1px solid #f3f3f3;
+}
+.popup button {
   padding: 10px;
   width: 100%;
   height: 100%;
@@ -77,15 +90,15 @@ button.more {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #fff;
 }
-.handleFunction button.mark {
-  border-radius: 5px;
-  background: #60b158;
+.popup button.mark {
+  color: #60b158;
 }
-.handleFunction button.delete {
-  background: #fd413c;
-  border-radius: 5px;
+.popup button.mark i {
+  margin-left: 10px;
+}
+.popup button.delete {
+  color: #fd413c;
 }
 .tasks__name {
   font-size: 1rem;
@@ -114,12 +127,12 @@ button.more {
   display: flex;
   align-items: center;
 }
-.tasks__list svg.checked {
-  fill: #60b158;
-  stroke: #fff;
+.tasks__list i.checked {
+  color: #60b158;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   position: absolute;
-  top: -9px;
-  right: -9px;
+  top: -7px;
+  right: -7px;
 }
 
 /* comments component */
@@ -184,11 +197,18 @@ button.more {
 .send:focus {
   outline-color: #f7f6f4;
 }
-.send svg {
-  transform: rotateZ(-45deg);
-}
 
 /* dark mode */
+.project.dark .popup {
+  box-shadow: none;
+  background: #2b2f33;
+}
+.project.dark .popup li:hover {
+  background: #4b5563;
+}
+.project.dark .popup li:first-of-type {
+  border-bottom-color: #4b5563;
+}
 .project.dark .project__header button {
   color: #85878a;
 }

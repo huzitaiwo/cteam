@@ -2,12 +2,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+// framer motion
+import { motion } from "framer-motion";
+
 // hooks
 import { useTheme } from "../../hooks/useTheme";
 import { useSignup } from "../../hooks/useSignup";
 
 // images
-import Thumbnail from "../../assets/img/thumbnail.png";
+import Placeholder from "../../assets/brand/placeholder.svg";
 
 export default function Signup() {
   const { mode } = useTheme();
@@ -52,20 +55,7 @@ export default function Signup() {
 
         <label className="input__field">
           <div className="input__icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-              />
-            </svg>
+            <i className="fi fi-rr-envelope"></i>
           </div>
           <input
             required
@@ -78,20 +68,7 @@ export default function Signup() {
 
         <label className="input__field">
           <div className="input__icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
-              />
-            </svg>
+            <i className="fi fi-br-lock"></i>
           </div>
           <input
             required
@@ -104,20 +81,7 @@ export default function Signup() {
 
         <label className="input__field">
           <div className="input__icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-              />
-            </svg>
+            <i className="fi fi-rr-user"></i>
           </div>
           <input
             required
@@ -138,8 +102,8 @@ export default function Signup() {
           />
 
           <label className="input__field file" htmlFor="file">
-            <img src={Thumbnail} alt="" className="thumbnail" />
-            {!thumbnail && <span>Profile Image</span>}
+            <img src={Placeholder} alt="" className="thumbnail" />
+            {!thumbnail && <span>Chooose profile picture</span>}
             {thumbnail && <span>{thumbnail.name}</span>}
           </label>
           {thumbnailError && (
@@ -147,7 +111,18 @@ export default function Signup() {
           )}
         </div>
 
-        {!isPending && <button className={`btn ${mode}`}>Sign up</button>}
+        {!isPending && (
+          <motion.button
+            className={`btn ${mode}`}
+            whileHover={{
+              scale: 1.1,
+              textShadow: "0 0 1px #fd413c",
+              boxShadow: "0 0 5px #fd413c",
+            }}
+          >
+            Signup
+          </motion.button>
+        )}
         {isPending && (
           <button disabled className={`btn ${mode}`}>
             Signing up...

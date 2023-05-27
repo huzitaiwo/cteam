@@ -16,7 +16,6 @@ import "./App.css";
 import CreateTask from "./pages/createtask/CreateTask";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Settings from "./pages/settings/Settings";
-import Calender from "./pages/calender/Calender";
 import Projects from "./pages/projects/Projects";
 import Project from "./pages/project/Project";
 import Signup from "./pages/signup/Signup";
@@ -98,10 +97,6 @@ function App() {
                   <Route path="/tasks">
                     {!user && <Redirect to="/login" />}
                     {user && <Task />}
-                  </Route>
-                  <Route path="/calender">
-                    {!user && <Redirect to="/login" />}
-                    {user && <Calender />}
                   </Route>
                   <Route path="/create">
                     {!user && <Redirect to="/login" />}

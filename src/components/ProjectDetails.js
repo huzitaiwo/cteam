@@ -30,14 +30,14 @@ export default function ProjectDetails({ project, tasks }) {
   };
 
   const handleComplete = async (id) => {
-    setPopup({});
+    setPopup(false);
     await updateDocument(id, {
       isCompleted: true,
       inProgress: false,
     });
   };
   const handleDelete = async (id) => {
-    setPopup({});
+    setPopup(false);
     await deleteDocument(id);
 
     tasks.forEach(async (task) => {
@@ -60,39 +60,18 @@ export default function ProjectDetails({ project, tasks }) {
         <h1>{project.name} Project</h1>
         {project.createdBy.id === user.uid && (
           <button onClick={() => setPopup(!popup)} className="project__action">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
-            </svg>
+            <i className="fi fi-br-menu-dots-vertical"></i>
           </button>
         )}
         {popup && (
-          <div className="handleFunction">
+          <div className="popup">
             <ul>
               <li>
                 <button
                   onClick={() => handleComplete(project.id)}
                   className="mark"
                 >
-                  mark as complete{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
+                  mark as complete <i className="fi fi-br-check"></i>
                 </button>
               </li>
               <li>
@@ -100,21 +79,7 @@ export default function ProjectDetails({ project, tasks }) {
                   onClick={() => handleDelete(project.id)}
                   className="delete"
                 >
-                  delete{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
+                  delete <i className="fi fi-br-cross"></i>
                 </button>
               </li>
             </ul>
