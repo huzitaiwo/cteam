@@ -19,7 +19,7 @@
   padding-left: 15px;
 }
 .user__name {
-  padding-left: 0 !important;
+  padding: 0 !important;
 }
 .user__name h2 {
   font-size: 1rem;
