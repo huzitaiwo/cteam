@@ -16,16 +16,6 @@ export default function Navbar({ mobileMenu, setMobileMenu, screenWidth }) {
   const { user } = useAuthContext();
   const history = useHistory();
 
-  const [term, setTerm] = useState("");
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-
-    history.push(`/search?q=${term}`);
-
-    setTerm("");
-  };
-
   return (
     <div className={`navbar ${mode}`}>
       {!mobileMenu && screenWidth < 501 && (
@@ -43,7 +33,7 @@ export default function Navbar({ mobileMenu, setMobileMenu, screenWidth }) {
           <i className="fi fi-br-search"></i>
         </button>
 
-        <form className="search" onSubmit={handleSearch}>
+        <form className="search">
           <input type="text" placeholder="search" />
         </form>
 

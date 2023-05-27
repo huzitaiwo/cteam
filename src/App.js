@@ -19,7 +19,6 @@ import Settings from "./pages/settings/Settings";
 import Projects from "./pages/projects/Projects";
 import Project from "./pages/project/Project";
 import Signup from "./pages/signup/Signup";
-import Search from "./pages/search/Search";
 import Sidebar from "./components/Sidebar";
 import Create from "./pages/create/Create";
 import Navbar from "./components/Navbar";
@@ -78,10 +77,6 @@ function App() {
             <main>
               <AnimatePresence>
                 <Switch>
-                  <Route exact path="/search">
-                    {!user && <Redirect to="/login" />}
-                    {user && <Search />}
-                  </Route>
                   <Route exact path="/">
                     {!user && <Redirect to="/login" />}
                     {user && <Dashboard />}
