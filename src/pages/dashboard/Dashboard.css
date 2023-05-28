@@ -164,6 +164,10 @@
   flex: 1;
   font-weight: 600;
 }
+.card__tasks i {
+  margin-top: 5px;
+  font-size: 18px;
+}
 
 /* __________dark mode__________ */
 .dashboard.dark .dashboard__card,

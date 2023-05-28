@@ -64,6 +64,7 @@ export default function Signup() {
     };
 
     const errorCallback = (error) => {
+      signup(email, password, displayName, thumbnail, "");
       console.log(error);
     };
 

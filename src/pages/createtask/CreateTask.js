@@ -82,6 +82,7 @@ export default function CreateTask() {
 
     if (taskTags.length < 1) {
       setFormError("Please select atleast one task tag");
+      return;
     }
 
     if (assignedUsers.length < 1) {

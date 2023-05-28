@@ -86,7 +86,8 @@ export default function ProjectDetails({ project, tasks }) {
           </div>
         )}
       </div>
-      <ul className="project__info">
+
+      <ul onClick={() => setPopup(false)} className="project__info">
         <li>
           <h5>
             <span>Priority</span>:

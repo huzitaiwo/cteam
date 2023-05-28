@@ -6,8 +6,9 @@
   font-weight: 500;
 }
 .card__progress .done {
+  color: #303648;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 .progress__bar {
   height: 5px;
@@ -36,7 +37,11 @@
 .bar__low {
   background: #717eee;
 }
+
 /* __________dark mode_________ */
 .dashboard.dark .progress__bar {
   background: #3e4246;
+}
+.dashboard.dark .card__progress .done {
+  color: #85878a;
 }

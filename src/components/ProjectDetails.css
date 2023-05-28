@@ -91,6 +91,9 @@
 .project.dark .progress__bar {
   background: #3e4246;
 }
+.project.dark .card__progress .done {
+  color: #85878a;
+}
 
 @media (max-width: 550px) {
   .project__info h5 {

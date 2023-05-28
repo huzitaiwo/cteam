@@ -59,7 +59,7 @@ const priorities = [
 export default function Create() {
   const { mode } = useTheme();
   const { user } = useAuthContext();
-  const { documents } = useCollection("users");
+  const { documents } = useCollection("users", "", ["displayName"]);
   const { addDocument, response } = useFirestore("projects");
   const [users, setUsers] = useState([]);
   const [category, setCategory] = useState([]);
@@ -70,9 +70,7 @@ export default function Create() {
   const [companyName, setCompanyName] = useState("");
   const [thumbnail, setThumbnail] = useState(null);
   const [thumbnailError, setThumbnailError] = useState(null);
-  const [details, setDetails] = useState(
-    "This project need a new brand identify where they will recognize"
-  );
+  const [details, setDetails] = useState("");
   const [dueDate, setDueDate] = useState("");
   const [priority, setPriority] = useState("");
   const [projectCategories, setProjectCategories] = useState([]);
