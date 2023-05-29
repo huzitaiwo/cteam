@@ -73,7 +73,7 @@ export default function Dashboard() {
                   You haven't been asigned any project
                 </p>
               )}
-              {myProjects.map((project) => (
+              {myProjects.slice(0, 2).map((project) => (
                 <Link
                   to={`/projects/${project.id}`}
                   key={project.id}

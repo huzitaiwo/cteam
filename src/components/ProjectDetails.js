@@ -51,9 +51,11 @@ export default function ProjectDetails({ project, tasks }) {
     <div>
       <div
         className="project__banner"
-        style={{
-          backgroundImage: `url(${project.photoURL})`,
-        }}
+        style={
+          project.photoURL && {
+            backgroundImage: `url(${project.photoURL})`,
+          }
+        }
       >
         <div className="backdrop"></div>
         <small>Project / {project.companyName}</small>
