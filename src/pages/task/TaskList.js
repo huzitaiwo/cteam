@@ -11,7 +11,7 @@ export default function TaskList({ documents, task, i }) {
   const { mode } = useTheme();
 
   return (
-    <Link to={`/projects/${task.projectID}`} key={task.id} className="td">
+    <Link to={`/projects/${task.projectID}`} className="td">
       <div className={`task__name`}>
         <span>
           {documents.length < 10 && 0}
@@ -31,12 +31,13 @@ export default function TaskList({ documents, task, i }) {
           ))}
       </div>
       <ul>
-        {task.assignedUsersList && (
-          <li key={task.assignedUsersList[0].photoURL} className="task__user">
-            <Avatar src={task.assignedUsersList[0].photoURL} />
+        {task.assignedUsersList.slice(0, 1).map((user) => (
+          <li className="task__user" key={user.photoURL}>
+            <Avatar src={user.photoURL} />
             <span>{task.assignedUsersList[0].displayName}</span>
           </li>
-        )}
+        ))}
+        ...
       </ul>
       <p className="task__duedate">
         {task.dueDate.toDate().toDateString().slice(3)}

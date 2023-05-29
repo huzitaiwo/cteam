@@ -28,7 +28,7 @@ export const useSignup = () => {
       }
 
       // upload user thumbnail
-      const uploadPath = `thumbnails/${thumbnail.name}`;
+      const uploadPath = `thumbnails/${res.user.uid}/${thumbnail.name}`;
       const photo = await firebaseStorage.ref(uploadPath).put(thumbnail);
       const photoURL = await photo.ref.getDownloadURL();
 

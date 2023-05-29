@@ -58,6 +58,7 @@ export default function ProjectDetails({ project, tasks }) {
         <div className="backdrop"></div>
         <small>Project / {project.companyName}</small>
         <h1>{project.name} Project</h1>
+        <p>{project.details}</p>
         {project.createdBy.id === user.uid && (
           <button onClick={() => setPopup(!popup)} className="project__action">
             <i className="fi fi-br-menu-dots-vertical"></i>

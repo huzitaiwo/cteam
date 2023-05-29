@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Select from "react-select";
 
-// pages, components, hooks, context
-import { useCollection } from "../../hooks/useCollection";
+// hooks
 import { useTheme } from "../../hooks/useTheme";
-import { useAuthContext } from "../../hooks/useAuthContext";
 import { useFirestore } from "../../hooks/useFirestore";
+import { useCollection } from "../../hooks/useCollection";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 // firebase function
 import { timestamp } from "../../firebase/config";
@@ -31,7 +31,7 @@ const categories = [
   { value: "ar", label: "AR" },
   { value: "branding", label: "Branding" },
   { value: "desktop", label: "Desktop" },
-  { value: "ios", label: "IOS app" },
+  { value: "ios", label: "IOS" },
   { value: "iot", label: "IOT" },
   { value: "sales", label: "Sales" },
   { value: "uiux", label: "ui/ux" },
@@ -58,23 +58,23 @@ const priorities = [
 
 export default function Create() {
   const { mode } = useTheme();
+  const history = useHistory();
   const { user } = useAuthContext();
-  const { documents } = useCollection("users", "", ["displayName"]);
-  const { addDocument, response } = useFirestore("projects");
   const [users, setUsers] = useState([]);
   const [category, setCategory] = useState([]);
-  const history = useHistory();
+  const { addDocument, response } = useFirestore("projects");
+  const { documents } = useCollection("users", "", ["displayName"]);
 
   // form field values
   const [name, setName] = useState("");
   const [companyName, setCompanyName] = useState("");
+  const [companyBrand, setCompanyBrand] = useState([]);
   const [thumbnail, setThumbnail] = useState(null);
   const [thumbnailError, setThumbnailError] = useState(null);
   const [details, setDetails] = useState("");
   const [dueDate, setDueDate] = useState("");
   const [priority, setPriority] = useState("");
   const [projectCategories, setProjectCategories] = useState([]);
-  const [companyBrand, setCompanyBrand] = useState([]);
   const [assignedUsers, setAssignedUsers] = useState([]);
   const [formError, setFormError] = useState(null);
 
@@ -115,10 +115,10 @@ export default function Create() {
 
     setFormError(null);
 
-    if (!priority) {
-      setFormError("Please select project priority");
+    if (!companyBrand) {
+      setFormError("Please select default company logo");
+      return;
     }
-
     if (projectCategories.length < 1) {
       setFormError("Please select at least one project category");
       return;
@@ -126,6 +126,9 @@ export default function Create() {
     if (assignedUsers.length < 1) {
       setFormError("Please assign the project to at least one user");
       return;
+    }
+    if (!priority) {
+      setFormError("Please select project priority");
     }
 
     const createdBy = {
@@ -160,7 +163,7 @@ export default function Create() {
     await addDocument(project, thumbnail);
 
     if (!response.error) {
-      history.push("/");
+      history.push("/projects");
     }
   };
 
@@ -211,7 +214,7 @@ export default function Create() {
             type="file"
             onChange={handleFileChange}
           />
-          <label className="file" htmlFor="file">
+          <label tabIndex={0} className="file" htmlFor="file">
             <img src={Placeholder} alt="" className="thumbnail" />
             {!thumbnail && <span>Choose project thumbnail</span>}
             {thumbnail && <span>{thumbnail.name}</span>}
@@ -222,7 +225,7 @@ export default function Create() {
         </div>
 
         <label>
-          <span>Project details:</span>
+          <span>Project description:</span>
           <textarea
             required
             type="text"
@@ -272,7 +275,7 @@ export default function Create() {
 
         {response.isPending && (
           <button disabled className={`btn ${mode}`}>
-            adding project...
+            ...
           </button>
         )}
         {!response.isPending && (

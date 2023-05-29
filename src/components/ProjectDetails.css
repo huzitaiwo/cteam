@@ -1,7 +1,7 @@
 .project__banner {
   min-height: 150px;
   color: #fff;
-  padding: 100px 0 0 20px;
+  padding: 100px 0 10px 20px;
   position: relative;
   z-index: 1;
 }

@@ -44,7 +44,12 @@ export default function Task() {
           </div>
           <div>
             {documents.map((task, index) => (
-              <TaskList documents={documents} task={task} i={index} />
+              <TaskList
+                key={task.id}
+                documents={documents}
+                task={task}
+                i={index}
+              />
             ))}
           </div>
         </div>
