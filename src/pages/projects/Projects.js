@@ -61,7 +61,7 @@ export default function Projects() {
 
   if (projects && projects.length === 0) {
     return (
-      <p className={`project-redirect error ${mode}`}>
+      <p className={`project-redirect no___action ${mode}`}>
         No projects yet! Add a new project <Link to="/create">here</Link>
       </p>
     );
@@ -84,7 +84,7 @@ export default function Projects() {
                   <i className="fi fi-br-menu-dots"></i>
                 </div>
                 {workingProjects.length === 0 && (
-                  <p className={`error ${mode}`}>
+                  <p className={`no___action ${mode}`}>
                     You have no project in hand!
                   </p>
                 )}
@@ -103,7 +103,7 @@ export default function Projects() {
                   <i className="fi fi-br-menu-dots"></i>
                 </div>
                 {projectsInProgress.length === 0 && (
-                  <p className={`error ${mode}`}>
+                  <p className={`no___action ${mode}`}>
                     You haven't started any project yet!
                   </p>
                 )}
@@ -121,7 +121,7 @@ export default function Projects() {
                   <i className="fi fi-br-menu-dots"></i>
                 </div>
                 {completedProjects.length === 0 && (
-                  <p className={`error ${mode}`}>
+                  <p className={`no___action ${mode}`}>
                     You haven't completed any project yet!
                   </p>
                 )}

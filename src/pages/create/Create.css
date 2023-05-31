@@ -6,6 +6,7 @@
   text-transform: uppercase;
   font-weight: 800;
   margin-bottom: 15px;
+  font-size: 1.1rem;
 }
 .form__create span {
   font-weight: 600;
@@ -39,7 +40,11 @@
   margin: 3px 0 20px;
 }
 .form__create .thumbnail {
-  margin-right: 10px;
+  height: 100px;
+  width: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
 }
 .form__create .file {
   text-align: center;
@@ -47,6 +52,10 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+.form__create .file span {
+  text-transform: lowercase;
+  margin-left: 10px;
 }
 .brand__option {
   display: flex;

@@ -53,11 +53,20 @@
   border-right-color: transparent;
 }
 .task__name {
-  border-left: 4px solid #9c9fad;
+  border-left: 3px solid transparent;
   font-weight: 600;
   font-size: 1.1rem;
   display: flex;
   align-items: center;
+}
+.task__high {
+  border-left-color: #ff7782;
+}
+.task__medium {
+  border-left-color: #45bfff;
+}
+.task__low {
+  border-left-color: #717eee;
 }
 .tasks i {
   margin: 0 15px -5px 10px;
@@ -160,7 +169,6 @@
 .users.dark,
 .users.dark .td {
   color: #abadae;
-  stroke: #abadae;
 }
 .tasks.dark .h3,
 .tasks.dark .thead,
@@ -189,8 +197,21 @@
   .tasks .thead {
     display: none;
   }
+  .task__name {
+    border: none;
+  }
   .tasks .td {
     grid-template-columns: 1fr;
+    border-left: 3px solid transparent;
+  }
+  .tasks .td__high {
+    border-left-color: #ff7782;
+  }
+  .tasks .td__medium {
+    border-left-color: #45bfff;
+  }
+  .tasks .td__low {
+    border-left-color: #717eee;
   }
   .tasks .td > div:first-of-type {
     width: 100%;

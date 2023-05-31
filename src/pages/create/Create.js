@@ -1,7 +1,7 @@
 // react packages & other packages
+import Select from "react-select";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import Select from "react-select";
 
 // hooks
 import { useTheme } from "../../hooks/useTheme";
@@ -62,21 +62,28 @@ export default function Create() {
   const { user } = useAuthContext();
   const [users, setUsers] = useState([]);
   const [category, setCategory] = useState([]);
+  const [thumbnailUrl, setThumbnailUrl] = useState(null);
   const { addDocument, response } = useFirestore("projects");
   const { documents } = useCollection("users", "", ["displayName"]);
 
   // form field values
   const [name, setName] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [companyBrand, setCompanyBrand] = useState([]);
-  const [thumbnail, setThumbnail] = useState(null);
-  const [thumbnailError, setThumbnailError] = useState(null);
   const [details, setDetails] = useState("");
   const [dueDate, setDueDate] = useState("");
   const [priority, setPriority] = useState("");
-  const [projectCategories, setProjectCategories] = useState([]);
-  const [assignedUsers, setAssignedUsers] = useState([]);
+  const [thumbnail, setThumbnail] = useState(null);
   const [formError, setFormError] = useState(null);
+  const [companyName, setCompanyName] = useState("");
+  const [companyBrand, setCompanyBrand] = useState([]);
+  const [assignedUsers, setAssignedUsers] = useState([]);
+  const [thumbnailError, setThumbnailError] = useState(null);
+  const [projectCategories, setProjectCategories] = useState([]);
+
+  useEffect(() => {
+    if (thumbnail) {
+      setThumbnailUrl(URL.createObjectURL(thumbnail));
+    }
+  }, [thumbnail]);
 
   useEffect(() => {
     setCategory(categories);
@@ -215,9 +222,22 @@ export default function Create() {
             onChange={handleFileChange}
           />
           <label tabIndex={0} className="file" htmlFor="file">
-            <img src={Placeholder} alt="" className="thumbnail" />
-            {!thumbnail && <span>Choose project thumbnail</span>}
-            {thumbnail && <span>{thumbnail.name}</span>}
+            {!thumbnail && (
+              <>
+                <img src={Placeholder} alt="placeholder" />
+                <span>Choose project thumbnail</span>
+              </>
+            )}
+            {thumbnail && (
+              <>
+                <img
+                  src={thumbnailUrl}
+                  alt="project thumbnail"
+                  className="thumbnail"
+                />
+                <span>{thumbnail.name}</span>
+              </>
+            )}
           </label>
           {thumbnailError && (
             <div className={`error ${mode}`}>{thumbnailError}</div>

@@ -26,13 +26,19 @@ body {
   border: 2px solid #fff;
 }
 
-.error {
+.error,
+.no___action {
   background: pink;
   border: 1px solid red;
   border-radius: 4px;
   color: red;
   margin: 10px 0;
   padding: 8px;
+}
+.no___action {
+  border-color: #abafb5;
+  color: #abafb5;
+  background: #fff;
 }
 .high {
   color: #ff7782;
@@ -124,8 +130,11 @@ i {
   color: #abafb5;
 }
 .form__auth .thumbnail {
-  margin-right: 10px;
-  width: 50px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
 }
 .form__auth .file {
   text-align: center;
@@ -133,6 +142,10 @@ i {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+.form__auth .file span {
+  text-transform: lowercase;
+  margin-left: 10px;
 }
 .input__icon {
   background: #fd7b38;
@@ -148,6 +161,11 @@ i {
 /* dark mode */
 .error.dark {
   background: #403034;
+}
+.no___action.dark {
+  background: #2b2f33;
+  border-color: #4b5563;
+  color: #abafb5;
 }
 .success.dark,
 .completed.dark {

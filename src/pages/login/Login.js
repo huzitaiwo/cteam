@@ -67,7 +67,7 @@ export default function Login() {
         )}
         {isPending && (
           <button disabled className={`btn ${mode}`}>
-            Loging in...
+            ...
           </button>
         )}
         {error && <div className={`error ${mode}`}>{error}</div>}

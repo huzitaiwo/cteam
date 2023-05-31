@@ -124,7 +124,7 @@ export default function CreateTask() {
 
   return (
     <div className={`form__create ${mode}`}>
-      <h2>Add tasks to your existing projects</h2>
+      <h2>Add tasks to your existing project</h2>
       <form onSubmit={handleSubmit}>
         <label>
           <span>Task name:</span>

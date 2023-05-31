@@ -56,7 +56,7 @@ export default function Dashboard() {
 
   if (documents && documents.length === 0) {
     return (
-      <p className={`project-redirect error ${mode}`}>
+      <p className={`project-redirect no___action ${mode}`}>
         No activities yet in your dashboard!
       </p>
     );
@@ -69,7 +69,7 @@ export default function Dashboard() {
           <div className="dashboard__grid">
             <div className="grid__1">
               {myProjects.length === 0 && (
-                <p className={`error ${mode}`}>
+                <p className={`no___action ${mode}`}>
                   You haven't been asigned any project
                 </p>
               )}
@@ -143,7 +143,7 @@ export default function Dashboard() {
             </div>
             <div className="grid__2">
               {myTasks && myTasks.length === 0 && (
-                <p className={`error ${mode}`}>
+                <p className={`no___action ${mode}`}>
                   You haven't been asigned any task
                 </p>
               )}

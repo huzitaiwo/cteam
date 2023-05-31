@@ -21,7 +21,7 @@ export default function Settings() {
             Logout
           </button>
         )}
-        {isPending && <button className={`btn ${mode}`}>Logging out...</button>}
+        {isPending && <button className={`btn ${mode}`}>...</button>}
       </div>
       {error && <p className={`error ${mode}`}>{error}</p>}
     </div>

@@ -1,5 +1,5 @@
 // react packages
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // framer motion
@@ -18,9 +18,16 @@ export default function Signup() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [displayName, setDisplayName] = useState("");
   const [thumbnail, setThumbnail] = useState(null);
+  const [displayName, setDisplayName] = useState("");
+  const [thumbnailUrl, setThumbnailUrl] = useState(null);
   const [thumbnailError, setThumbnailError] = useState(null);
+
+  useEffect(() => {
+    if (thumbnail) {
+      setThumbnailUrl(URL.createObjectURL(thumbnail));
+    }
+  }, [thumbnail]);
 
   const handleFileChange = (e) => {
     setThumbnail(null);
@@ -128,9 +135,18 @@ export default function Signup() {
           />
 
           <label className="input__field file" htmlFor="file">
-            <img src={Placeholder} alt="" className="thumbnail" />
-            {!thumbnail && <span>Choose profile picture</span>}
-            {thumbnail && <span>{thumbnail.name}</span>}
+            {!thumbnail && (
+              <>
+                <img src={Placeholder} alt="placeholder" />
+                <span>Choose a profile picture</span>
+              </>
+            )}
+            {thumbnail && (
+              <>
+                <img src={thumbnailUrl} alt="profile" className="thumbnail" />
+                <span>{thumbnail.name}</span>
+              </>
+            )}
           </label>
           {thumbnailError && (
             <div className={`error ${mode}`}>{thumbnailError}</div>
@@ -151,7 +167,7 @@ export default function Signup() {
         )}
         {isPending && (
           <button disabled className={`btn ${mode}`}>
-            Signing up...
+            ...
           </button>
         )}
         {error && <div className={`error ${mode}`}>{error}</div>}
