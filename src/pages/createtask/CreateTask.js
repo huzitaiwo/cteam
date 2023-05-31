@@ -17,7 +17,9 @@ import { timestamp } from "../../firebase/config";
 // setting task tags
 const tags = [
   { value: "ae", label: "AfterEffect" },
+  { value: "xd", label: "Adobe XD" },
   { value: "bootstrap", label: "Bootstrap" },
+  { value: "canva", label: "Canva" },
   { value: "corel", label: "Corel Draw" },
   { value: "css", label: "Css" },
   { value: "figma", label: "Figma" },
@@ -31,17 +33,16 @@ const tags = [
   { value: "illustrator", label: "Illustrator" },
   { value: "javascript", label: "Js" },
   { value: "laravel", label: "Laravel" },
-  { value: "native", label: "React Native" },
   { value: "node", label: "Nodejs" },
   { value: "photoshop", label: "Photoshop" },
   { value: "php", label: "Php" },
   { value: "python", label: "Python" },
   { value: "react", label: "Reactjs" },
+  { value: "native", label: "React Native" },
   { value: "scss", label: "SCSS" },
   { value: "sketch", label: "Sketch" },
   { value: "tailwind", label: "Tailwind" },
   { value: "vue", label: "Vuejs" },
-  { value: "xd", label: "Adobe XD" },
 ];
 
 export default function CreateTask() {

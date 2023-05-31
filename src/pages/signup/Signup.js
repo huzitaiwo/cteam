@@ -95,7 +95,7 @@ export default function Signup() {
             type="email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
-            placeholder="Email"
+            placeholder="email"
           />
         </label>
 
@@ -108,7 +108,7 @@ export default function Signup() {
             type="password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
-            placeholder="Password"
+            placeholder="password"
           />
         </label>
 
@@ -121,7 +121,7 @@ export default function Signup() {
             type="text"
             onChange={(e) => setDisplayName(e.target.value)}
             value={displayName}
-            placeholder="Display Name"
+            placeholder="username"
           />
         </label>
 

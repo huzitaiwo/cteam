@@ -154,10 +154,15 @@ export default function ProjectDetails({ project, tasks }) {
             <span className={`status completed ${mode}`}>Completed</span>
           )}
           {project.inProgress && (
-            <span className="status progress_select">In progress</span>
+            <span className={`status progress_select ${mode}`}>
+              In progress
+            </span>
           )}
           {!project.isCompleted && !project.inProgress && (
-            <button onClick={startProject} className="status progress_select">
+            <button
+              onClick={startProject}
+              className={`status progress_select ${mode}`}
+            >
               Start Project
             </button>
           )}

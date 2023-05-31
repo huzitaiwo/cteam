@@ -7,6 +7,9 @@
   border-bottom: 2px solid transparent;
   margin-right: 20px;
 }
+.project__header button.active {
+  border-bottom-color: #fd8b51;
+}
 .project__header .add {
   margin-left: auto;
   padding: 5px;
@@ -14,8 +17,9 @@
   align-items: center;
   text-decoration: none;
 }
-.project__header button.active {
-  border-bottom-color: #fd8b51;
+.project__header .add i {
+  font-size: 18px;
+  margin-right: 5px;
 }
 
 /* tasks component */

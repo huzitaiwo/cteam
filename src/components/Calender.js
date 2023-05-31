@@ -40,7 +40,7 @@ export default function Calender() {
   return (
     <div className={`calender ${mode}`}>
       {preselectedDays.length === 0 && (
-        <p className={`error ${mode}`}>No project means no deadline</p>
+        <p className={`no___action ${mode}`}>No project means no deadline</p>
       )}
 
       {preselectedDays.length > 0 && (

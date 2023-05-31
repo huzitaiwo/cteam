@@ -15,6 +15,10 @@
   color: #4e5157;
   border-radius: 1rem;
   margin-bottom: 15px;
+}
+.dashboard__card:hover,
+.projects__card:hover,
+.calender__card:hover {
   box-shadow: 0 1em 3em rgba(156, 136, 255, 0.2);
 }
 .card__head,
@@ -129,8 +133,10 @@
   border: 1px solid #fff;
   border-radius: 1rem;
   padding: 15px 0;
-  box-shadow: 5px 5px 15px #f7f6f4;
   margin-bottom: 15px;
+}
+.card__tasks:hover {
+  box-shadow: 5px 5px 15px #f7f6f4;
 }
 .card__tasks h3 {
   margin: 0 0 15px 15px;
@@ -156,6 +162,10 @@
 .card__tasks a:last-of-type {
   border: none;
 }
+.card__tasks a:hover {
+  background: #f7f6f4;
+  box-shadow: 0 1em 3em #f7f6f4;
+}
 .card__tasks small {
   margin-right: 15px;
   font-weight: 600;
@@ -176,7 +186,12 @@
 .dashboard.dark .card__tasks {
   background: #2b2f33;
   border-color: #4b5563;
-  box-shadow: none;
+}
+.dashboard.dark .dashboard__card:hover,
+.projects.dark .projects__card:hover,
+.dashboard.dark .calender__card:hover,
+.dashboard.dark .card__tasks:hover {
+  box-shadow: 0 1em 3em rgba(156, 136, 255, 0.2);
 }
 .dashboard.dark .card__logo {
   background: #3c4247;
@@ -218,6 +233,10 @@
 .dashboard.dark .card__tasks a {
   color: #fff;
   border-color: #4b5563;
+}
+.dashboard.dark .card__tasks a:hover {
+  background: #4b5563;
+  box-shadow: 0 1em 3em #4b5563;
 }
 
 /* __________media query__________ */
