@@ -72,6 +72,7 @@ button.more {
   top: 40px;
   right: 20px;
   background: #fff;
+  z-index: 1;
 }
 .popup li {
   list-style: none;
@@ -81,9 +82,12 @@ button.more {
   background: #f7f6f4;
   border-radius: 5px;
 }
-.popup li:first-of-type {
+.popup li {
   list-style: none;
   border-bottom: 1px solid #f3f3f3;
+}
+.popup li:last-of-type {
+  border-color: transparent !important;
 }
 .popup button {
   padding: 10px;
@@ -103,6 +107,9 @@ button.more {
 }
 .popup button.delete {
   color: #fd413c;
+}
+.popup button.cancel {
+  color: #9a9dac;
 }
 .tasks__name {
   font-size: 1rem;
@@ -147,6 +154,7 @@ button.more {
   padding: 15px;
   border: 1px solid #f7f6f4;
   border-bottom: none;
+  position: relative;
 }
 .comments li:last-of-type {
   border: 1px solid #f7f6f4;
@@ -168,6 +176,34 @@ button.more {
 }
 .comment__head small {
   margin-right: auto;
+}
+.comment__head i {
+  font-size: 16px;
+}
+.comment__action {
+  position: absolute;
+  right: 50px;
+  top: 20px;
+  background: #f7f6f4;
+  border-radius: 5px;
+  display: flex;
+}
+.comment__action button {
+  padding: 5px 10px;
+  width: 100%;
+}
+.comment__action button:nth-child(1) {
+  border-radius: 5px 0 0 5px;
+}
+.comment__action button:nth-child(2) {
+  border-radius: 0 5px 5px 0;
+}
+.comment__action button:hover {
+  background: #fd8b51;
+  color: #fff;
+}
+.comment__action i {
+  font-size: 15px;
 }
 .comments form {
   display: flex;
@@ -198,12 +234,29 @@ button.more {
   color: #fff;
   border-radius: 5px;
 }
+.send.update {
+  padding: 10px 10px;
+}
 .send:focus {
   outline-color: #f7f6f4;
+}
+.send:hover {
+  background: rgba(253, 139, 81, 0.8);
 }
 .send i {
   display: inline-block;
   margin-bottom: -10px;
+}
+.comments li.update__action {
+  height: 150px;
+}
+.update__action textarea,
+.update__action label {
+  background: transparent;
+}
+.update__action form,
+.update__action label {
+  height: 100px;
 }
 
 /* dark mode */
@@ -214,8 +267,11 @@ button.more {
 .project.dark .popup li:hover {
   background: #4b5563;
 }
-.project.dark .popup li:first-of-type {
+.project.dark .popup li {
   border-bottom-color: #4b5563;
+}
+.project.dark .popup button.cancel {
+  color: #b9b9bb;
 }
 .project.dark .project__header button {
   color: #85878a;
@@ -244,6 +300,9 @@ button.more {
 }
 .send.dark {
   background: #fd413c;
+}
+.send.dark:hover {
+  background: rgba(253, 65, 60, 0.9);
 }
 
 @media (max-width: 500px) {

@@ -20,12 +20,42 @@ import "./Project.css";
 export default function Comment({ project }) {
   const { user } = useAuthContext();
   const { mode } = useTheme();
-  const [newComment, setNewComment] = useState("");
   const { updateDocument, response } = useFirestore("projects");
+
+  const [editComment, setEditComment] = useState("");
+  const [newComment, setNewComment] = useState("");
+  const [action, setAction] = useState({});
+  const [edit, setEdit] = useState({});
 
   const usersList = project.assignedUsersList.filter((u) => {
     return u.id === user.uid;
   });
+
+  const handleAction = (index) => {
+    setAction((state) => ({
+      ...state,
+      [index]: !state[index],
+    }));
+  };
+
+  const handleDelete = async () => {
+    setAction({});
+  };
+
+  const handleEdit = (index) => {
+    setAction({});
+    setEditComment(project.comments[index].content);
+
+    setEdit((state) => ({
+      ...state,
+      [index]: !state[index],
+    }));
+  };
+
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+    setEdit({});
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,31 +81,67 @@ export default function Comment({ project }) {
   return (
     <div className={`comments ${mode}`}>
       <ul>
-        {project.comments.map((comment) => (
-          <li key={comment.id}>
-            <div className="comment__head">
-              <Avatar src={comment.photoURL} />
-              <h5>{comment.displayName}</h5>
-              <small>
-                {formatDistanceToNow(comment.createdAt.toDate(), {
-                  addSuffix: true,
-                })}
-              </small>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10.5 6a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm0 6a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm0 6a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-            <p>{comment.content}</p>
-          </li>
+        {project.comments.map((comment, i) => (
+          <>
+            {!edit[i] && (
+              <li key={comment.id}>
+                <div className="comment__head">
+                  <Avatar src={comment.photoURL} />
+                  <h5>{comment.displayName}</h5>
+                  <small>
+                    {formatDistanceToNow(comment.createdAt.toDate(), {
+                      addSuffix: true,
+                    })}
+                  </small>
+                  {comment.userID === user.uid && (
+                    <button onClick={() => handleAction(i)}>
+                      <i className="fi fi-br-menu-dots-vertical"></i>
+                    </button>
+                  )}
+                  {action[i] && (
+                    <div className="comment__action">
+                      <button onClick={() => handleEdit(i)}>
+                        <i className="fi fi-br-pen-fancy"></i>
+                      </button>
+                      <button onClick={() => handleDelete(comment.id)}>
+                        <i className="fi fi-rr-trash"></i>
+                      </button>
+                      <button onClick={() => setAction({})}>
+                        <i className="fi fi-br-cross"></i>
+                      </button>
+                    </div>
+                  )}
+                </div>
+                <p>{comment.content}</p>
+              </li>
+            )}
+            {edit[i] && (
+              <li className="update__action" key={comment.id}>
+                <div className="comment__head">
+                  <Avatar src={comment.photoURL} />
+                  <h5>{comment.displayName}</h5>
+                  <small>
+                    {formatDistanceToNow(comment.createdAt.toDate(), {
+                      addSuffix: true,
+                    })}
+                  </small>
+                </div>
+                <form onSubmit={handleUpdate}>
+                  <label>
+                    <textarea
+                      required
+                      placeholder="comment"
+                      onChange={(e) => {
+                        setEditComment(e.target.value);
+                      }}
+                      value={editComment}
+                    ></textarea>
+                  </label>
+                  <button className="send update">Update</button>
+                </form>
+              </li>
+            )}
+          </>
         ))}
       </ul>
 
@@ -100,10 +166,10 @@ export default function Comment({ project }) {
               <button className={`send ${mode}`}>...</button>
             )}
           </label>
-          {response.error && (
-            <div className={`error ${mode}`}>{response.error}</div>
-          )}
         </form>
+      )}
+      {response.error && (
+        <div className={`error ${mode}`}>{response.error}</div>
       )}
     </div>
   );

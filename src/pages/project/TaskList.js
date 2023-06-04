@@ -65,7 +65,12 @@ export default function TaskList({ tasks, project }) {
                       onClick={() => handleDelete(task.id)}
                       className="delete"
                     >
-                      delete <i className="fi fi-br-cross"></i>
+                      delete <i className="fi fi-rr-trash"></i>
+                    </button>
+                  </li>
+                  <li>
+                    <button onClick={() => setPopup({})} className="cancel">
+                      cancel <i className="fi fi-br-cross"></i>
                     </button>
                   </li>
                 </ul>
