@@ -121,7 +121,7 @@ export default function Sidebar({ mobileMenu, setMobileMenu, screenWidth }) {
                     to="/users"
                   >
                     <i className="fi fi-rr-users-alt"></i>
-                    <span>Users</span>
+                    <span>Team</span>
                   </NavLink>
                 </motion.li>
               </ul>

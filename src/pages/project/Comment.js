@@ -20,7 +20,8 @@ import "./Project.css";
 export default function Comment({ project }) {
   const { user } = useAuthContext();
   const { mode } = useTheme();
-  const { updateDocument, response } = useFirestore("projects");
+  const { updateDocument, deleteArrayField, response } =
+    useFirestore("projects");
 
   const [editComment, setEditComment] = useState("");
   const [newComment, setNewComment] = useState("");
@@ -38,8 +39,9 @@ export default function Comment({ project }) {
     }));
   };
 
-  const handleDelete = async () => {
+  const handleDelete = async (i) => {
     setAction({});
+    deleteArrayField(project.id, "comments", i);
   };
 
   const handleEdit = (index) => {
@@ -103,7 +105,7 @@ export default function Comment({ project }) {
                       <button onClick={() => handleEdit(i)}>
                         <i className="fi fi-br-pen-fancy"></i>
                       </button>
-                      <button onClick={() => handleDelete(comment.id)}>
+                      <button onClick={() => handleDelete(i)}>
                         <i className="fi fi-rr-trash"></i>
                       </button>
                       <button onClick={() => setAction({})}>

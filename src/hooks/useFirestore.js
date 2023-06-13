@@ -111,6 +111,75 @@ export const useFirestore = (collection) => {
     }
   };
 
+  // deleteArrayField
+  const deleteArrayField = async (documentId, fieldName, index, newValue) => {
+    try {
+      const docRef = ref.doc(documentId);
+
+      const doc = await docRef.get();
+
+      if (doc.exists) {
+        const array = doc.data()[fieldName];
+        array.splice(index, 1); // Remove the element at the specified index
+
+        // Update the array with the modified value
+        if (newValue) {
+          array.splice(index, 0, newValue); // Insert the new value at the same index
+        }
+
+        const updatedField = await docRef.update({
+          [fieldName]: array,
+        });
+
+        dispatchIfNotUnMounted({
+          type: "UPDATE_DOCUMENT",
+          payload: updatedField,
+        });
+      } else {
+        dispatchIfNotUnMounted({
+          type: "ERROR",
+          payload: "Document does not exist",
+        });
+        return null;
+      }
+    } catch (err) {
+      dispatchIfNotUnMounted({ type: "ERROR", payload: err.message });
+      return null;
+    }
+  };
+
+  // Edit array field
+  const editArrayField = async (documentId, fieldName, index, newValue) => {
+    try {
+      const documentRef = ref.doc(documentId);
+
+      const doc = await documentRef.get();
+
+      if (doc.exists) {
+        const array = doc.data()[fieldName];
+        array[index] = newValue; // Update the element at the specified index
+
+        const updatedField = await documentRef.update({
+          [fieldName]: array,
+        });
+
+        dispatchIfNotUnMounted({
+          type: "UPDATE_DOCUMENT",
+          payload: updatedField,
+        });
+      } else {
+        dispatchIfNotUnMounted({
+          type: "ERROR",
+          payload: "Document does not exist",
+        });
+        return null;
+      }
+    } catch (err) {
+      dispatchIfNotUnMounted({ type: "ERROR", payload: err.message });
+      return null;
+    }
+  };
+
   // update document
   const updateDocument = async (id, updates) => {
     dispatch({ type: "IS_LOADING" });
@@ -131,5 +200,11 @@ export const useFirestore = (collection) => {
     return () => setUnMounted(true);
   }, []);
 
-  return { addDocument, deleteDocument, updateDocument, response };
+  return {
+    addDocument,
+    deleteDocument,
+    updateDocument,
+    deleteArrayField,
+    response,
+  };
 };
