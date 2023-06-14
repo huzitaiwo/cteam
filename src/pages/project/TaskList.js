@@ -70,7 +70,7 @@ export default function TaskList({ tasks, project }) {
                   </li>
                   <li>
                     <button onClick={() => setPopup({})} className="cancel">
-                      cancel <i className="fi fi-br-cross"></i>
+                      close <i className="fi fi-br-cross"></i>
                     </button>
                   </li>
                 </ul>

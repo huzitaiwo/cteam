@@ -57,8 +57,14 @@ export default function Comment({ project }) {
   const handleUpdate = async (e, i) => {
     e.preventDefault();
     setEdit({});
-    editArrayField(project.id, "comments", i, {});
-    console.log(project.comments[i]);
+    editArrayField(project.id, "comments", i, {
+      displayName: project.comments[i].displayName,
+      photoURL: project.comments[i].photoURL,
+      content: editComment,
+      createdAt: project.comments[i].createdAt,
+      id: project.comments[i].id,
+      userID: project.comments[i].userID,
+    });
   };
 
   const handleSubmit = async (e) => {
@@ -88,7 +94,7 @@ export default function Comment({ project }) {
         {project.comments.map((comment, i) => (
           <>
             {!edit[i] && (
-              <li key={comment.id}>
+              <li key={`${i}___${comment.id}___${i}`}>
                 <div className="comment__head">
                   <Avatar src={comment.photoURL} />
                   <h5>{comment.displayName}</h5>
@@ -120,7 +126,10 @@ export default function Comment({ project }) {
               </li>
             )}
             {edit[i] && (
-              <li className="update__action" key={comment.id}>
+              <li
+                className="update__action"
+                key={`${i}___${comment.id}___${i}`}
+              >
                 <div className="comment__head">
                   <Avatar src={comment.photoURL} />
                   <h5>{comment.displayName}</h5>

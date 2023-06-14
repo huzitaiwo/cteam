@@ -112,7 +112,7 @@ export const useFirestore = (collection) => {
   };
 
   // deleteArrayField
-  const deleteArrayField = async (documentId, fieldName, index, newValue) => {
+  const deleteArrayField = async (documentId, fieldName, index, updates) => {
     try {
       const docRef = ref.doc(documentId);
 
@@ -123,8 +123,8 @@ export const useFirestore = (collection) => {
         array.splice(index, 1); // Remove the element at the specified index
 
         // Update the array with the modified value
-        if (newValue) {
-          array.splice(index, 0, newValue); // Insert the new value at the same index
+        if (updates) {
+          array.splice(index, 0, updates); // Insert the new value at the same index
         }
 
         const updatedField = await docRef.update({
@@ -149,7 +149,7 @@ export const useFirestore = (collection) => {
   };
 
   // Edit array field
-  const editArrayField = async (documentId, fieldName, index, newValue) => {
+  const editArrayField = async (documentId, fieldName, index, updates) => {
     try {
       const documentRef = ref.doc(documentId);
 
@@ -157,7 +157,7 @@ export const useFirestore = (collection) => {
 
       if (doc.exists) {
         const array = doc.data()[fieldName];
-        array[index] = newValue; // Update the object at the specified index
+        array[index] = updates; // Update the object at the specified index
 
         const updatedField = await documentRef.update({
           [fieldName]: array,
