@@ -20,7 +20,7 @@ import "./Project.css";
 export default function Comment({ project }) {
   const { user } = useAuthContext();
   const { mode } = useTheme();
-  const { updateDocument, deleteArrayField, response } =
+  const { updateDocument, deleteArrayField, editArrayField, response } =
     useFirestore("projects");
 
   const [editComment, setEditComment] = useState("");
@@ -54,9 +54,11 @@ export default function Comment({ project }) {
     }));
   };
 
-  const handleUpdate = async (e) => {
+  const handleUpdate = async (e, i) => {
     e.preventDefault();
     setEdit({});
+    editArrayField(project.id, "comments", i, {});
+    console.log(project.comments[i]);
   };
 
   const handleSubmit = async (e) => {
@@ -128,7 +130,7 @@ export default function Comment({ project }) {
                     })}
                   </small>
                 </div>
-                <form onSubmit={handleUpdate}>
+                <form onSubmit={(e) => handleUpdate(e, i)}>
                   <label>
                     <textarea
                       required

@@ -56,7 +56,7 @@ export default function Dashboard() {
 
   if (documents && documents.length === 0) {
     return (
-      <p className={`project-redirect no___action ${mode}`}>
+      <p className={` no___action ${mode}`}>
         No activities yet in your dashboard!
       </p>
     );

@@ -23,8 +23,10 @@ export default function Users() {
     return <div className={`error ${mode}`}>{error}</div>;
   }
 
-  if (!users) {
-    return <p className={`error ${mode}`}>Could not load users</p>;
+  if (users && users.length === 0) {
+    return (
+      <p className={`no___action ${mode}`}>Could not load teammate's list</p>
+    );
   }
 
   return (

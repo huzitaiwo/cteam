@@ -157,7 +157,7 @@ export const useFirestore = (collection) => {
 
       if (doc.exists) {
         const array = doc.data()[fieldName];
-        array[index] = newValue; // Update the element at the specified index
+        array[index] = newValue; // Update the object at the specified index
 
         const updatedField = await documentRef.update({
           [fieldName]: array,
@@ -205,6 +205,7 @@ export const useFirestore = (collection) => {
     deleteDocument,
     updateDocument,
     deleteArrayField,
+    editArrayField,
     response,
   };
 };
